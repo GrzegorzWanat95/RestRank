@@ -1,0 +1,419 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RestRank{% endblock %}
+
+{% block body %}
+<div id="login__start" class="login__start">
+        <div id="login__form"  class="login__form d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
+            <div class="login__panel flex-column d-none d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none justify-content-center">
+                <div class="x__section d-flex justify-content-end"><button onclick="functionClose()" class="close">&#10006;</button></div>
+                <div class="d-flex pt-2 justify-content-center align-content-center"><h1 class="login__header">Logowanie</h1></div>
+                        <form class="form-inline my-2 my-lg-0 d-flex">
+                            <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                <i class="bi bi-person-fill"></i>
+                            </div>   
+                            <input id="login__field" class="user__form login__field" type="text" placeholder="login" aria-label="Search">
+                            <button id="hidden" class="close"><i class="bi bi-eye-fill"></i></button>
+                        </form>
+                        <form class="form-inline my-2 my-lg-0 d-flex">
+                            <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                <i class="bi bi-lock-fill"></i>
+                            </div>   
+                            <input id="password__field" class="user__form" type="password" placeholder="hasło" aria-label="Search">
+                            <button onclick="hidePassword()" class="close"><i class="bi bi-eye-fill"></i></button>
+                        </form>
+                <div class="login__button contaienr w-100">
+                    <button class="btn__white d-flex justify-content-center" type="button">zaloguj</button>   
+                </div>
+                <div class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">
+                    <div>
+                        <a class="login__buttons" href="#" onclick="resetFunctionOpen(); functionClose()">Nie pamiętam hasła</a>   
+                    </div>
+                    <div>
+                        <a class="login__buttons" href="./register.html">Zarejestruj się</a>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="login__form__alternative"  class="login__form__alternative d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
+                <div class="login__panel__alternative flex-column d-block d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-block justify-content-center">
+                        <div class="x__section d-flex justify-content-end"><button onclick="functionClose()" class="close__alternative">&#10006;</button></div>
+                        <div class="d-flex justify-content-center align-content-center"><h1 class="login__header__alternative">Logowanie</h1></div>
+                                <form class="form-inline my-2 my-lg-0 d-flex">
+                                    <div class="person__alternative col-3 justify-content-end align-items-end align-content-end">
+                                        <i class="bi bi-person-fill"></i>
+                                    </div>   
+                                    <input id="login__field__mobile" class="user__form__alternative login__field" type="text" placeholder="login" aria-label="Search">
+                                    <button id="hidden__alternative" class="close"><i class="bi bi-eye-fill eye__alternative"></i></button>
+                                </form>
+                    
+                                <form class="form-inline my-2 my-lg-0 d-flex">
+                                    <div class="person col-3 justify-content-end align-items-end align-content-end">
+                                        <i class="bi bi-lock-fill lock"></i>
+                                    </div>   
+                                    <input id="password__field__mobile" class="user__form__alternative" type="password" placeholder="hasło" aria-label="Search">
+                                    <button onclick="hidePassword()" class="close"><i class="bi bi-eye-fill eye__alternative"></i></button>
+                                </form>
+                        <div class="login__button contaienr w-100">
+                            <button class="btn__white__alternative d-flex justify-content-center" type="button">zaloguj</button>   
+                        </div>
+                        <div class="login__bottom__buttons w-1000 justify-content-center align-items-center d-flex flex-wrap">
+                            <div>
+                                <a class="login__buttons" href="#" onclick="resetFunctionOpen()">Nie pamiętam hasła</a>   
+                            </div>
+                            <div>
+                                <a class="login__buttons" href="./register.html">Zarejestruj się</a>  
+                            </div>
+                        </div>
+                 </div>
+        </div>
+
+        <!-- odzyskiwanie hasla -->
+
+        <div id="reset__start" class="reset__start">
+            <div id="reset__form"  class="reset__form d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                <div class="login__panel flex-column d-none d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none justify-content-center">
+                    <div class="x__section d-flex justify-content-end"><button onclick="resetFunctionClose()" class="close">&#10006;</button></div>
+                    <div class="d-flex pt-2 justify-content-center align-content-center"><h1 class="login__header">Odzyskiwanie hasła</h1></div>  
+                            <form class="form-inline my-2 my-lg-0 d-flex">
+                                <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-envelope-fill envelope"></i>
+                                </div>   
+                                <input id="email__field__reset" class="user__form login__field" type="email" placeholder="e-mail" aria-label="Search">
+                                <button class="close hidden"><i class="bi bi-eye-fill"></i></button>
+                            </form>
+                            <form class="form-inline my-2 my-lg-0 pt-4 d-flex">
+                                <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-exclamation-square-fill square-fill square-fill"></i>
+                                </div> 
+                                <div class="text__register__form">
+                                    <div>
+                                        Wprowadź adres email z&nbsp;rejestracji. Na podane dane wyślemy wiadomość z&nbsp;linkiem do zmiany hasła. 
+                                    </div>
+                                </div> 
+                                <div class="person justify-content-end align-items-end align-content-end col-2">
+                                    <i class="bi bi-eye-fill eye__alternative hidden"></i>
+                                </div> 
+                            </form>
+                    <div class="login__button contaienr w-100">
+                        <button class="btn__white d-flex justify-content-center" type="button">wyślij</button>   
+                    </div>
+                </div>
+            </div>
+            <!-- reset mobilne -->
+            <div id="reset__form__alternative"  class="login__form__alternative d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-block justify-content-center">
+                <div class="login__panel__alternative flex-column d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-block justify-content-center">
+                    <div class="x__section d-flex justify-content-end"><button onclick="resetFunctionClose()" class="close__alternative">&#10006;</button></div>
+                    <div class="d-flex pt-2 justify-content-center align-content-center"><h1 class="login__header__alternative">Odzyskiwanie<br>hasła</h1></div>  
+                            <form class="form-inline my-2 my-lg-0 d-flex">
+                                <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-envelope-fill envelope__alternative"></i>
+                                </div>   
+                                <input id="email__field__reset__mobile" class="user__form__alternative login__field" type="email" placeholder="e-mail" aria-label="Search">
+                            </form>
+                            <form class="form-inline my-2 my-lg-0 pt-4 d-flex">
+                                <div class="text__register__form__alternative justify-content-start">
+                                    <div>
+                                        Wprowadź adres email z&nbsp;rejestracji. Na podane dane wyślemy wiadomość z&nbsp;linkiem do zmiany hasła. 
+                                    </div>
+                                </div> 
+                                <div class="person col-1 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-eye-fill eye__alternative hidden"></i>
+                                </div>  
+                            </form>
+                            <div class="login__button contaienr w-100">
+                                <button class="btn__white__alternative d-flex justify-content-center" type="button">wyślij</button>   
+                            </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- main content -->
+
+    <div class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 fixed-top d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html"><img class="logo d-block" src="./img/logo.png" alt="logo RestRank"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#aboutus">O&nbsp;nas</a>
+                <a id="login__button" onclick="functionOpen()" class="nav-link" href="#">Zaloguj</a>
+                <a class="nav-link" href="./register.html">Rejestracja</a>
+                </div>
+            </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white pt-4 d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html"><img class="logo d-block" src="./img/sygnet.png" alt="logo RestRank"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup__alternative" aria-controls="navbarNavAltMarkup__alternative" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup__alternative">
+                <div class="alternative__collapse navbar-nav ms-auto">
+                <a class="nav-link" href="#aboutus">O nas</a>
+                <a class="nav-link" onclick="functionOpen()" href="#">Zaloguj</a>
+                <a class="nav-link" href="./register.html">Rejestracja</a>
+                </div>
+            </div>
+            </div>
+        </nav>
+
+        <div id="home" class="home d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none">
+            <div class="container h-100 d-flex flex-column justify-content-end align-items-center text-light text-center">
+                <p class="header flex-row display-3">POZNAJ OPINIE O&nbsp;RESTAURACJACH W&nbsp;TWOJEJ OKOLICY</p>
+                <div class="input__field d-flex col-12 align-items-center justify-content-center">
+                    <nav id="search__field" class="navbar col-11 justify-content-center">
+                        <div class="input-group d-flex;">
+                            <input class="form-control mr-sm-2 col-9 col-xxl-9 col-xl-9 col-lg-9 col-md-6 col-sm-6" type="search" placeholder="Znajdź restaurację" aria-label="Search">
+                            <select class="custom-select col-2 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-5" id="inputGroupSelect04">
+                            <option value="1">Nazwa restauracji</option>
+                            <option value="2">Miasto</option>
+                            </select>
+                            <div class="input-group-append col-1">
+                            <button class="btn btn-outline-secondary" type="button">&#x1F50E;&#xFE0E;</button>
+                            </div>
+                        </div>
+                    </nav>                
+                </div>
+            </div>
+            <a class="hero-shadow"></a>
+            </div>
+            <div class="home__alternative d-xxl-none d-xl-none d-lg-none d-md-none d-sm-flex d-flex h-75">
+                <div class="container d-flex flex-column justify-content-center align-items-center text-center">
+                <p class="header text__alternative flex-row display-5">POZNAJ OPINIE O&nbsp;RESTAURACJACH W&nbsp;TWOJEJ OKOLICY</p>
+                <div class="input__field__alternative d-flex col-12 align-items-center justify-content-center">
+                    <nav id="search__field__alternative" class="navbar col-12 justify-content-center">
+                        <div class="input-group__alternative d-flex col-12 justify-content-center h-100 w-100 m-md-5">
+                            <div class="input__alternative col-12">
+                                <input class="form-control__alternative" type="search" placeholder="Znajdź restaurację" aria-label="Search">
+                            </div>
+                            <div class="input__alternative col-12">
+                                <select class="custom-select__alternative d-block" id="inputGroupSelect04__alternative">
+                                    <option class="text-black" value="1">Nazwa restauracji</option>
+                                    <option class="text-black" value="2">Miasto</option>
+                                </select>
+                            </div>
+                            <div class="input-group-append__alternative col-12 d-flex">
+                                <button class="btn__alternative btn-outline-secondary text-light" type="button">Szukaj &#x1F50E;&#xFE0E;</button>
+                            </div>
+                            </div>
+                        </nav>                
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="aboutus">
+                <div class="main__content upper d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                    <div class="content__top col-12 d-block d-flex justify-content-center align-content-center col-12">
+                        <div class="left__side d-block col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="left__image">
+                            </div>
+                        </div>
+                        <div class="right__side col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-block m-0 p-0">
+                            <div class="bar col-6"></div>
+                            <div class="right__text">
+                                <p class="text__header flex-row display-1">Podziel się opinią z&nbsp;innymi</p>
+                                <p class="text flex-row text-uppercase">Poznaj opinie na temat restauracji w&nbsp;Twojej okolicy. Oceń miejsca w&nbsp;których byłeś i&nbsp;pomóż innym w&nbsp;odkryciu najlepszych kulinarnych doznań.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__content upper d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-block">
+                    <div class="content__top col-12 d-block d-flex justify-content-center align-content-center col-12">
+                        <div class="left__side__alternative d-none">
+                            <div class="left__image"></div>
+                        </div>
+                        <div class="right__side col-md-12 col-sm-12 col-12 d-block m-0 p-0">
+                            <div class="bar__alternative col-6"></div>
+                            <div class="right__text__alternative align-content-center">
+                                <p class="text__header flex-row display-1">Podziel się opinią z&nbsp;innymi</p>
+                                <p class="text flex-row text-uppercase">Poznaj opinie na temat restauracji w&nbsp;Twojej okolicy. Oceń miejsca w&nbsp;których byłeś i&nbsp;pomóż innym w&nbsp;odkryciu najlepszych kulinarnych doznań.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bottom__field" class="main__content d-xxl-block d-xl-block d-lg-none d-md-none d-sm-none d-none">
+                    <div class="bar col-12"></div>
+                    <div class="content__bottom col-12 d-block d-flex justify-content-center align-content-center col-12">
+                        <div class="left__side__bottom bg-light d-block col-xxl-7 col-xl-7">
+                            <div class="ranking__field d-xxl-6 d-xl-6 d-lg-6 container align-items-center justify-content-center d-flex flex-wrap">
+                                <div class="field col-6 h-100 w-50 align-items-center justify-content-center d-flex flex-wrap">
+                                    <div class="ranking__background align-items-center justify-content-center">
+                                        <div class="ranking d-flex justify-content-end align-content-center flex-column">
+                                            <div class="opinion__number">
+                                                <p class="text-light">150</p>
+                                            </div>
+                                            <div class="opinion">
+                                                <p class="text-light">Restauracji</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field col-6 h-100 w-50 align-items-center justify-content-center d-flex flex-wrap">
+                                    <div class="ranking__background">
+                                        <div class="ranking d-flex justify-content-end align-content-center flex-column">
+                                            <div class="opinion__number">
+                                                <p class="text-light">874</p>
+                                            </div>
+                                            <div class="opinion">
+                                                <p class="text-light">Opinii</p>
+                                            </div>
+                                        </div>
+                                    </div>                            
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right__side__bottom col-xxl-5 col-xl-5 col-lg-5 d-block">
+                            <div class="right__image__bottom"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__content d-xxl-none d-xl-none d-lg-block d-md-block d-sm-none d-none d-block">
+                    <div class="bar col-12"></div>
+                    <div class="content__bottom col-12 d-block d-flex justify-content-center align-content-center">
+                        <div class="left__side__bottom bg-light d-block d-lg-7 d-md-12 col-12">
+                            <div class="left__side__bottom bg-light d-block d-lg-7 d-md-7 d-sm-12 col-12">
+                                <div class="ranking__field  d-lg-6 d-md-7 d-sm-12 d-12 container align-items-center justify-content-center d-flex">
+                                    <div class="field col-6 h-100 w-50 align-items-center justify-content-center d-flex flex-wrap">
+                                        <div class="ranking__background align-items-center justify-content-center">
+                                            <div class="ranking d-flex justify-content-end align-content-center flex-column">
+                                                <div class="opinion__number">
+                                                    <p class="text-light">150</p>
+                                                </div>
+                                                <div class="opinion">
+                                                    <p class="text-light">Restauracji</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field col-6 h-100 w-50 align-items-center justify-content-center d-flex">
+                                        <div class="ranking__background">
+                                            <div class="ranking d-flex justify-content-end align-content-center flex-column">
+                                                <div class="opinion__number">
+                                                    <p class="text-light">874</p>
+                                                </div>
+                                                <div class="opinion">
+                                                    <p class="text-light">Opinii</p>
+                                                </div>
+                                            </div>
+                                        </div>                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right__side__bottom col-xxl-5 col-xl-5 col-lg-none col-md-none col-sm-none col-12 d-block m-0 p-0">
+                            <div class="right__image__bottom"></div>    
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__content d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block">
+                    <div class="bar__alternative col-12"></div>
+                    <div class="content__bottom col-12 d-block d-flex justify-content-center align-content-center col-12">
+                        <div class="left__side__bottom bg-light d-block w-100 d-sm-12 d-12">
+                            <div class="ranking__field d-sm-12 d-12 container align-items-center justify-content-center d-flex flex-wrap">
+                                <div class="field col-6 h-100 w-50 align-items-center justify-content-center d-flex flex-wrap">
+                                    <div class="ranking__background__alternative__small align-items-center justify-content-center">
+                                        <div class="ranking__alternative__small d-flex justify-content-end align-content-center flex-column">
+                                            <div class="opinion__number">
+                                                <p class="text-light">150</p>
+                                            </div>
+                                            <div class="opinion">
+                                                <p class="text-light">Restauracji</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field col-12 h-100 w-50 align-items-center justify-content-center d-flex flex-wrap">
+                                    <div class="ranking__background__alternative__small">
+                                        <div class="ranking__alternative__small d-flex justify-content-end align-content-center flex-column">
+                                            <div class="opinion__number">
+                                                <p class="text-light">874</p>
+                                            </div>
+                                            <div class="opinion">
+                                                <p class="text-light">Opinii</p>
+                                            </div>
+                                        </div>
+                                    </div>                            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right__side__bottom col-xxl-5 col-xl-5 col-lg-none col-md-none col-sm-none col-12 d-block m-0 p-0">
+                            <div class="right__image__bottom"></div>    
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="site__bottom col-12 container-fluid d-flex align-content-center justify-content-center align-items-center px-0 d-xxl-block d-xl-none d-lg-none d-md-none d-sm-none d-none">
+                        <div class="links__field d-flex align-items-center">
+                            <div class="links__holder col-7 justify-content-start align-items-center d-flex">
+                                    <div class="bottom__links d-flex flex-wrap justify-items-start">
+                                        <a class="link__list light__brown__color" href="#">Kontakt</a>
+                                        <a class="link__list light__brown__color" href="#">Regulamin</a>
+                                        <a class="link__list light__brown__color" href="#">Zasady pisania recenzji</a>
+                                    </div>
+                            </div>
+                            <div class="certifies__field col-5 d-block d-flex justify-content-end align-items-center d-xxl-4 d-xl-4 d-lg-4 d-md-12 d-sm-12">
+                                <div><img class="certificate" src="./img/najlepszy_portal_certyfikat.png" alt="certify"></div>
+                                <div><img class="certificate" src="./img/portal_roku_certyfikat.png" alt="certify"></div>
+                            </div>
+                            <div class="footer__sign col-12 d-flex d-block flex-wrap col-12 text-light"><p class="light__brown__color">Copyright©2022 RestRank</p></div>
+                        </div>
+                    </div>
+                </footer>
+
+                <footer>
+                    <div class="site__bottom col-12 container-fluid d-flex align-content-center justify-content-center align-items-center px-0 d-xxl-none d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                        <div class="links__field d-flex align-items-center">
+                            <div class="links__holder col-5 justify-content-start align-items-center d-flex">
+                                <div class="bottom__links d-flex flex-column justify-items-start">
+                                        <a class="link__list light__brown__color" href="#">Kontakt</a>
+                                        <a class="link__list light__brown__color" href="#">Regulamin</a>
+                                        <a class="link__list light__brown__color" href="#">Zasady pisania recenzji</a>
+                                    </div>
+                            </div>
+                            <div class="certifies__field col-7 d-block d-flex justify-content-end align-items-center d-xxl-4 d-xl-4 d-lg-4 d-md-12 d-sm-12">
+                                <div><img class="certificate" src="./img/najlepszy_portal_certyfikat.png" alt="certify"></div>
+                                <div><img class="certificate" src="./img/portal_roku_certyfikat.png" alt="certify"></div>
+                            </div>
+                            <div class="footer__sign text-light"><p class="light__brown__color">Copyright©2022 RestRank</p></div>
+                        </div>
+                    </div>
+                </footer>
+                <!---->
+                <footer>
+                    <div class="site__bottom col-12 container-fluid d-flex align-content-center justify-content-center align-items-center px-0 d-xxl-none d-xl-block d-lg-none d-md-block d-sm-block d-block">
+                        <div class="links__field d-flex align-items-center">
+                            <div class="links__holder col-12 justify-content-start flex-column align-items-center d-block w-100">
+                                <div class="bottom__links d-flex flex-column justify-items-start">
+                                    <div class="input-group-append__alternative col-12 d-flex">
+                                        <button class="bottom__navigation btn-outline-secondary" type="button">Kontakt</button>
+                                    </div>
+                                    <div class="input-group-append__alternative col-12 d-flex">
+                                        <button class="bottom__navigation btn-outline-secondary" type="button">Regulamin</button>
+                                    </div>
+                                    <div class="input-group-append__alternative col-12 d-flex">
+                                        <button class="bottom__navigation btn-outline-secondary" type="button">Zasady pisania recenzji</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="certifies__field__alternative col-12 d-block d-flex justify-content-center align-items-center d-xxl-4 d-xl-4 d-lg-4 d-md-12 d-sm-12">
+                                <div><img class="certificate__alternative" src="./img/najlepszy_portal_certyfikat.png"  alt="certify"></div>
+                                <div><img class="certificate__alternative" src="./img/portal_roku_certyfikat.png"  alt="certify"></div>
+                            </div>
+                            <div class="footer__sign__alternative col-12 d-flex d-block flex-wrap col-12 text-light"><p class="text__footer light__brown__color">Copyright©2022 RestRank</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            <script src="./script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+{% endblock %}
