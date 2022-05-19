@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}RestRank{% endblock %}
-
+{% block javascripts %}
+    <script src="{{ asset('scripts/script1.js') }}"></script>
+{% endblock %}
 {% block body %}
+
 <div id="login__start" class="login__start">
         <div id="login__form"  class="login__form d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
             <div class="login__panel flex-column d-none d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none justify-content-center">
@@ -134,14 +137,29 @@
     <div class="bg-light">
         <nav class="navbar navbar-expand-lg navbar-light bg-light pt-4 fixed-top d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none">
             <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html"><img class="logo d-block" src="./img/logo.png" alt="logo RestRank"></a>
+            <a class="navbar-brand" href="/"><img class="logo d-block" src="{{ asset('build/images/logo.png') }}" alt="logo RestRank"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="#aboutus">O&nbsp;nas</a>
-                <a id="login__button" onclick="functionOpen()" class="nav-link" href="#">Zaloguj</a>
+
+                <script>
+                function functionOpen() {
+                var targetDiv = document.getElementById("login__start");
+                var displaySetting = login__start.style.display;
+                if (displaySetting == 'block') {
+                    targetDiv.style.display = 'none';
+                } else {
+                    targetDiv.style.display = 'block';
+                }
+
+                resetDiv.style.display = 'none';
+                } //Open reset password form 
+                </script>
+
+                <a id="login__button" onclick='functionOpen()' class="nav-link" href="#">Zaloguj</a>
                 <a class="nav-link" href="./register.html">Rejestracja</a>
                 </div>
             </div>
@@ -149,7 +167,7 @@
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-white pt-4 d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block">
             <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html"><img class="logo d-block" src="./img/sygnet.png" alt="logo RestRank"></a>
+            <a class="navbar-brand" href="./index.html"><img class="logo d-block" src="{{ asset('build/images/sygnet.png') }}" alt="logo RestRank"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup__alternative" aria-controls="navbarNavAltMarkup__alternative" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -361,8 +379,8 @@
                                     </div>
                             </div>
                             <div class="certifies__field col-5 d-block d-flex justify-content-end align-items-center d-xxl-4 d-xl-4 d-lg-4 d-md-12 d-sm-12">
-                                <div><img class="certificate" src="./img/najlepszy_portal_certyfikat.png" alt="certify"></div>
-                                <div><img class="certificate" src="./img/portal_roku_certyfikat.png" alt="certify"></div>
+                                <div><img class="certificate" src="{{ asset('build/images/najlepszy_portal_certyfikat.png') }}" alt="certify"></div>
+                                <div><img class="certificate" src="{{ asset('build/images/portal_roku_certyfikat.png') }}" alt="certify"></div>
                             </div>
                             <div class="footer__sign col-12 d-flex d-block flex-wrap col-12 text-light"><p class="light__brown__color">Copyright©2022 RestRank</p></div>
                         </div>
@@ -380,8 +398,8 @@
                                     </div>
                             </div>
                             <div class="certifies__field col-7 d-block d-flex justify-content-end align-items-center d-xxl-4 d-xl-4 d-lg-4 d-md-12 d-sm-12">
-                                <div><img class="certificate" src="./img/najlepszy_portal_certyfikat.png" alt="certify"></div>
-                                <div><img class="certificate" src="./img/portal_roku_certyfikat.png" alt="certify"></div>
+                                <div><img class="certificate" src="{{ asset('build/images/najlepszy_portal_certyfikat.png') }}" alt="certify"></div>
+                                <div><img class="certificate" src="{{ asset('build/images/portal_roku_certyfikat.png') }}" alt="certify"></div>
                             </div>
                             <div class="footer__sign text-light"><p class="light__brown__color">Copyright©2022 RestRank</p></div>
                         </div>
@@ -405,12 +423,12 @@
                                 </div>
                             </div>
                             <div class="certifies__field__alternative col-12 d-block d-flex justify-content-center align-items-center d-xxl-4 d-xl-4 d-lg-4 d-md-12 d-sm-12">
-                                <div><img class="certificate__alternative" src="./img/najlepszy_portal_certyfikat.png"  alt="certify"></div>
-                                <div><img class="certificate__alternative" src="./img/portal_roku_certyfikat.png"  alt="certify"></div>
+                                <div><img class="certificate__alternative" src="{{ asset('build/images/najlepszy_portal_certyfikat.png') }}"  alt="certify"></div>
+                                <div><img class="certificate__alternative" src="{{ asset('build/images/portal_roku_certyfikat.png') }}"  alt="certify"></div>
                             </div>
                             <div class="footer__sign__alternative col-12 d-flex d-block flex-wrap col-12 text-light"><p class="text__footer light__brown__color">Copyright©2022 RestRank</p>
                             </div>
                         </div>
                     </div>
-                </footer>
+                </footer>            
 {% endblock %}

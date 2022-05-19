@@ -1,3 +1,822 @@
-body {
-    background-color: black;
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
 }
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+a:hover{
+    color:#4D1C08;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.6rem;
+}
+
+.hero-shadow{
+    position: absolute;
+    top:0;
+    font-size: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.home{
+    position:relative;
+    margin-top: 2.5em;
+    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 50rem;
+    z-index: 1;
+    background-image: url(/assets/images/restauracja.08205931.png);
+    background-repeat:no-repeat;
+}
+
+.header{
+    font-weight: bold;
+}
+
+.brown__color{
+    color:#2D1D15;
+}
+
+.light__brown__color{
+    color: #E0B59F;
+}
+
+.home__alternative{
+    color:#2D1D15;
+    min-height: 50vh;
+}
+
+.alternative__collapse{
+    text-align: end;
+}
+
+.input__field{
+    height: 35%;
+}
+
+.input__field__alternative{
+    padding-top:5rem;
+    height: 50%;
+}
+
+.input-group__alternative{
+    display: flex;
+    margin:4em;
+    padding-top: 1.5em;
+    flex-wrap: wrap;
+    min-height: 20vh;
+}
+
+.input__alternative{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    width: 90vw;
+    background-color: transparent;
+}
+
+.form-control__alternative{
+    margin: 5px;
+    color: grey;
+    width: 90vw;
+    background-color: transparent;
+    padding-left: 0px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.custom-select__alternative{
+    margin: 5px;
+    color: grey;
+    width: 90vw;
+    background-color: transparent;
+    padding: 5px;
+    padding-left: 0px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.input-group-append__alternative {
+    display:block;
+    width: 100vw;
+}
+
+.btn__alternative{
+    margin-top: 15px;
+    text-align: center;
+    display: block;
+    background-color: #2D1D15;
+    width: 100%;
+    margin:5vw;
+}
+
+.logo{
+    max-height: 3em;
+}
+
+.navbar-nav{
+    font-size: 1.8rem;
+}
+
+.navbar-toggler{
+    padding: 0.5em;
+}
+
+.form-control, .custom-select{
+    font-family: 'Sanchez', serif;
+    font-size: 1.2rem;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.btn{
+    display: flex;
+    color: white;
+    background-color: #2D1D15;
+    border: 1px solid #1C0C04;
+    font-size: 1.2rem;
+}
+
+.main__content{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 1.5rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.upper{
+    margin-bottom: 1.5rem;
+}
+
+.content__top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    max-height: 32rem;
+}
+
+.left__side{
+    display: flex;
+    padding-right: 1.5rem;
+    height: 32rem; 
+}
+
+.left__side__alternative{
+    display: flex;
+}
+
+.left__image{
+    background-image: url(/assets/images/restauracja-wnetrze.cc13d4ec.png);
+    display: flex;
+    background-size: 100%;
+    background-size: cover;
+    background-position:bottom;
+    height: 32rem;
+}
+
+.right__side{
+    display: flex;
+    padding-left: 1.5rem;
+}
+
+.bar{
+    width:100%;
+    background-color: #2D1D15;
+    height: 2rem;
+}
+
+.bar__alternative{
+    width:100%;
+    background-color: #2D1D15;
+    height: 5px;
+    padding-top: 1rem;
+}
+
+.bar__medium{
+    width:100%;
+    background-color: #2D1D15;
+    height: 5px;
+    padding-top: 1rem;
+}
+
+@media screen and (min-width: 770px) {
+    .bar__alternative{display: none};
+}
+
+.right__text{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 7vh;
+    text-align: start;
+    max-height: 36rem;
+}
+
+.right__text__alternative{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: start;
+    max-height: 32rem;
+    min-height: 22rem;
+    margin-top:3rem;
+    margin: 2rem;
+}
+
+@media screen and (min-width: 320px) {
+    .text__header{
+    color:#5E2D19;
+    font-weight: bold;
+    font-size: calc(35px + 6 * ((100vw - 320px) / 680));
+    }
+    .text{
+        color:#5E2D19;
+        font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+      }
+}
+
+@media screen and (min-width: 800px) {
+    .text__header{
+        color:#5E2D19;
+        font-weight: bold;
+        font-size: calc(40px + 6 * ((100vw - 320px) / 680));
+        }
+        .text{
+            color:#5E2D19;
+            font-size: calc(26px + 6 * ((100vw - 320px) / 680));
+          }
+}
+
+@media screen and (min-width: 1300px) {
+    .text__header{
+        color:#5E2D19;
+        font-weight:bold;
+        font-size: calc(50px + 6 * ((100vw - 320px) / 680));
+        }
+        .text{
+            color:#5E2D19;
+            font-size: calc(28px + 6 * ((100vw - 320px) / 680));
+          }
+}
+
+.content__bottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: #2D1D15;
+}
+
+.left__side__bottom{
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    height: 32rem;
+}
+
+.right__side__bottom{
+    display: flex;
+    height: 32rem;
+}
+
+.right__image__bottom{
+    background-image: url(/assets/images/restauracja-wnetrze-stoly.d514bd82.png);
+    display: flex;
+    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 32rem;
+}
+
+.ranking__field{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 32rem;
+    text-align: center;
+    font-weight: bold;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.field{
+    display: flex;
+    flex-wrap: wrap;
+    height: 32rem;
+    min-width: 14rem;
+}
+
+.ranking{
+    background-color:#2D1D15;
+    flex-wrap: wrap;
+    height: 14rem;
+    width: 16rem;
+    margin: 1rem;
+    z-index: 0;
+}
+
+.ranking__alternative__small{
+    background-color:#2D1D15;
+    flex-wrap: wrap;
+    height: 11.5rem;
+    width: 12rem;
+    margin: 1rem;
+    z-index: 0;
+}
+
+.ranking__background{
+    background-color: #5E2D19;
+    flex-wrap: wrap;
+    height: 14rem;
+    width: 16rem;
+    margin: 2rem;
+    z-index: 1;
+}
+
+.ranking__background__alternative__small{
+    background-color: #5E2D19;
+    flex-wrap: wrap;
+    height: 11rem;
+    width: 12rem;
+    margin: 2rem;
+    z-index: 1;
+}
+
+.opinion__number{
+    font-size: 5rem;
+    font-weight: bold;
+    margin:0;
+    justify-self:end;
+    line-height: 80%;
+}
+
+.opinion{
+    font-size: 2rem;
+}
+
+.site__bottom{
+    min-height: 15rem;
+    background-color: #2D1D15;
+    margin-bottom: 2rem;
+}
+
+.certifies__field{
+    display: flex;
+    flex-wrap: wrap;
+    min-height:12rem;
+    padding-right: 2rem;
+    }
+
+.certificate{
+    display: flex;
+    flex-wrap: wrap;
+    height: 12rem;
+    padding-right: 2rem;
+    min-width: 12rem;
+}
+
+.links__field{
+    display: flex;
+    flex-wrap: wrap;
+    min-height:12rem;
+}
+
+a{
+    padding-left:6rem;
+    text-decoration: none;
+}
+
+.link__list{
+    margin: 0.5rem;
+}
+
+.bottom__links{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #E0B59F;
+}
+
+.links__holder{
+    min-width: 200px;
+}
+
+.footer__sign{
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 6rem;
+    width: 200px;
+}
+
+.site__alternative{
+    min-height: 15rem;
+    background-color: #2D1D15;
+    margin-bottom: 2rem;
+}
+
+.bottom__navigation{
+    display: flex;
+    text-align: center;
+    display: block;
+    background-color: #2D1D15;
+    width: 100%;
+    margin:5vw;
+    min-width: 200px;
+    border:none;
+    color: #E0B59F;
+}
+
+.certifies__field__alternative{
+    display: flex;
+    flex-wrap: wrap;
+    min-height:12rem;
+    background:#2D1D15;
+    }
+
+.footer__sign__alternative{
+        font-weight: bold;
+        font-size: 1rem;
+        width: 100%;
+        padding-top: 2px;
+        background-color: #2D1D15;
+        align-content: center;
+}
+
+.certificate__alternative{
+    display: flex;
+    flex-wrap: wrap;
+    height: 12rem;
+    min-width: 12rem;
+}
+
+.text__footer{
+    margin-left: 2rem;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.login__start{
+    display: none;
+}
+
+.reset__start{
+    display: none;
+}
+
+.login__form{
+    width:100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.71);
+    z-index: 2;
+    position:fixed;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset__form{
+    width:100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.71);
+    z-index: 2;
+    position:fixed;
+    justify-content: center;
+    align-items: center; 
+}
+
+.reset__form__alternative{
+    background-color: rgba(255, 255, 255, 0.71);
+    display: none;
+    width:100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    position:fixed;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__form__alternative{
+    display: none;
+    width:100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    position:fixed;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__panel{
+    padding-top: 8rem;
+    color: #5E2D19;
+    background-color: white;
+    display: block;
+}
+
+.register__panel__alternative{
+    color: #5E2D19;
+    background-color: white;
+    display: block;
+}
+
+.register__header{
+    padding-top: 3rem;
+    font-size: 3rem;
+    font-weight:bold;
+}
+
+.login__panel{
+    color: #5E2D19;
+    background-color: white;
+    width: 50%;
+    height: 50vh;
+    height: 36.5rem;
+    display: block;
+    z-index: 3;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.background__field{
+    height: 2000px;
+    width: 2000px;
+    background-color: black;
+    background-size: 100%;
+    z-index:1000;
+    position: relative;
+}
+
+.login__panel__alternative{
+    color: #5E2D19;
+    background-color: white;
+    background-size: 100%;
+    display: block;
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login__button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.close{
+    margin-top: 2rem;
+    margin-right: 3rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #5E2D19;
+    border: none;
+    background-color: transparent;
+}
+
+.close__alternative{
+    margin-top: 2rem;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5E2D19;
+    border: none;
+    background-color: transparent;
+}
+
+.login__header{
+    font-size: 3rem;
+    font-weight:bold;
+}
+
+.login__header__alternative{
+    font-size: 2.5rem;
+    font-weight:bold;
+}
+
+.input__alternative{
+    padding-top: 3rem;
+    color: #5E2D19;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: transparent;
+    width: 100%;
+}
+
+.user__form{
+    font-size: 2.5rem;
+    margin: 5px;
+    color: #5E2D19;
+    width: 85%;
+    background-color: transparent;
+    padding-left: 0px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.user__register{
+    font-size: 2.5rem;
+    margin: 5px;
+    color: #5E2D19;
+    width: 60%;
+    background-color: transparent;
+    padding-left: 0px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.user__form__alternative{
+    font-size: 2rem;
+    margin: 2px;
+    color: #5E2D19;
+    width: 85%;
+    min-width:160px;
+    background-color: transparent;
+    padding-left: 0px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.user__form::-webkit-input-placeholder {
+    color: #5E2D19;
+    background-image: none;
+    background-position: left;
+}
+
+.user__form__alternative::-webkit-input-placeholder {
+    color: #5E2D19;
+    background-image: none;
+    background-position: left;
+}
+
+.login{
+    width: 82%;
+}
+
+.bi{
+    width: auto;
+    color: #5E2D19;
+}
+
+.lock{
+    display: block;
+    font-size: 3rem;
+}
+
+.person{
+    display: flex;
+    font-size: 4rem;
+    padding-right: 0.5rem;
+}
+
+.envelope{
+        display: flex;
+    font-size: 3.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.7rem;
+}
+
+.envelope__alternative{
+    display: flex;
+    font-size: 2.2rem;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.person__alternative{
+    display: flex;
+    font-size: 3rem;
+    padding-right: 0.5rem;
+}
+
+.bi-eye-fill{
+    font-size: 3rem;
+    display: block;
+    line-height: 0;
+    padding-left: 20px;
+}
+
+.eye__alternative{
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    display: block;
+    line-height: 0;
+    padding-left: 20px;
+}
+
+.btn__white{
+    border: 2px solid #5E2D19;
+    margin-top: 2rem;
+    text-align: center;
+    display: block;
+    color: #5E2D19;
+    width: 15rem;
+    background-color: transparent;
+    font-weight: bold;;
+    font-size: 2rem;
+    padding: 0.7rem;
+}
+
+.btn__white:hover{
+    border: 2px solid #4D1E08;
+    color: white;
+    background-color: #5E2D19;
+    font-weight: bold;;
+}
+
+.btn__white__alternative{
+    border: 2px solid #5E2D19;
+    margin-top: 1rem;
+    text-align: center;
+    display: block;
+    color: #5E2D19;
+    width: 15rem;
+    background-color: transparent;
+    font-weight: bold;;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.btn__white__alternative:hover{
+    border: 2px solid #4D1E08;
+    color: white;
+    background-color: #5E2D19;
+    font-weight: bold;;
+}
+
+.login__bottom__buttons{
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__buttons{
+    text-decoration: none;
+    padding: 3px;
+    text-align: center;
+    background-color: transparent;
+    color: #5E2D19;
+    border: none;
+    margin: 0.8rem;
+    border-bottom: 2px solid #5E2D19;
+    font-weight: bold;
+}
+
+.text__form{
+    margin: 0.8rem;
+    border: none;
+    text-decoration: none;
+    background-color: transparent;
+    color:#5E2D19;
+    font-weight: bold;
+}
+
+.square-fill{
+    align-self: flex-start;
+    font-size: 3.5rem;
+    padding-right: 0.5rem;
+}
+
+.square-fill__alternative{
+    display: flex;
+    font-size: 2.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 1.3rem;
+}
+
+.text__register__form{
+    text-align: justify;
+    text-justify: inter-word;
+    width: 100%;
+}
+
+.text__register__form__alternative{
+    font-size: 1.2rem;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 100%;
+    hyphens: auto;
+}
+
