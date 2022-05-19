@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dodaj restaurację{% endblock %}
+
+{% block body %}
+    <h1>Dodaj restauracje</h1>
+
+    {{ include('restaurant/_form.html.twig') }}
+
+    <a href="{{ path('app_restaurant_index') }}">Powrót do listy restauracji</a>
+{% endblock %}

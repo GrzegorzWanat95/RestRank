@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista restauracji{% endblock %}
+
+{% block body %}
+    <h1>Lista restauracji</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa</th>
+                <th>Miasto</th>
+                <th>Ulica</th>
+                <th>Numer budynku</th>
+                <th>Opis</th>
+                <th>Typ</th>
+                <th>Aktywności</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for restaurant in restaurants %}
+            <tr>
+                <td>{{ restaurant.id }}</td>
+                <td>{{ restaurant.Name }}</td>
+                <td>{{ restaurant.City }}</td>
+                <td>{{ restaurant.Street }}</td>
+                <td>{{ restaurant.AddressNumber }}</td>
+                <td>{{ restaurant.Description }}</td>
+                <td>{{ restaurant.Type }}</td>
+                <td>
+                    <a href="{{ path('app_restaurant_show', {'id': restaurant.id}) }}">Wyświetl</a>
+                    <a href="{{ path('app_restaurant_edit', {'id': restaurant.id}) }}">Edycja</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Nie znaleziono wyników</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_restaurant_new') }}">Dodaj restaurację</a>
+{% endblock %}
