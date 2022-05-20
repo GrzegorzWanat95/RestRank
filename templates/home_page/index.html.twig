@@ -2,31 +2,32 @@
 
 {% block title %}RestRank{% endblock %}
 {% block javascripts %}
-    <script src="{{ asset('scripts/script1.js') }}"></script>
+    {{encore_entry_script_tags('app')}}
+    {{encore_entry_script_tags('script1')}}
 {% endblock %}
 {% block body %}
 
 <div id="login__start" class="login__start">
         <div id="login__form"  class="login__form d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
             <div class="login__panel flex-column d-none d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none justify-content-center">
-                <div class="x__section d-flex justify-content-end"><button onclick="functionClose()" class="close">&#10006;</button></div>
+                <div class="x__section d-flex justify-content-end"><button id="button__close" class="close">&#10006;</button></div>
                 <div class="d-flex pt-2 justify-content-center align-content-center"><h1 class="login__header">Logowanie</h1></div>
                         <form class="form-inline my-2 my-lg-0 d-flex">
                             <div class="person col-2 justify-content-end align-items-end align-content-end">
                                 <i class="bi bi-person-fill"></i>
                             </div>   
                             <input id="login__field" class="user__form login__field" type="text" placeholder="login" aria-label="Search">
-                            <button id="hidden" class="close"><i class="bi bi-eye-fill"></i></button>
+                            <button id="hidden" class="close"><i class="bi bi-eye-fill hidden"></i></button>
                         </form>
                         <form class="form-inline my-2 my-lg-0 d-flex">
                             <div class="person col-2 justify-content-end align-items-end align-content-end">
                                 <i class="bi bi-lock-fill"></i>
                             </div>   
                             <input id="password__field" class="user__form" type="password" placeholder="hasło" aria-label="Search">
-                            <button onclick="hidePassword()" class="close"><i class="bi bi-eye-fill"></i></button>
+                            <button id="eye__hide" class="close"><i class="bi bi-eye-fill"></i></button>
                         </form>
                 <div class="login__button contaienr w-100">
-                    <button class="btn__white d-flex justify-content-center" type="button">zaloguj</button>   
+                    <button id="login__btn" class="btn__white d-flex justify-content-center" type="button">zaloguj</button>   
                 </div>
                 <div class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">
                     <div>
@@ -48,7 +49,7 @@
                                         <i class="bi bi-person-fill"></i>
                                     </div>   
                                     <input id="login__field__mobile" class="user__form__alternative login__field" type="text" placeholder="login" aria-label="Search">
-                                    <button id="hidden__alternative" class="close"><i class="bi bi-eye-fill eye__alternative"></i></button>
+                                    <button id="hidden__alternative" class="close"><i class="bi bi-eye-fill eye__alternative hidden"></i></button>
                                 </form>
                     
                                 <form class="form-inline my-2 my-lg-0 d-flex">
@@ -145,21 +146,7 @@
                 <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="#aboutus">O&nbsp;nas</a>
 
-                <script>
-                function functionOpen() {
-                var targetDiv = document.getElementById("login__start");
-                var displaySetting = login__start.style.display;
-                if (displaySetting == 'block') {
-                    targetDiv.style.display = 'none';
-                } else {
-                    targetDiv.style.display = 'block';
-                }
-
-                resetDiv.style.display = 'none';
-                } //Open reset password form 
-                </script>
-
-                <a id="login__button" onclick='functionOpen()' class="nav-link" href="#">Zaloguj</a>
+                <a id="login__button" class="nav-link" href="#">Zaloguj</a>
                 <a class="nav-link" href="./register.html">Rejestracja</a>
                 </div>
             </div>
