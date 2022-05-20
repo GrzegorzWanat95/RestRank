@@ -15,4 +15,11 @@ class HomePageController extends AbstractController
             'controller_name' => 'HomePageController',
         ]);
     }
+
+    //Rejestracja użytkowników
+    #[Route('/{id}', name: 'app_users_register', methods: ['GET'])]
+    public function register(): Response
+    {
+        return $this->render('register.html.twig');
+    }
 }
