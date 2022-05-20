@@ -20,6 +20,17 @@ body{
     font-size: 1.6rem;
 }
 
+.content{
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    min-height:70vh;
+}
+
+.table__style{
+    padding-top: 10rem;
+}
+
 .hero-shadow{
     position: absolute;
     top:0;
