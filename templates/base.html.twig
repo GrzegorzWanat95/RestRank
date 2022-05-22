@@ -53,7 +53,7 @@
                         <a id="reset__open" class="login__buttons" href="#">Nie pamiętam hasła</a>   
                     </div>
                     <div>
-                        <a class="login__buttons" href="./register.html">Zarejestruj się</a>  
+                        <a class="login__buttons" href="{{ path('app_users_new') }}">Zarejestruj się</a>  
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                                 <a id="reset__open__mobile" class="login__buttons" href="#">Nie pamiętam hasła</a>   
                             </div>
                             <div>
-                                <a class="login__buttons" href="./register.html">Zarejestruj się</a>  
+                                <a class="login__buttons" href="{{ path('app_users_new') }}">Zarejestruj się</a>  
                             </div>
                         </div>
                  </div>
@@ -166,7 +166,7 @@
                 <a class="nav-link" href="/#aboutus">O&nbsp;nas</a>
 
                 <a id="login__button" class="nav-link" href="#">Zaloguj</a>
-                <a class="nav-link" href="{{ ('register.html.twig') }}">Rejestracja</a>
+                <a class="nav-link" href="{{ path('app_users_new') }}">Rejestracja</a>
                 </div>
             </div>
             </div>
@@ -181,7 +181,7 @@
                 <div class="alternative__collapse navbar-nav ms-auto">
                 <a class="nav-link" href="/#aboutus">O nas</a>
                 <a id="login__button__mobile" class="nav-link" onclick="functionOpen()" href="#">Zaloguj</a>
-                <a class="nav-link" href="./register.html">Rejestracja</a>
+                <a class="nav-link" href="{{ path('app_users_new') }}">Rejestracja</a>
                 </div>
             </div>
             </div>

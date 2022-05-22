@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link href="{{asset('build/app.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block body %}
+    <!--- Formularz rejestracji-->
+        <div id="more__info">
+            <div class="register__form d-block">
+                <div class="register__panel flex-column d-flex d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none w-100">
+                    <div class="d-flex pt-4 justify-content-center align-content-center"><h1 class="register__header">Informacje</h1></div>
+
+                </div>
+                <!-- wersja mobilna -->
+                <div class="register__panel__alternative flex-column d-flex d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block w-100">
+                    <div class="d-flex pt-4 justify-content-center align-content-center"><h1 class="register__header">Informacje</h1></div>
+                            
+                    
+                </div>
+            </div>
+{% endblock %}

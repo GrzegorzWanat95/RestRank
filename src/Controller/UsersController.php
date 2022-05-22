@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/users')]
+#[Route('/uzytkownicy')]
 class UsersController extends AbstractController
 {
     #[Route('/', name: 'app_users_index', methods: ['GET'])]
@@ -21,7 +21,7 @@ class UsersController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_users_new', methods: ['GET', 'POST'])]
+    #[Route('/rejestracja', name: 'app_users_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UsersRepository $usersRepository): Response
     {
         $user = new Users();
