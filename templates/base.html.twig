@@ -164,8 +164,10 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="/#aboutus">O&nbsp;nas</a>
-
-                <a id="login__button" class="nav-link" href="#">Zaloguj</a>
+                <a id="login__button" class="nav-link" href="/{{app.user ? 'logout' : 'login'}}" 
+                @click="isOpen = false">
+                {{app.user ? 'Wyloguj' : 'Zaloguj'}}
+                </a>
                 <a class="nav-link" href="{{ path('app_users_new') }}">Rejestracja</a>
                 </div>
             </div>
@@ -180,7 +182,10 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup__alternative">
                 <div class="alternative__collapse navbar-nav ms-auto">
                 <a class="nav-link" href="/#aboutus">O nas</a>
-                <a id="login__button__mobile" class="nav-link" onclick="functionOpen()" href="#">Zaloguj</a>
+                <a id="login__button__mobile" class="nav-link" href="/{{app.user ? 'logout' : 'login'}}" 
+                @click="isOpen = false">
+                {{app.user ? 'Wyloguj' : 'Zaloguj'}}
+                </a>
                 <a class="nav-link" href="{{ path('app_users_new') }}">Rejestracja</a>
                 </div>
             </div>

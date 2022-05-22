@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{asset('build/app.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block title %}RestRank{% endblock %}
+
+{% block body %}
+
+<div class="container">
+        <div id="aboutus">
+            <div class="register__form d-block pb-4">
+                <div class="register__panel flex-column d-flex d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none w-100">
+                    <div class="d-flex pt-4 justify-content-center align-content-center"><h1 class="register__header">Rejestracja</h1></div>
+                        </div>
+                    </div>
+                <div class="register__panel__alternative flex-column d-flex d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block w-100">
+                    <div class="d-flex pt-4 justify-content-center align-content-center"><h1 class="register__header__alteriative">Rejestracja</h1></div>
+                     </div>
+                </div>
+        </div>
+            <div class="container register__form__panel justify-content-center align-content-center d-block">
+                <div class="container register__form__handler justify-content-center d-flex">
+                        <div class="container-fluid register__input justify-content-center">
+                            {{ form_start(registrationForm) }}
+                            {{ form_row(registrationForm.email) }}
+                            {{ form_row(registrationForm.plainPassword, {
+                             label: 'Password'
+                             }) }}
+                             {{ form_row(registrationForm.agreeTerms) }}
+                                <div class="widget__field">{{ form_widget(registrationForm) }}</div>
+                            <div class="login__button contaienr w-100 mb-2">
+                                    <button class="btn__white d-flex justify-content-center" type="submit">{{ button_label|default('Zarejestruj') }}</button>
+                             {{ form_end(registrationForm) }}
+                            </div>
+                            <div class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">
+                                <button id="register__login" class="text__form" type="button" onclick="functionOpen()">Posiadasz konto?<span class="login__buttons">Zaloguj&nbsp;się</span></button>
+                            </div>
+                        </div>
+                </div>
+                <form class="container form-inline my-2 my-lg-0 pt-4 pb-4 d-xxl-flex d-xl-flex d-lg-flex d-md-none d-sm-none">
+                                <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-exclamation-square-fill square-fill"></i>
+                                </div> 
+                                <div class="text__register__form">
+                                    <div>
+                                        Klikając przycisk rejestracji, potwierdzam przeczytanie i akceptację następujących dokumentów: Oświadczenie RestRank  ochronie
+                                        danych osobowych online oraz Zasady i warunki dotyczące witryny internetowej RestRank.
+                                    </div>
+                                </div> 
+                                <div class="person col-1 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-eye-fill hidden"></i>
+                                </div>  
+                </form>
+                <form class="form-inline my-2 my-lg-0 pt-4 pb-4 d-flex d-xxl-none d-xl-none d-lg-none d-md-flex d-sm-flex d-flex">
+                                <div class="person col-3 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-exclamation-square-fill square-fill square-fill__alternative"></i>
+                                </div> 
+                                <div class="text__register__form__alternative">
+                                    <div>
+                                        Klikając przycisk rejestracji, potwierdzam przeczytanie i akceptację następujących dokumentów: Oświadczenie RestRank o ochronie
+                                        danych osobowych online oraz Zasady i warunki dotyczące witryny internetowej RestRank.
+                                    </div>
+                                </div>  
+                                <div class="person justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-eye-fill eye__alternative hidden"></i>
+                                </div> 
+                </form>    
+{% endblock %}
