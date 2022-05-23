@@ -3,11 +3,11 @@
         <div id="aboutus">
             <div class="register__form d-block pb-4">
                 <div class="register__panel flex-column d-flex d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none w-100">
-                    <div class="d-flex pt-4 justify-content-center align-content-center"><h1 class="register__header">Rejestracja</h1></div>
+                    <div class="d-flex justify-content-center align-content-center"><h1 class="register__header">Zmiana danych</h1></div>
                         </div>
                     </div>
                 <div class="register__panel__alternative flex-column d-flex d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block w-100">
-                    <div class="d-flex pt-4 justify-content-center align-content-center"><h1 class="register__header__alteriative">Rejestracja</h1></div>
+                    <div class="d-flex justify-content-center align-content-center"><h1 class="register__header__alteriative">Zmiana danych</h1></div>
                      </div>
                 </div>
         </div>
@@ -17,11 +17,8 @@
                             {{ form_start(form) }}
                                 <div class="widget__field">{{ form_widget(form) }}</div>
                             <div class="login__button contaienr w-100 mb-2">
-                                    <button class="btn__white d-flex justify-content-center">{{ button_label|default('Zarejestruj') }}</button>
+                                    <button class="btn__white d-flex justify-content-center">{{ button_label|default('Aktualizuj dane') }}</button>
                             {{ form_end(form) }}
-                            </div>
-                            <div class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">
-                                <button id="register__login" class="text__form" type="button" onclick="functionOpen()">Posiadasz konto?<span class="login__buttons">Zaloguj&nbsp;się</span></button>
                             </div>
                         </div>
                 </div>
@@ -31,8 +28,7 @@
                                 </div> 
                                 <div class="text__register__form">
                                     <div>
-                                        Klikając przycisk rejestracji, potwierdzam przeczytanie i akceptację następujących dokumentów: Oświadczenie RestRank  ochronie
-                                        danych osobowych online oraz Zasady i warunki dotyczące witryny internetowej RestRank.
+                                        Zapamiętaj zmienione dane. Nie będzie możliwości ich odzyskania. 
                                     </div>
                                 </div> 
                                 <div class="person col-1 justify-content-end align-items-end align-content-end">
@@ -45,8 +41,8 @@
                                 </div> 
                                 <div class="text__register__form__alternative">
                                     <div>
-                                        Klikając przycisk rejestracji, potwierdzam przeczytanie i akceptację następujących dokumentów: Oświadczenie RestRank o ochronie
-                                        danych osobowych online oraz Zasady i warunki dotyczące witryny internetowej RestRank.
+                                        Zapamiętaj zmienione dane. Nie będzie możliwości ich odzyskania. 
+
                                     </div>
                                 </div>  
                                 <div class="person justify-content-end align-items-end align-content-end">
@@ -57,5 +53,5 @@
         <div>
         </div>
      </div>
-    <div>                             
+    <div>                           
 {% endblock %}

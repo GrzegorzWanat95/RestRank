@@ -1,48 +1,78 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}RestRank{% endblock %}
+
+
+
 
 {% block body %}
+
+<div class="frame__body d-flex">
+<div class="container">
 <form method="post">
-
-    {% block body %}
-        {{ include('users/_form.html.twig') }}
-    {% endblock %}
-
-
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+       <div id="login__start" class="login__start">
+        <div id="login__form__complex"  class="login__form d-flex justify-content-center">
+            <div class="login__panel flex-column justify-content-center">
+                <div class="form__login__settings d-flex pt-2 justify-content-center align-content-center d-xxl-flex d-xl-flex d-lg-flex d-md-flex d-sm-none d-none"><h1 class="login__header">Logowanie</h1></div> 
+                <div class="form__login__settings d-flex justify-content-center align-content-center d-xxl-none d-xl-none d-lg-none d-md-none d-sm-flex d-flex"><h1 class="login__header__alternative">Logowanie</h1></div> 
+                        <div class="login__info form-inline my-2 my-lg-0 d-block">
+                            {% if app.user %}
+                              <meta http-equiv='refresh' content='0; {{ path('app_logged') }}'>                                
+                            {% endif %}                        
+                        </div> 
+                    <div id="login_hidden">
+                        <div class="form-inline my-2 my-lg-0 d-flex">
+                            <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <div class="col-8">
+                                <input id="login__field" type="email" placeholder="email" value="{{ last_username }}" name="email" id="inputEmail" class="user__form__login login__field widget__field" autocomplete="email" required="required">
+                            </div>   
+                        </div>
+                        <div class="form-inline my-2 my-lg-0 d-flex">
+                            <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                <i class="bi bi-lock-fill"></i>
+                            </div>   
+                            <div class="col-8 field__empty">
+                                <input id="password__field" placeholder="hasło" type="password" name="password" id="inputPassword" class="user__form__login login__field  widget__field" autocomplete="current-password" required="required">
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            </div>
+                            <div class="col-2">
+                                <button id="eye__hide" class="close"><i class="bi bi-eye-fill"></i></button>
+                            </div>
+                        </div>
+                        <div class="checkbox__field pt-2 my-lg-0 d-flex align-items-center">
+                                <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-person-fill hidden"></i>
+                                </div> 
+                                <label class="label__login">
+                                    <input type="checkbox" name="_remember_me" class="checkbox__login"> Zapamiętaj mnie
+                                </label>
+                        </div> 
+                     </div>                          
+                <div class="login__button contaienr d-flex flex-wrap pt-2">
+                    <button id="login__btn" class="btn__white__login d-flex justify-content-center" type="submit">Zaloguj</button>   
+                </div>
+                <div class="login__bottom__buttons w-100 pb-4 justify-content-center align-items-center d-flex">
+                    <div>
+                        <a id="reset__open" class="login__buttons__complex d-flex flex-wrap" href="#">Nie&nbsp;pamiętam&nbsp;hasła</a>   
+                    </div>
+                    <div>
+                        <a class="login__buttons__complex d-flex flex-wrap" href="{{ path('app_register') }}">Zarejestruj&nbsp;się</a>  
+                    </div>
+                </div>
+            </div>
         </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+    </div>
 </form>
+    </div>
+</div>
+<div>
 {% endblock %}
+
+
+
+

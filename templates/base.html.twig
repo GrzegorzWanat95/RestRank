@@ -26,71 +26,7 @@
     </head>
     <body>
         {% block header %}
-        <div id="login__start" class="login__start">
-        <div id="login__form"  class="login__form d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
-            <div class="login__panel flex-column d-none d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none justify-content-center">
-                <div class="x__section d-flex justify-content-end"><button id="button__close" class="close">&#10006;</button></div>
-                <div class="d-flex pt-2 justify-content-center align-content-center"><h1 class="login__header">Logowanie</h1></div>
-                        <form class="form-inline my-2 my-lg-0 d-flex">
-                            <div class="person col-2 justify-content-end align-items-end align-content-end">
-                                <i class="bi bi-person-fill"></i>
-                            </div>   
-                            <input id="login__field" class="user__form login__field" type="text" placeholder="login" aria-label="Search">
-                            <button id="hidden" class="close"><i class="bi bi-eye-fill hidden"></i></button>
-                        </form>
-                        <form class="form-inline my-2 my-lg-0 d-flex">
-                            <div class="person col-2 justify-content-end align-items-end align-content-end">
-                                <i class="bi bi-lock-fill"></i>
-                            </div>   
-                            <input id="password__field" class="user__form" type="password" placeholder="hasło" aria-label="Search">
-                            <button id="eye__hide" class="close"><i class="bi bi-eye-fill"></i></button>
-                        </form>
-                <div class="login__button contaienr w-100">
-                    <button id="login__btn" class="btn__white d-flex justify-content-center" type="button">zaloguj</button>   
-                </div>
-                <div class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">
-                    <div>
-                        <a id="reset__open" class="login__buttons" href="#">Nie pamiętam hasła</a>   
-                    </div>
-                    <div>
-                        <a class="login__buttons" href="{{ path('app_users_new') }}">Zarejestruj się</a>  
-                    </div>
-                </div>
-            </div>
-        </div>
         
-        <div id="login__form__alternative"  class="login__form__alternative d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
-                <div class="login__panel__alternative flex-column d-block d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-block justify-content-center">
-                        <div class="x__section d-flex justify-content-end"><button id="button__close__mobile" onclick="functionClose()" class="close__alternative">&#10006;</button></div>
-                        <div class="d-flex justify-content-center align-content-center"><h1 class="login__header__alternative">Logowanie</h1></div>
-                                <form class="form-inline my-2 my-lg-0 d-flex">
-                                    <div class="person__alternative col-3 justify-content-end align-items-end align-content-end">
-                                        <i class="bi bi-person-fill"></i>
-                                    </div>   
-                                    <input id="login__field__mobile" class="user__form__alternative login__field" type="text" placeholder="login" aria-label="Search">
-                                    <button id="hidden__alternative" class="close"><i class="bi bi-eye-fill eye__alternative hidden"></i></button>
-                                </form>
-                    
-                                <form class="form-inline my-2 my-lg-0 d-flex">
-                                    <div class="person col-3 justify-content-end align-items-end align-content-end">
-                                        <i class="bi bi-lock-fill lock"></i>
-                                    </div>   
-                                    <input id="password__field__mobile" class="user__form__alternative" type="password" placeholder="hasło" aria-label="Search">
-                                    <button id="eye__hide__mobile" class="close"><i class="bi bi-eye-fill eye__alternative"></i></button>
-                                </form>
-                        <div class="login__button contaienr w-100">
-                            <button id="login__btn__mobile" class="btn__white__alternative d-flex justify-content-center" type="button">zaloguj</button>   
-                        </div>
-                        <div class="login__bottom__buttons w-1000 justify-content-center align-items-center d-flex flex-wrap">
-                            <div>
-                                <a id="reset__open__mobile" class="login__buttons" href="#">Nie pamiętam hasła</a>   
-                            </div>
-                            <div>
-                                <a class="login__buttons" href="{{ path('app_users_new') }}">Zarejestruj się</a>  
-                            </div>
-                        </div>
-                 </div>
-        </div>
 
         <!-- odzyskiwanie hasla -->
 
@@ -168,7 +104,7 @@
                 @click="isOpen = false">
                 {{app.user ? 'Wyloguj' : 'Zaloguj'}}
                 </a>
-                <a class="nav-link" href="{{ path('app_users_new') }}">Rejestracja</a>
+                <a class="nav-link" href="{{ path('app_register') }}">Rejestracja</a>
                 </div>
             </div>
             </div>
@@ -186,7 +122,7 @@
                 @click="isOpen = false">
                 {{app.user ? 'Wyloguj' : 'Zaloguj'}}
                 </a>
-                <a class="nav-link" href="{{ path('app_users_new') }}">Rejestracja</a>
+                <a class="nav-link" href="{{ path('app_register') }}">Rejestracja</a>
                 </div>
             </div>
             </div>
