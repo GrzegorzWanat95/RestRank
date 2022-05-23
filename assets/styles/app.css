@@ -130,13 +130,27 @@ body{
     margin-top: 15px;
     text-align: center;
     display: block;
-    background-color: #2D1D15;
     width: 100%;
     margin:5vw;
 }
 
 .logo{
+    display: flex;
+    justify-self: flex-start;
     max-height: 3em;
+}
+
+.logo__field{
+    display: flex;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.field__top{
+    display: flex;
+    border: 1px solid red;
 }
 
 .navbar-nav{
@@ -763,11 +777,19 @@ a{
     font-size: 3rem;
 }
 
-.person{
+.person__login{
     display: flex;
     font-size: 2rem;
     padding-right: 0.5rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 770px) {
+    .person__login{
+    display: flex;
+    font-size: 3rem;
+    padding-right: 0.5rem;    
+    };
 }
 
 @media screen and (min-width: 770px) {
@@ -805,12 +827,17 @@ a{
     padding-right: 0.5rem;
 }
 
+.eye__field{
+    text-align: center;
+    align-self: center;
+}
+
 .bi-eye-fill{
     font-size: 2rem;
-    padding-bottom: 1.5rem;
+    align-self: center;
+    padding-bottom: -2rem;
     display: flex;
     line-height: 0;
-
 }
 
 @media screen and (min-width: 770px) {
@@ -903,7 +930,6 @@ a{
 
 .btn-outline-secondary{
     display: block;
-    max-width: 
 }
 
 .btn__white:hover{

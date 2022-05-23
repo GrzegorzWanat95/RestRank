@@ -25,26 +25,26 @@
                         </div> 
                     <div id="login_hidden">
                         <div class="form-inline my-2 my-lg-0 d-flex">
-                            <div class="person col-2 justify-content-end align-items-end align-content-end">
+                            <div class="person__login col-2 justify-content-end align-items-end align-content-end">
                                 <i class="bi bi-person-fill"></i>
                             </div>
                             <div class="col-8">
                                 <input id="login__field" type="email" placeholder="email" value="{{ last_username }}" name="email" id="inputEmail" class="user__form__login login__field widget__field" autocomplete="email" required="required">
                             </div>   
                         </div>
-                        <div class="form-inline my-2 my-lg-0 d-flex">
-                            <div class="person col-2 justify-content-end align-items-end align-content-end">
-                                <i class="bi bi-lock-fill"></i>
+                        <div class="form-inline my-2 my-lg-0 d-flex align-items-end">
+                            <div class="person__login col-2 justify-content-end align-items-end align-content-center">
+                                <i class="bi bi-lock-fill d-flex"></i>
                             </div>   
                             <div class="col-8 field__empty">
                                 <input id="password__field" placeholder="hasło" type="password" name="password" id="inputPassword" class="user__form__login login__field  widget__field" autocomplete="current-password" required="required">
                                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                             </div>
-                            <div class="col-2">
-                                <button id="eye__hide" class="close"><i class="bi bi-eye-fill"></i></button>
+                            <div class="col-2 eye__field d-flex">
+                                <button id="eye__hide" class="close d-flex"><i class="bi bi-eye-fill"></i></button>
                             </div>
                         </div>
-                        <div class="checkbox__field pt-2 my-lg-0 d-flex align-items-center">
+                        <div id="eye" class="checkbox__field pt-2 my-lg-0 d-flex align-items-center">
                                 <div class="person col-2 justify-content-end align-items-end align-content-end">
                                     <i class="bi bi-person-fill hidden"></i>
                                 </div> 
