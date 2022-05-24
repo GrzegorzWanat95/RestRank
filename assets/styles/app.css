@@ -10,8 +10,10 @@ html{
 }
 
 a:hover{
+    text-decoration: none;;
     color:#4D1C08;
 }
+
 
 body{
     font-family: 'League Spartan', sans-serif;
@@ -965,6 +967,7 @@ a{
     padding-top: 1rem;
     justify-content: center;
     align-items: center;
+    text-align: center !important;
 }
 
 @media screen and (min-width: 770px) {
@@ -996,6 +999,25 @@ a{
     font-size: 1.5rem;
 }
 
+.border__none{
+    border-bottom: 2px solid #5E2D19;
+}
+
+.login__buttons__complex__2{
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    padding: 3px;
+    text-align: center;
+    background-color: transparent;
+    color: #5E2D19;
+    border: none;
+    margin: 0.8rem;
+    border-bottom: 2px solid #5E2D19;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 .login__buttons__alternative{
     display: block;
     flex-wrap: wrap;
@@ -1009,6 +1031,19 @@ a{
     border-bottom: 2px solid #5E2D19;
     font-weight: bold;
 }
+
+.login__buttons{
+    text-decoration: none;
+    padding: 3px;
+    text-align: center;
+    background-color: transparent;
+    color: #5E2D19;
+    border: none;
+    margin: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: bold;   
+}
+
 
 .login__label{
     display: block;

@@ -35,7 +35,7 @@
                              {{ form_end(registrationForm) }}
                             </div>
                             <div class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">
-                                <button id="register__login" class="text__form" type="button" onclick="functionOpen()">Posiadasz konto?<span class="login__buttons">Zaloguj&nbsp;się</span></button>
+                                <a href="{{ path('app_login') }}" id="register__login" class="login__buttons" type="button" onclick="functionOpen()">Posiadasz&nbsp;konto?&nbsp;<span class="border__none">Zaloguj&nbsp;się</span></a>
                             </div>
                         </div>
                 </div>
