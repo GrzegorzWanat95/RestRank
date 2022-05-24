@@ -144,6 +144,7 @@ body{
     display: block;
     width: 100%;
     margin:5vw;
+    background-color: #2D1D15 !important;
 }
 
 .logo{
@@ -617,16 +618,16 @@ a{
 }
 
 .register__header{
-    padding-top: 3rem;
-    font-size: 3rem;
+    padding-top: 1rem;
+    font-size: 2rem;
     font-weight:bold;
     color: #5E2D19;
 }
 
 @media screen and (min-width: 770px) {
     .register__header{
-        padding-top: 1rem;
-        font-size: 2rem;
+        padding-top: 3rem;
+        font-size: 3rem;
         font-weight:bold;
         color: #5E2D19;
     }
@@ -1249,6 +1250,10 @@ a{
     padding-top: 0.55rem;
 }
 
+.label__login{
+    font-family: 'League Spartan', sans-serif;
+}
+
 .checkbox__login{
     width: 20px;
     height: 20px;
@@ -1396,4 +1401,57 @@ a{
 .image__column{
     display: flex;
     justify-content: flex-start;
+}
+
+#restaurant_Name{
+    outline: none;
+    border:none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+#restaurant_City{
+    outline: none;
+    border:none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+#restaurant_Street{
+    outline: none;
+    border:none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+#restaurant_AddressNumber{
+    outline: none;
+    border:none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+#restaurant_Description{
+    outline: none;
+    border:none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+#restaurant_Type{
+    outline: none;
+    border:none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+#restaurant_image{
+    outline: none;
+    border:none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+#login__field{
+    color:#5E2D19;
 }

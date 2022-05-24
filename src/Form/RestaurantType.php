@@ -53,7 +53,7 @@ class RestaurantType extends AbstractType
                 'label_attr' => ['class' => 'label__field'],
                 'row_attr' => ['class' => 'login__field__in__form'],
             ])
-            ->add('Image',TextType::class, [
+            ->add('image',TextType::class, [
                 'label' => 'Zdjęcie',
                 'attr' => ['class' => 'img__field'],
                 'label_attr' => ['class' => 'label__field'],

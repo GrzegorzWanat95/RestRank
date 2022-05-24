@@ -30,22 +30,22 @@
                 <div class="container d-flex flex-column justify-content-center align-items-center text-center">
                 <p class="header text__alternative flex-row display-5">POZNAJ OPINIE O&nbsp;RESTAURACJACH W&nbsp;TWOJEJ OKOLICY</p>
                 <div class="input__field__alternative d-flex col-12 align-items-center justify-content-center">
-                    <nav id="search__field__alternative" class="navbar col-12 justify-content-center">
-                        <div class="input-group__alternative d-flex col-12 justify-content-center h-100 w-100 m-md-5">
+                    <div id="search__field__alternative" class="navbar col-12 justify-content-center" type="text" name="Name">
+                        <form class="input-group__alternative d-flex col-12 justify-content-center h-100 w-100 m-md-5" action="/restauracje/szukaj/{Type}/{Name}" method="get">
                             <div class="input__alternative col-12">
-                                <input class="form-control__alternative" type="search" placeholder="Znajdź restaurację" aria-label="Search">
+                                <input class="form-control__alternative" type="text" name="Name" placeholder="Znajdź restaurację" aria-label="Search">
                             </div>
                             <div class="input__alternative col-12">
-                                <select class="custom-select__alternative d-block" id="inputGroupSelect04__alternative">
+                                <select name="Type" type="text" name="Type" class="custom-select__alternative d-block" id="inputGroupSelect04__alternative" method="post">
                                     <option class="text-black" value="1">Nazwa restauracji</option>
                                     <option class="text-black" value="2">Miasto</option>
                                 </select>
                             </div>
                             <div class="input-group-append__alternative col-12 d-flex">
-                                <button class="btn__alternative btn-outline-secondary text-light" type="button">Szukaj &#x1F50E;&#xFE0E;</button>
+                                <button class="btn__alternative btn-outline-secondary text-light" type="submit">Szukaj &#x1F50E;&#xFE0E;</button>
                             </div>
-                            </div>
-                        </nav>                
+                            </form>
+                        </div>                
                     </div>
                 </div>
             </div>

@@ -7,14 +7,13 @@ hidePasswdMobile.addEventListener("click", hidePassword);
 function hidePassword(){
     const passwordField = document.getElementById("password__field");
     const passwordFieldMobile = document.getElementById("password__field__mobile");
-    if((passwordField.type == 'password') || (passwordFieldMobile.type == 'password'))
+    if((passwordField.type == 'password'))
         {
             passwordField.type = 'text';
-            passwordFieldMobile.type = 'text';
         }
-    else{
+    else
+    {
         passwordField.type = 'password';
-        passwordFieldMobile.type = 'password';
     }
 }
 
