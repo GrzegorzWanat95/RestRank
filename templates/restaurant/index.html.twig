@@ -7,34 +7,22 @@
 
 {% block body %}
     <div class="table__style container">
-    <h1>Lista restauracji</h1>
+    <h1 class="form__header">Lista restauracji</h1>
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nazwa</th>
-                <th>Miasto</th>
-                <th>Ulica</th>
-                <th>Numer budynku</th>
-                <th>Opis</th>
-                <th>Typ</th>
-                <th>Aktywności</th>
-            </tr>
         </thead>
         <tbody>
         {% for restaurant in restaurants %}
-            <tr>
-                <td>{{ restaurant.id }}</td>
-                <td>{{ restaurant.Name }}</td>
-                <td>{{ restaurant.City }}</td>
-                <td>{{ restaurant.Street }}</td>
-                <td>{{ restaurant.AddressNumber }}</td>
-                <td>{{ restaurant.Description }}</td>
-                <td>{{ restaurant.Type }}</td>
-                <td>
-                    <a href="{{ path('app_restaurant_show', {'id': restaurant.id}) }}">Wyświetl</a>
-                    <a href="{{ path('app_restaurant_edit', {'id': restaurant.id}) }}">Edycja</a>
+            <tr class="table__index">
+                <td class="column text__column image__column"><div class="column__row__field col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><img src={{restaurant.image}} class="image__form"></div></td>
+                <td class="column text__column"><div class="column__row__field d-flex col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">{{ restaurant.Name }}</div></td>
+                <td class="column text__column__city"><div class="column__row__field col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">{{ restaurant.City }}</div></td>
+                <td class="column text__column">
+                    <div class="d-flex flex-wrap justify-items-center justify-content-center column__row__field d-flex col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <a class="btn__white__form" href="{{ path('app_restaurant_show', {'id': restaurant.id}) }}">Wyświetl</a>
+                    </div>
+
                 </td>
             </tr>
         {% else %}
@@ -46,6 +34,6 @@
     </table>
 
 
-    <a href="{{ path('app_restaurant_new') }}">Dodaj restaurację</a>
+    <a class="btn__white__form w-100" href="{{path('app_restaurant_new')}}">Dodaj restaurację</a>
     </div>
 {% endblock %}
