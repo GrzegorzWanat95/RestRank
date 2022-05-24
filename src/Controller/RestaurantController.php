@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Restaurant;
 use App\Form\RestaurantType;
 use App\Repository\RestaurantRepository;
+use Doctrine\DBAL\Query;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -74,5 +75,32 @@ class RestaurantController extends AbstractController
         }
 
         return $this->redirectToRoute('app_restaurant_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+
+    #[Route('/szukaj/{Type}/{Name}', name: 'app_restaurant_query_name', methods: ['GET'])]
+    public function searchByName(Request $request, RestaurantRepository $restaurantRepository): Response
+    {
+        $value = dump($request->query->get('Type'));
+        $name = dump($request->query->get('Name'));
+
+        switch ($value){
+            case 1 :
+                $restaurants = $restaurantRepository->findBy(
+                    ['Name' => $name]
+                );
+                    return $this->render('restaurant/index.html.twig', [
+                        'restaurants' => $restaurants,
+                    ]);
+                break;
+            case 2 :
+                $restaurants = $restaurantRepository->findBy(
+                    ['City' => $name]
+                );
+                    return $this->render('restaurant/index.html.twig', [
+                        'restaurants' => $restaurants,
+                    ]);
+                break;
+        }
     }
 }

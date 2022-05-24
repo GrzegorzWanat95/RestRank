@@ -11,16 +11,16 @@
                 <p class="header flex-row display-3">POZNAJ OPINIE O&nbsp;RESTAURACJACH W&nbsp;TWOJEJ OKOLICY</p>
                 <div class="input__field d-flex col-12 align-items-center justify-content-center">
                     <nav id="search__field" class="navbar col-11 justify-content-center">
-                        <div class="input-group d-flex;">
-                            <input class="form-control mr-sm-2 col-9 col-xxl-9 col-xl-9 col-lg-9 col-md-6 col-sm-6" type="search" placeholder="Znajdź restaurację" aria-label="Search">
-                            <select class="custom-select col-2 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-5" id="inputGroupSelect04">
+                        <form class="input-group d-flex;" class="form-group" action="/restauracje/szukaj/{Type}/{Name}" method="get">
+                            <input class="form-control mr-sm-2 col-9 col-xxl-9 col-xl-9 col-lg-9 col-md-6 col-sm-6" type="text" name="Name" placeholder="Znajdź restaurację" aria-label="Search">
+                            <select class="custom-select col-2 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-5" id="inputGroupSelect04" name="Type" type="text" method="post">
                             <option value="1">Nazwa restauracji</option>
                             <option value="2">Miasto</option>
                             </select>
                             <div class="input-group-append col-1">
-                            <button class="btn btn-outline-secondary" type="button">&#x1F50E;&#xFE0E;</button>
+                            <button class="btn btn-outline-secondary" type="submit">&#x1F50E;&#xFE0E;</button>
                             </div>
-                        </div>
+                        </form>
                     </nav>                
                 </div>
             </div>

@@ -5,6 +5,12 @@
 {% block body %}
     <h1>Dodaj restauracje</h1>
 
+            <div class="logged__form d-block pb-4">
+                <div class="logged__panel flex-column d-flex d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none w-100">
+                    <div class="d-flex justify-content-center align-content-center"><h1 class="register__header">Dodaj restauracje</h1></div>
+                </div>
+            </div>
+
     {{ include('restaurant/_form.html.twig') }}
 
     <a href="{{ path('app_restaurant_index') }}">Powrót do listy restauracji</a>
