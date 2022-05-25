@@ -1,48 +1,88 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Restauracja{% endblock %}
-
 {% block body %}
     <div class="table__style">
     <h1>Restauracja</h1>
 
+
+    <div class="d-flex">
+        <div class="d-flex flex-wrap">
+            <table>
+                <tbody class="table__index">
+                    <td class="column text__column image__column"><div class="column__row__field col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><img src={{restaurant.image}} class="image__form"></div></td>
+                </tbody>
+            </table>
+        </div>
+        <div class="d-flex flex-wrap">
+            <table class="table__index">
+                <tbody>
+                    <td>
+                    <tr>
+                        <th>Nazwa</th>
+                        <td>{{ restaurant.Name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Miasto</th>
+                        <td>{{ restaurant.City }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ulica</th>
+                        <td>{{ restaurant.Street }}</td>
+                    </tr>
+                    <tr>
+                        <th>Numer budynku</th>
+                        <td>{{ restaurant.AddressNumber }}</td>
+                    </tr>
+                    <tr>
+                        <th>Opis</th>
+                        <td>{{ restaurant.Description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Typ</th>
+                        <td>{{ restaurant.Type }}</td>
+                    </tr>
+                    <td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <a class="btn__white__form w-100 my-4" href="{{ path('app_restaurant_index') }}">Powrót do listy restauracji</a>
+    </div>
+
+
+    <h1>Opinie</h1>
+
     <table class="table">
+        <thead>
+            <tr>
+                <th>Text</th>
+            </tr>
+        </thead>
         <tbody>
+        {% for comment in restaurant.comments %}
             <tr>
-                <th>Id</th>
-                <td>{{ restaurant.id }}</td>
+                <td>{{ comment.Text }}</td>
+                <td>
+                    <a href="{{ path('app_comments_show', {'id': comment.id}) }}">show</a>
+                </td>
             </tr>
+        {% else %}
             <tr>
-                <th>Nazwa</th>
-                <td>{{ restaurant.Name }}</td>
+                <td colspan="3">no records found</td>
             </tr>
-            <tr>
-                <th>Miasto</th>
-                <td>{{ restaurant.City }}</td>
-            </tr>
-            <tr>
-                <th>Ulica</th>
-                <td>{{ restaurant.Street }}</td>
-            </tr>
-            <tr>
-                <th>Numer budynku</th>
-                <td>{{ restaurant.AddressNumber }}</td>
-            </tr>
-            <tr>
-                <th>Opis</th>
-                <td>{{ restaurant.Description }}</td>
-            </tr>
-            <tr>
-                <th>Typ</th>
-                <td>{{ restaurant.Type }}</td>
-            </tr>
+        {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_restaurant_index') }}">Powrót do listy restauracji</a>
+    <a href="{{ path('app_comments_new') }}">Create new</a>
 
-    <a href="{{ path('app_restaurant_edit', {'id': restaurant.id}) }}">Edytuj</a>
-    </div>
 
-    {{ include('restaurant/_delete_form.html.twig') }}
+
 {% endblock %}
+
+
+
+
+

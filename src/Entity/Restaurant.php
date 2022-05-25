@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\RestaurantRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RestaurantRepository::class)]
@@ -33,6 +35,14 @@ class Restaurant
 
     #[ORM\Column(type: 'string', length: 255)]
     private $image;
+
+    #[ORM\OneToMany(mappedBy: 'Restaurant', targetEntity: Comments::class)]
+    private $Comments;
+
+    public function __construct()
+    {
+        $this->Comments = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -128,5 +138,39 @@ class Restaurant
         $this->image = $image;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Comments>
+     */
+    public function getComments(): Collection
+    {
+        return $this->Comments;
+    }
+
+    public function addComment(Comments $comment): self
+    {
+        if (!$this->Comments->contains($comment)) {
+            $this->Comments[] = $comment;
+            $comment->setRestaurant($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comments $comment): self
+    {
+        if ($this->Comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getRestaurant() === $this) {
+                $comment->setRestaurant(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString() {
+        return $this->Name;
     }
 }
