@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -12,6 +14,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[UniqueEntity(fields: ['email'], message: 'Istnieje już konto o podanych danych!')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
@@ -25,6 +29,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string')]
     private $password;
+
+    #[ORM\OneToMany(mappedBy: 'User', targetEntity: Comments::class)]
+    private $UserId;
+
+    public function __construct()
+    {
+        $this->UserId = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -94,5 +106,39 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection<int, Comments>
+     */
+    public function getUserId(): Collection
+    {
+        return $this->UserId;
+    }
+
+    public function addUserId(Comments $userId): self
+    {
+        if (!$this->UserId->contains($userId)) {
+            $this->UserId[] = $userId;
+            $userId->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserId(Comments $userId): self
+    {
+        if ($this->UserId->removeElement($userId)) {
+            // set the owning side to null (unless already changed)
+            if ($userId->getUser() === $this) {
+                $userId->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString() {
+        return $this->id;
     }
 }

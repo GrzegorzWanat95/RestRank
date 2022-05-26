@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use App\Entity\Restaurant;
 use App\Entity\Comments;
 use App\Form\CommentsType;
 use App\Repository\CommentsRepository;
@@ -22,9 +24,12 @@ class CommentsController extends AbstractController
     }
 
     #[Route('/new', name: 'app_comments_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, CommentsRepository $commentsRepository): Response
+    public function new(Restaurant $Restaurant, Request $request, CommentsRepository $commentsRepository): Response
     {
-        $comment = new Comments();
+        $comment = new Comments();   
+        $comment -> setUser($this->getUser());
+        $comment -> setDate(new \DateTime());
+        $comment -> setRestaurant($Restaurant); 
         $form = $this->createForm(CommentsType::class, $comment);
         $form->handleRequest($request);
 

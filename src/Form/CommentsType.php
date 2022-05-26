@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
 class CommentsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -14,6 +15,7 @@ class CommentsType extends AbstractType
         $builder
             ->add('Text')
             ->add('Restaurant')
+            ->add('Stars')
         ;
     }
 
