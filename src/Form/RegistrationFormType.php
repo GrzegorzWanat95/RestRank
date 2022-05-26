@@ -26,6 +26,13 @@ class RegistrationFormType extends AbstractType
                 'row_attr' => ['class' => 'login__field__in__form'],
             ])
 
+            ->add('Login', TextType::class, [
+                'label' => 'Login',
+                'attr' => ['class' => 'widget__field'],
+                'label_attr' => ['class' => 'label__field'],
+                'row_attr' => ['class' => 'login__field__in__form'],
+            ])
+
             ->add('agreeTerms', CheckboxType::class, [
                 'label' => 'Akceptuję zasady RestRank',
                 'mapped' => false,

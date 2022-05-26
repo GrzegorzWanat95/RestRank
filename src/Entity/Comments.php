@@ -30,7 +30,8 @@ class Comments
     #[ORM\Column(type: 'integer')]
     private $Stars;
 
-
+    #[ORM\Column(type: 'string', length: 20)]
+    private $UserLogin;
     
     public function getId(): ?int
     {
@@ -103,6 +104,18 @@ class Comments
     public function setStars(int $Stars): self
     {
         $this->Stars = $Stars;
+
+        return $this;
+    }
+
+    public function getUserLogin(): ?string
+    {
+        return $this->UserLogin;
+    }
+
+    public function setUserLogin(string $UserLogin): self
+    {
+        $this->UserLogin = $UserLogin;
 
         return $this;
     }

@@ -7,10 +7,12 @@ use App\Entity\Restaurant;
 use App\Entity\Comments;
 use App\Form\CommentsType;
 use App\Repository\CommentsRepository;
+use App\Repository\RestaurantRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 #[Route('/comments')]
 class CommentsController extends AbstractController
@@ -24,12 +26,17 @@ class CommentsController extends AbstractController
     }
 
     #[Route('/new', name: 'app_comments_new', methods: ['GET', 'POST'])]
-    public function new(Restaurant $Restaurant, Request $request, CommentsRepository $commentsRepository): Response
+    public function new(Request $request, CommentsRepository $commentsRepository, RestaurantRepository $Restaurant): Response
     {
+        $value = dump($request->query->get('id'));
+        $restaurant = $Restaurant->find($value);
+        $user = $this->getUser();
+        $login = $this->getUser()->getLogin();
         $comment = new Comments();   
+        $comment -> setRestaurant($restaurant);
+        $comment -> setUserLogin($login);
         $comment -> setUser($this->getUser());
         $comment -> setDate(new \DateTime());
-        $comment -> setRestaurant($Restaurant); 
         $form = $this->createForm(CommentsType::class, $comment);
         $form->handleRequest($request);
 

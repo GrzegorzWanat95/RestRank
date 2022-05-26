@@ -3,83 +3,115 @@
 {% block title %}Restauracja{% endblock %}
 {% block body %}
 
-    <div class="table__style container">
-    <h1>Restauracja</h1>
+<div class="table__style container">
+            <h1 class="form__header pb-4">Restauracja {{restaurant.Name}}</h1>
+            <div class="table d-block">
+                <div class="d-flex">
+                    <div class="table__index__show flex-wrap d-flex align-content-center w-100">
+                        <div class="image__column d-flex flex-wrap">
+                            <img src={{restaurant.image}} class="image__form__show">
+                        </div>
+                        <div>
+                             <table>
+                                            <tr>
+                                                <th class="table__header__show">Miasto</th>
+                                                <td class="table__content">{{ restaurant.City }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="table__header__show">Ulica</th>
+                                                <td class="table__content">{{ restaurant.Street }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="table__header__show">Numer budynku</th>
+                                                <td class="table__content">{{ restaurant.AddressNumber }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th  class="table__header__show">Opis</th>
+                                                <td class="table__content" >{{ restaurant.Description }}</td>
+                                            </tr>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+             </div> 
 
-
-    <div class="d-flex">
-        <div class="d-flex flex-wrap">
-            <table>
-                <tbody class="table__index">
-                    <td class="column text__column image__column"><div class="column__row__field col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><img src={{restaurant.image}} class="image__form"></div></td>
-                </tbody>
-            </table>
-        </div>
-        <div class="d-flex flex-wrap">
-            <table class="table__index">
-                <tbody>
-                    <td>
-                    <tr>
-                        <th>Nazwa</th>
-                        <td>{{ restaurant.Name }}</td>
-                    </tr>
-                    <tr>
-                        <th>Miasto</th>
-                        <td>{{ restaurant.City }}</td>
-                    </tr>
-                    <tr>
-                        <th>Ulica</th>
-                        <td>{{ restaurant.Street }}</td>
-                    </tr>
-                    <tr>
-                        <th>Numer budynku</th>
-                        <td>{{ restaurant.AddressNumber }}</td>
-                    </tr>
-                    <tr>
-                        <th>Opis</th>
-                        <td>{{ restaurant.Description }}</td>
-                    </tr>
-                    <tr>
-                        <th>Typ</th>
-                        <td>{{ restaurant.Type }}</td>
-                    </tr>
-                    <td>
-                </tbody>
-            </table>
-        </div>
+        <h2 class="form__header__medium pb-2">Opinie użytkowników</h2>
+    <div class="d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
+        <table class="table">
+            {% for comment in restaurant.comments %}
+                <tr class="col-12 w-100">
+                    <th class="col-8">{{comment.UserLogin}}</th>
+                    <th class="col-2">{{comment.Date|date("d/m/y") }}</th>
+                    <th class="col-2">
+                        {% if comment.Stars == '1' %}
+                        <p>&#9733;</p>
+                        {% elseif comment.Stars == '2' %}
+                        <p>&#9733;&#9733;</p>
+                        {% elseif comment.Stars == '3' %}
+                        <p>&#9733;&#9733;&#9733;</p>
+                        {% elseif comment.Stars == '4' %}
+                        <p>&#9733;&#9733;&#9733;&#9733;</p>
+                        {% elseif comment.Stars == '5' %}
+                        <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                        {% endif %}
+                    </th>
+                </tr>
+        </table>
+        <table>
+                </tr class="col-12 w-100">
+                <tr>
+                    <td class="col-12 w-100 comment__text">{{ comment.Text }}</td>
+                </tr>
+                    {% else %}
+                <tr>
+                    <td class="pb-4">Nie znaleziono opinii na temat tej restauracji.</td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
-
-
-
-    <h1>Opinie</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Text</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for comment in restaurant.comments %}
-            <tr>
-                <td>{{ comment.Text }}</td>
-                <td>
-                    <a href="{{ path('app_comments_show', {'id': comment.id}) }}">show</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    {{ app.user }}
-    <a class="btn__white__form w-100 my-4" href="{{ path('app_comments_new') }}">Dodaj opinię</a>
+    <div class="d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-bold">
+        <table class="table d-flex">
+            {% for comment in restaurant.comments %}
+                <tr class="col-12 w-100 d-flex flex-wrap opinion__text">
+                    <th class="col-12 w-100 d-flex">{{comment.UserLogin}}</th>
+                    <th class="col-12 w-100 d-flex">{{comment.Date|date("d/m/y") }}</th>
+                    <th class="col-12 w-100 d-flex">
+                        {% if comment.Stars == '1' %}
+                        <p>&#9733;</p>
+                        {% elseif comment.Stars == '2' %}
+                        <p>&#9733;&#9733;</p>
+                        {% elseif comment.Stars == '3' %}
+                        <p>&#9733;&#9733;&#9733;</p>
+                        {% elseif comment.Stars == '4' %}
+                        <p>&#9733;&#9733;&#9733;&#9733;</p>
+                        {% elseif comment.Stars == '5' %}
+                        <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                        {% endif %}
+                    </th>
+                </tr>
+        </table>
+        <table>
+                </tr class="col-12 w-100 d-flex">
+                <tr>
+                    <td class="col-12 w-100 comment__text__alternative ml-2 mr-2 pl-2 pr-2">{{ comment.Text }}</td>
+                </tr>
+                    {% else %}
+                <tr>
+                    <td class="pb-4">Nie znaleziono opinii na temat tej restauracji.</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% if is_granted('ROLE_USER') %}
+    <a class="btn__white__form w-100 my-4" href="{{ path('app_comments_new', {'id': restaurant.id}) }}">Dodaj opinię</a>
+    {% else %}
+    <a class="btn__white__form w-100 my-4" href="{{ path('app_login') }}">Zaloguj się żeby dodać opinię</a>
+    {% endif %}
     <a class="btn__white__form w-100 my-4" href="{{ path('app_restaurant_index') }}">Powrót do listy restauracji</a>
-    </div>
+</div>
+</div>
 {% endblock %}
+
 
 
 

@@ -33,6 +33,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'User', targetEntity: Comments::class)]
     private $UserId;
 
+    #[ORM\Column(type: 'string', length: 20)]
+    private $Login;
+
     public function __construct()
     {
         $this->UserId = new ArrayCollection();
@@ -140,5 +143,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __toString() {
         return $this->id;
+    }
+
+    public function getLogin(): ?string
+    {
+        return $this->Login;
+    }
+
+    public function setLogin(string $Login): self
+    {
+        $this->Login = $Login;
+
+        return $this;
     }
 }

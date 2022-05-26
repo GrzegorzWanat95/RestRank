@@ -163,7 +163,6 @@ body{
 
 .field__top{
     display: flex;
-    border: 1px solid red;
 }
 
 .navbar-nav{
@@ -624,7 +623,7 @@ a{
     color: #5E2D19;
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 760px) {
     .register__header{
         padding-top: 3rem;
         font-size: 3rem;
@@ -639,13 +638,32 @@ a{
     color: #5E2D19;
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 760px) {
     .form__header{
         padding-top: 3rem;
         font-size: 3rem;
         font-weight:bold;
         color: #5E2D19;
     }
+}
+
+.form__header__medium{
+    font-size: 1.5rem;
+    font-weight:bold;
+    color: #5E2D19;
+}
+
+@media screen and (min-width: 760px) {
+    .form__header__medium{
+        padding-top: 3rem;
+        font-size: 2rem;
+        font-weight:bold;
+        color: #5E2D19;
+    }
+}
+
+.text__color{
+    color: #5E2D19;
 }
 
 
@@ -981,7 +999,6 @@ a{
 
 .btn__white__form:hover{
     border: 2px solid #5E2D19;
-    margin-top: 1.2rem;
     text-align: center;
     display: block;
     color: white;
@@ -1323,12 +1340,20 @@ a{
 
 .image__form{
     display: flex;
-    width: 250px;
+    width: 240px;
     height: 200px;
     background-size: 200px;
     image-orientation: from-image;
     size: 200px;
     justify-self: flex-start;
+}
+
+.image__form__show{
+    display: flex;
+    max-width: 230px;
+    height: 200px;
+    justify-self: flex-start;
+    align-content: center;
 }
 
 
@@ -1339,6 +1364,16 @@ a{
     color:#5E2D19;
     font-weight: bold;
     font-size: 2rem;
+    width: 100%;
+    min-width: 250px;
+}
+
+
+.text__column__field{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
     width: 100%;
     min-width: 250px;
 }
@@ -1376,6 +1411,26 @@ a{
 }
 
 @media screen and (min-width: 1200px) {
+    .column__row__field__show{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+    };
+}
+
+.column__row__field__show{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 0px;
+    margin:0px;
+}
+
+@media screen and (min-width: 1200px) {
     .column__row__field{
         display: flex;
         flex-wrap: wrap;
@@ -1393,13 +1448,36 @@ a{
 
 .table__index{
     display: flex;
-    justify-content:center;
+    justify-content: center;
+    justify-items: center;
     align-content: center;
     flex-wrap: wrap;
 }
 
-.image__column{
+.table__index__comment{
+    width: 100vw;
+}
+
+.table__index__show{
     display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1200px) {
+    .table__index__show{
+        display: flex;
+        justify-content: flex-start;
+        justify-items: flex-start;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.image__column{
+    width:250px;
     justify-content: flex-start;
 }
 
@@ -1455,3 +1533,67 @@ a{
 #login__field{
     color:#5E2D19;
 }
+
+.show__column{
+    display: flex;
+}
+
+.opinions__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.opinion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.opinion__text{
+    display: block;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    width:50%;
+}
+
+.opinion__photo{
+    display: block;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height:fit-content;
+    width:50%;
+}
+
+.table__field{
+    height:200px;
+    width:fit-content;
+}
+
+.table__header__show{
+    padding-right: 2rem;
+}
+
+.table__content{
+    font-weight: bold;
+}
+
+.show__field{
+    display: flex;
+}
+
+.comment__text{
+    display:table;
+    width:100%;
+    text-align:left;
+}
+
+.comment__text__alternative{
+    display:table;
+    width:100%;
+    text-align: center;
+}
+

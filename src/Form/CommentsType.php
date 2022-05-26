@@ -14,7 +14,6 @@ class CommentsType extends AbstractType
     {
         $builder
             ->add('Text')
-            ->add('Restaurant')
             ->add('Stars')
         ;
     }
