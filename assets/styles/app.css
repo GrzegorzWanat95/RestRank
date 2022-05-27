@@ -1243,6 +1243,14 @@ a{
     width: 100%;
 }
 
+#registration_form_Login{
+    border:none;
+    border-bottom: 1px solid grey;
+    flex-wrap: wrap;
+    min-width: 200px;
+    width: 100%;
+}
+
 #registration_form_agreeTerms{
     margin:10px;
     margin-top:20px;
@@ -1628,3 +1636,10 @@ a{
     flex-wrap: nowrap;
     width: 100%;
 }
+
+#comments_Text{
+    border:1px solid grey;
+    width: 100%;
+    height: 200px;
+}
+

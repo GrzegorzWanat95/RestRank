@@ -99,8 +99,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
+                {% if is_granted('ROLE_USER') %}
+                <a class="nav-link" href="{{ path('app_user_panel') }}">Panel&nbsp;użytkownika</a>
+                {% endif %}
                 <a class="nav-link" href="/#aboutus">O&nbsp;nas</a>
-                <a id="login__button" class="nav-link" href="/{{app.user ? 'logout' : 'login'}}" 
+                <a id="login__button" class="nav-link" href="/{{app.user ? 'wyloguj' : 'logowanie'}}" 
                 @click="isOpen = false">
                 {{app.user ? 'Wyloguj' : 'Zaloguj'}}
                 </a>
@@ -111,14 +114,17 @@
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light bg-white pt-4 d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block">
             <div class="container-fluid">
-            <a class="navbar-brand logo__field" href="./index.html"><img class="logo d-block" src="{{ asset('build/images/sygnet.png') }}" alt="logo RestRank"></a>
+            <a class="navbar-brand logo__field" href="/"><img class="logo d-block" src="{{ asset('build/images/sygnet.png') }}" alt="logo RestRank"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup__alternative" aria-controls="navbarNavAltMarkup__alternative" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup__alternative">
                 <div class="alternative__collapse navbar-nav ms-auto">
+                {% if is_granted('ROLE_USER') %}
+                <a class="nav-link" href="{{ path('app_user_panel') }}">Panel&nbsp;użytkownika</a>
+                {% endif %}
                 <a class="nav-link" href="/#aboutus">O nas</a>
-                <a id="login__button__mobile" class="nav-link" href="/{{app.user ? 'logout' : 'login'}}" 
+                <a id="login__button__mobile" class="nav-link" href="/{{app.user ? 'wyloguj' : 'logowanie'}}" 
                 @click="isOpen = false">
                 {{app.user ? 'Wyloguj' : 'Zaloguj'}}
                 </a>

@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-#[Route('/comments')]
+#[Route('/opinie')]
 class CommentsController extends AbstractController
 {
     #[Route('/', name: 'app_comments_index', methods: ['GET'])]
@@ -25,7 +25,7 @@ class CommentsController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_comments_new', methods: ['GET', 'POST'])]
+    #[Route('/dodaj', name: 'app_comments_new', methods: ['GET', 'POST'])]
     public function new(Request $request, CommentsRepository $commentsRepository, RestaurantRepository $Restaurant): Response
     {
         $value = dump($request->query->get('id'));
@@ -60,7 +60,7 @@ class CommentsController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_comments_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/edycja', name: 'app_comments_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Comments $comment, CommentsRepository $commentsRepository): Response
     {
         $form = $this->createForm(CommentsType::class, $comment);

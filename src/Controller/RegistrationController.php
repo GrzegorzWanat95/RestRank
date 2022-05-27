@@ -61,4 +61,19 @@ class RegistrationController extends AbstractController
             'form' => $form,
         ]);
     }
+
+    
+    #[Route('/panel-uzytkownika', name: 'app_user_panel', methods: ['GET', 'POST'])]
+    public function userPanel(): Response
+    {
+            return $this->renderForm('users/userPanel.html.twig');
+    }
+
+    #[Route('/{id}/usuwanie', name: 'app_user_delete', methods: ['POST'])]
+    public function delete(UserRepository $userRepository)
+    {     
+        $cUser = $this->getUser();
+        $userRepository->remove($cUser, true);    
+        return $this->redirectToRoute('app_home_page', [], Response::HTTP_SEE_OTHER);
+    }
 }

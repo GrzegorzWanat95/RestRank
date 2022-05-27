@@ -1,23 +1,16 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Users{% endblock %}
-
+{% block stylesheets %}
+    <link href="{{asset('build/app.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block javascripts %}
+    {{encore_entry_script_tags('app')}}
+    {{encore_entry_script_tags('script1')}}
+{% endblock %}
 {% block body %}
-    <h1>Users</h1>
-
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
                 <th>Login</th>
                 <td>{{ user.Login }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.Password }}</td>
             </tr>
             <tr>
                 <th>Email</th>
@@ -25,10 +18,20 @@
             </tr>
         </tbody>
     </table>
+    <div>
+        <div class="container-fluid register__input justify-content-center">
+            <div class="login__button contaienr w-100">
+                <a class="btn__white__form w-25 mt-4" href="{{ path('app_user_edit', {'id': user.id}) }}">Edytuj dane</a>
+            </div>
+            {% set id = user.id %}
 
-    <a href="{{ path('app_users_index') }}">back to list</a>
+            <button onclick="reset()" class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">Usuń dane
+            </button>
 
-    <a href="{{ path('app_users_edit', {'id': user.id}) }}">edit</a>
-
-    {{ include('users/_delete_form.html.twig') }}
+            <form method="post" action="{{ path('app_user_delete', {'id': id}) }}">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ id) }}">
+                <button id="delete" class="login__buttons border__none">Usuń konto</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}

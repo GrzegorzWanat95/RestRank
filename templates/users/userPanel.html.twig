@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link href="{{asset('build/app.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block title %}RestRank{% endblock %}
+
+{% block body %}
+    <div class="table__style container">
+    <h1 class="form__header">Witaj {{app.user.Login}}</h1>
+        {% set user = app.user %}
+
+        <p>
+            <a class="btn__white__form w-100 my-4" data-bs-toggle="collapse" href="#Data" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Moje dane
+        </a>
+        </p>
+            <div class="collapse" id="Data">
+                 <div class="card card-body">
+                {{ include('users/show.html.twig') }}
+                </div>
+            </div>
+        
+        <p>
+            <a class="btn__white__form w-100 my-4" data-bs-toggle="collapse" href="#Opinions" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Moje opinie
+        </a>
+        </p>
+            <div class="collapse" id="Opinions">
+                 <div class="card card-body">
+                {{ include('users/show.html.twig') }}
+                </div>
+        </div>
+
+        <a class="btn__white__form w-100 my-4" href="{{ path('app_restaurant_index') }}">Powrót do strony głównej</a>
+
+
+
+
+
+
+        
+
+
+
+
+    </div>
+{% endblock %}

@@ -21,7 +21,7 @@ class Comments
     private $Text;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'UserId')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true, onDelete: 'Cascade')]
     private $User;
 
     #[ORM\Column(type: 'datetime')]
@@ -31,6 +31,7 @@ class Comments
     private $Stars;
 
     #[ORM\Column(type: 'string', length: 20)]
+    #[ORM\JoinColumn(nullable: true)]
     private $UserLogin;
     
     public function getId(): ?int
