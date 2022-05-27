@@ -1454,10 +1454,6 @@ a{
     flex-wrap: wrap;
 }
 
-.table__index__comment{
-    width: 100vw;
-}
-
 .table__index__show{
     display: flex;
     justify-content: center;
@@ -1589,11 +1585,46 @@ a{
     display:table;
     width:100%;
     text-align:left;
+    text-justify: auto;
+    hyphens: auto;
+    overflow: auto;
 }
 
 .comment__text__alternative{
     display:table;
     width:100%;
-    text-align: center;
+    text-align: left;
+    text-justify: auto;
+    margin-right:0px !important;
+    padding-right:0px !important;
 }
 
+.tbody__comment{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.table__index__comment{
+    width:inherit;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.table__comment{
+    width: 100%;
+}
+
+.comment__data{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comment__data__content{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}

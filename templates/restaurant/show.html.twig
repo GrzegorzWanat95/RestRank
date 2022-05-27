@@ -36,71 +36,73 @@
              </div> 
 
         <h2 class="form__header__medium pb-2">Opinie użytkowników</h2>
-    <div class="d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
-        <table class="table">
-            {% for comment in restaurant.comments %}
-                <tr class="col-12 w-100">
-                    <th class="col-8">{{comment.UserLogin}}</th>
-                    <th class="col-2">{{comment.Date|date("d/m/y") }}</th>
-                    <th class="col-2">
-                        {% if comment.Stars == '1' %}
-                        <p>&#9733;</p>
-                        {% elseif comment.Stars == '2' %}
-                        <p>&#9733;&#9733;</p>
-                        {% elseif comment.Stars == '3' %}
-                        <p>&#9733;&#9733;&#9733;</p>
-                        {% elseif comment.Stars == '4' %}
-                        <p>&#9733;&#9733;&#9733;&#9733;</p>
-                        {% elseif comment.Stars == '5' %}
-                        <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-                        {% endif %}
-                    </th>
-                </tr>
-        </table>
-        <table>
-                </tr class="col-12 w-100">
-                <tr>
-                    <td class="col-12 w-100 comment__text">{{ comment.Text }}</td>
-                </tr>
-                    {% else %}
-                <tr>
-                    <td class="pb-4">Nie znaleziono opinii na temat tej restauracji.</td>
-                </tr>
-            {% endfor %}
-        </table>
+    <div>
+        <table class=" table table__comment d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
+            <thead>
+            </thead>
+            <tbody class="tbody__comment d-flex">
+                {% for comment in restaurant.comments %}
+                    <tr class="col-12 w-100 table__index__comment d-flex">
+                        <th class="col-8 comment__data">{{comment.UserLogin}}</th>
+                        <th class="col-2 comment__data">{{comment.Date|date("d/m/y") }}</th>
+                        <th class="col-2 comment__data">
+                            {% if comment.Stars == '1' %}
+                            <p>&#9733;</p>
+                            {% elseif comment.Stars == '2' %}
+                            <p>&#9733;&#9733;</p>
+                            {% elseif comment.Stars == '3' %}
+                            <p>&#9733;&#9733;&#9733;</p>
+                            {% elseif comment.Stars == '4' %}
+                            <p>&#9733;&#9733;&#9733;&#9733;</p>
+                            {% elseif comment.Stars == '5' %}
+                            <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                            {% endif %}
+                        </th>
+                    </tr>
+                    <tr class="col-12 comment__data__content">
+                        <td class="comment__text">{{ comment.Text }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>Nie znaleziono restauracji</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
     </div>
-    <div class="d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-bold">
-        <table class="table d-flex">
-            {% for comment in restaurant.comments %}
-                <tr class="col-12 w-100 d-flex flex-wrap opinion__text">
-                    <th class="col-12 w-100 d-flex">{{comment.UserLogin}}</th>
-                    <th class="col-12 w-100 d-flex">{{comment.Date|date("d/m/y") }}</th>
-                    <th class="col-12 w-100 d-flex">
-                        {% if comment.Stars == '1' %}
-                        <p>&#9733;</p>
-                        {% elseif comment.Stars == '2' %}
-                        <p>&#9733;&#9733;</p>
-                        {% elseif comment.Stars == '3' %}
-                        <p>&#9733;&#9733;&#9733;</p>
-                        {% elseif comment.Stars == '4' %}
-                        <p>&#9733;&#9733;&#9733;&#9733;</p>
-                        {% elseif comment.Stars == '5' %}
-                        <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-                        {% endif %}
-                    </th>
-                </tr>
-        </table>
-        <table>
-                </tr class="col-12 w-100 d-flex">
-                <tr>
-                    <td class="col-12 w-100 comment__text__alternative ml-2 mr-2 pl-2 pr-2">{{ comment.Text }}</td>
-                </tr>
-                    {% else %}
-                <tr>
-                    <td class="pb-4">Nie znaleziono opinii na temat tej restauracji.</td>
-                </tr>
-            {% endfor %}
-        </table>
+    <div>
+        <table class=" table table__comment d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block d-block">
+            <thead>
+            </thead>
+            <tbody class="tbody__comment d-flex">
+                {% for comment in restaurant.comments %}
+                    <tr class="col-12 w-100 table__index__comment d-flex">
+                        <th class="col-12 comment__data">{{comment.UserLogin}}</th>
+                        <th class="col-12 comment__data">{{comment.Date|date("d/m/y") }}</th>
+                        <th class="col-12 comment__data">
+                            {% if comment.Stars == '1' %}
+                            <p>&#9733;</p>
+                            {% elseif comment.Stars == '2' %}
+                            <p>&#9733;&#9733;</p>
+                            {% elseif comment.Stars == '3' %}
+                            <p>&#9733;&#9733;&#9733;</p>
+                            {% elseif comment.Stars == '4' %}
+                            <p>&#9733;&#9733;&#9733;&#9733;</p>
+                            {% elseif comment.Stars == '5' %}
+                            <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                            {% endif %}
+                        </th>
+                    </tr>
+                    <tr class="col-12 comment__data__content">
+                        <td class="comment__text">{{ comment.Text }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>Nie znaleziono restauracji</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
     </div>
     {% if is_granted('ROLE_USER') %}
     <a class="btn__white__form w-100 my-4" href="{{ path('app_comments_new', {'id': restaurant.id}) }}">Dodaj opinię</a>
