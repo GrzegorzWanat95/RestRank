@@ -12,6 +12,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\Security\Http\Event\LogoutEvent;
+use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class RegistrationController extends AbstractController
 {
@@ -69,11 +72,14 @@ class RegistrationController extends AbstractController
             return $this->renderForm('users/userPanel.html.twig');
     }
 
-    #[Route('/{id}/usuwanie', name: 'app_user_delete', methods: ['POST'])]
-    public function delete(UserRepository $userRepository)
+    #[Route('/usuwanie/{id}', name: 'app_user_delete', methods: ['POST'])]
+    public function delete(Request $request, UserRepository $userRepository, EventDispatcherInterface $eventDispatcher, TokenStorageInterface $tokenStorage)
     {     
         $cUser = $this->getUser();
         $userRepository->remove($cUser, true);    
-        return $this->redirectToRoute('app_home_page', [], Response::HTTP_SEE_OTHER);
+        $logoutEvent = new LogoutEvent($request, $tokenStorage->getToken());
+        $eventDispatcher->dispatch($logoutEvent);
+        $tokenStorage->setToken(null);
+        return $this->redirectToRoute('app_logout');
     }
 }
