@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    border: 1px solid black;
 }
 
 html{
@@ -13,7 +14,6 @@ a:hover{
     text-decoration: none;;
     color:#4D1C08;
 }
-
 
 body{
     font-family: 'League Spartan', sans-serif;
@@ -1660,4 +1660,3 @@ a{
 #delete__button{
     font-size: 1.2rem;
 }
-
