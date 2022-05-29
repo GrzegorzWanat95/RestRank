@@ -11,7 +11,7 @@
         {% set user = app.user %}
 
         <p>
-            <a class="btn__white__form w-100 my-4" data-bs-toggle="collapse" href="#Data" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="btn__brown__form w-100 my-4" data-bs-toggle="collapse" href="#Data" role="button" aria-expanded="false" aria-controls="collapseExample">
             Moje dane
         </a>
         </p>
@@ -22,56 +22,112 @@
             </div>
         
         <p>
-            <a class="btn__white__form w-100 my-4" data-bs-toggle="collapse" href="#Opinions" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="btn__brown__form w-100 my-4" data-bs-toggle="collapse" href="#Opinions" role="button" aria-expanded="false" aria-controls="collapseExample">
             Moje opinie
         </a>
         </p>
-            <div class="collapse" id="Opinions">
-                <div>
-        <table class=" table table__comment d-xxl-block d-xl-block d-lg-block d-md-none d-sm-none d-none">
-            <thead>
-            </thead>
-            <tbody class="tbody__comment d-flex">
-                {% for comment in user.UserId %}
-                    <tr class="col-12 w-100 table__index__comment d-flex">
-                        <th class="col-8 comment__data"><a href="{{ path('app_restaurant_show', {'id': comment.Restaurant.id}) }}">{{comment.Restaurant}}</a></th>
-                        <th class="col-2 comment__data">{{comment.Date|date("d/m/y") }}</th>
-                        <th class="col-2 comment__data">
-                            {% if comment.Stars == '1' %}
-                            <p>&#9733;</p>
-                            {% elseif comment.Stars == '2' %}
-                            <p>&#9733;&#9733;</p>
-                            {% elseif comment.Stars == '3' %}
-                            <p>&#9733;&#9733;&#9733;</p>
-                            {% elseif comment.Stars == '4' %}
-                            <p>&#9733;&#9733;&#9733;&#9733;</p>
-                            {% elseif comment.Stars == '5' %}
-                            <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-                            {% endif %}
-                        </th>
-                    </tr>
-                    <tr class="col-12 comment__data__content">
-                        <td class="comment__text">{{ comment.Text }}</td>
-                    </tr>
-                    <tr class="col-12 comment__data__content">
-                        <td class="comment__text">
-                            <a class="btn__white__form w-100 my-4" href="{{ path('app_comments_edit', {'id': comment.id}) }}">Edytuj opinię</a>
-                        </td>
-                    </tr>
-                    <tr class="col-12 comment__data__content">
-                        <td class="comment__text"></td>
-                    </tr>
+        <div class="collapse" id="Opinions">
+            <div>
+                <table class=" table table__comment d-xxl-block d-xl-none d-lg-none d-md-none d-sm-none d-none">
+                    <thead>
+                    </thead>
+                    <tbody class="tbody__comment d-flex">
+                        {% for comment in user.UserId %}
+                            <tr class="col-12 w-100 table__index__comment d-flex">
+                                <th class="col-8 comment__data"><a href="{{ path('app_restaurant_show', {'id': comment.Restaurant.id}) }}" class="link__form">{{comment.Restaurant}}</a></th>
+                                <th class="col-2 comment__data">{{comment.Date|date("d/m/y") }}</th>
+                                <th class="col-2 comment__data">
+                                    {% if comment.Stars == '1' %}
+                                    <p>&#9733;</p>
+                                    {% elseif comment.Stars == '2' %}
+                                    <p>&#9733;&#9733;</p>
+                                    {% elseif comment.Stars == '3' %}
+                                    <p>&#9733;&#9733;&#9733;</p>
+                                    {% elseif comment.Stars == '4' %}
+                                    <p>&#9733;&#9733;&#9733;&#9733;</p>
+                                    {% elseif comment.Stars == '5' %}
+                                    <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                                    {% endif %}
+                                </th>
+                            </tr>
+                            <tr class="col-12 comment__data__content">
+                                <td class="comment__text">{{ comment.Text }}</td>
+                            </tr>
+                            <tr class="col-12 comment__data__content">
+                                <td class="comment__text d-flex justify-content-center align-content-center">
+                                    <a class="btn__white__form w-25 mt-4 d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none" href="{{ path('app_comments_edit', {'id': comment.id}) }}">Edytuj opinię</a>
+                                    <a class="btn__white__form w-100 mt-4 d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block" href="{{ path('app_comments_edit', {'id': comment.id}) }}">Edytuj opinię</a>
+                                </td>
+                            </tr>
+                            <tr class="col-12 comment__data__content">
+                                <td class="comment__text d-flex justify-content-center align-content-center">
+                                                <div class="login__bottom__buttons justify-content-center align-items-center d-flex">
+                                                    {{ include('comments/_delete_form.html.twig') }}
+                                                </div>
+                                </td>
+                            </tr>
+                            <tr class="col-12 comment__data__content">
+                                <td class="comment__text"></td>
+                            </tr>
 
-                {% else %}
-                    <tr>
-                        <td>Nie znaleziono restauracji</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-            </table>
+                        {% else %}
+                            <tr>
+                                <td>Nie znaleziono komentarzy</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+            </div>
+            <div>
+                <table class=" table table__comment d-xxl-none d-xl-block d-lg-block d-md-block d-sm-block d-block">
+                    <thead>
+                    </thead>
+                    <tbody class="tbody__comment d-flex">
+                        {% for comment in user.UserId %}
+                            <tr class="col-12 w-100 table__index__comment d-flex">
+                                <th class="col-12 comment__data"><a href="{{ path('app_restaurant_show', {'id': comment.Restaurant.id}) }}" class="link__form">{{comment.Restaurant}}</a></th>
+                                <th class="col-12 comment__data">{{comment.Date|date("d/m/y") }}</th>
+                                <th class="col-12 comment__data">
+                                    {% if comment.Stars == '1' %}
+                                    <p>&#9733;</p>
+                                    {% elseif comment.Stars == '2' %}
+                                    <p>&#9733;&#9733;</p>
+                                    {% elseif comment.Stars == '3' %}
+                                    <p>&#9733;&#9733;&#9733;</p>
+                                    {% elseif comment.Stars == '4' %}
+                                    <p>&#9733;&#9733;&#9733;&#9733;</p>
+                                    {% elseif comment.Stars == '5' %}
+                                    <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                                    {% endif %}
+                                </th>
+                            </tr>
+                            <tr class="col-12 comment__data__content">
+                                <td class="comment__text">{{ comment.Text }}</td>
+                            </tr>
+                                                    <tr class="col-12 comment__data__content">
+                                <td class="comment__text d-flex justify-content-center align-content-center">
+                                    <a class="btn__white__form w-25 mt-4 d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none" href="{{ path('app_comments_edit', {'id': comment.id}) }}">Edytuj opinię</a>
+                                    <a class="btn__white__form w-100 mt-4 d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block" href="{{ path('app_comments_edit', {'id': comment.id}) }}">Edytuj opinię</a>
+                                </td>
+                                <tr class="col-12 comment__data__content">
+                                    <td class="comment__text d-flex justify-content-center align-content-center">
+                                        <div class="login__bottom__buttons justify-content-center align-items-center d-flex">
+                                            {{ include('comments/_delete_form.html.twig') }}
+                                        </div>
+                                    </td>
+                            </tr>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td>Nie znaleziono komentarzy</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
     </div>
+        
         </div>
 
-        <a class="btn__white__form w-100 my-4" href="{{ path('app_restaurant_index') }}">Powrót do strony głównej</a>
+        <a class="btn__brown__form w-100 my-4" href="{{ path('app_home_page') }}">Powrót do strony głównej</a>
     </div>
 {% endblock %}

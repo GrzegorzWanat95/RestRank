@@ -1,4 +1,4 @@
-<form method="post" action="{{ path('app_comments_delete', {'id': comment.id}) }}">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}">
-    <button class="btn">Usuń</button>
-</form>
+    <form method="post" action="{{ path('app_comments_delete', {'id': user.id}) }}" onsubmit="return confirm('Czy jesteś pewien, że chcesz usunąć opinię? Tej operacji nie da się odwrócić');">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}">
+        <button id="delete__button" class="login__buttons">Usuń</button>
+    </form>

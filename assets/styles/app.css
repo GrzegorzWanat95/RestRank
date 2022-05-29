@@ -2,7 +2,6 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
-    border: 1px solid black;
 }
 
 html{
@@ -1012,6 +1011,63 @@ a{
     color: white;
 }
 
+.btn__brown__form{
+    border: 2px solid #2D1D15;
+    text-align: center;
+    display: block;
+    color: white;
+    width: 8rem;
+    background-color: #5E2D19;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    text-align: center;
+}
+
+.btn__brown__form:hover{
+    border: 2px solid #5E2D19;
+    text-align: center;
+    display: block;
+    color: white;
+    width: 8rem;
+    background-color: white;
+    font-weight: bold;;
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    text-align: center;
+    border: 2px solid #4D1E08;
+    color: #5E2D19;
+}
+
+.btn__brown__form:after{
+    border: 2px solid #5E2D19;
+    text-align: center;
+    display: block;
+    color: white;
+    width: 8rem;
+    background-color: #5E2D19;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    text-align: center;
+    border: 2px solid #4D1E08;
+    color: white;
+}
+
+
+.btn__brown__form:{
+    border: 2px solid #5E2D19;
+    text-align: center;
+    display: block;
+    color: #5E2D19;
+    width: 8rem;
+    background-color: white;
+    font-weight: bold;;
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    text-align: center;
+}
+
 .btn-outline-secondary{
     display: block;
 }
@@ -1659,4 +1715,13 @@ a{
 
 #delete__button{
     font-size: 1.2rem;
+}
+
+.link__form{
+    display: row;
+    text-align: start;
+    color:#5E2D19;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
 }
