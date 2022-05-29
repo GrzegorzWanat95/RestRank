@@ -6,32 +6,30 @@
     {{encore_entry_script_tags('script1')}}
 {% endblock %}
 {% block body %}
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Login</th>
-                <td>{{ user.Login }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.Email }}</td>
-            </tr>
-        </tbody>
+
+<div class="container">
+    <table class=" table table__comment ">
+                <tr>
+                    <th class="comment__data">Login</th>
+                    <td class="comment__data__content">{{ user.Login }}</td>
+                </tr>
+                <tr>
+                    <th class="comment__data">Email</th>
+                    <td class="comment__data__content">{{ user.Email }}</td>
+                </tr>
     </table>
+
     <div>
         <div class="container-fluid register__input justify-content-center">
-            <div class="login__button contaienr w-100">
-                <a class="btn__white__form w-25 mt-4" href="{{ path('app_user_edit', {'id': user.id}) }}">Edytuj dane</a>
+            <div class="login__button d-flex">
+                <a class="btn__white__form w-25 mt-4 d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none" href="{{ path('app_user_edit', {'id': user.id}) }}">Edytuj dane</a>
+                <a class="btn__white__form w-100 mt-4 d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block" href="{{ path('app_user_edit', {'id': user.id}) }}">Edytuj dane</a>
             </div>
-            {% set id = user.id %}
-
-            <button onclick="reset()" class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">Usuń dane
-            </button>
-
-            <form method="post" action="{{ path('app_user_delete', {'id': id}) }}">
-                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ id) }}">
-                <button id="delete" class="login__buttons border__none">Usuń konto</button>
-            </form>
-        </div>
+            <div class="login__bottom__buttons justify-content-center align-items-center d-flex">
+                {{ include('users/_delete_form.html.twig') }}
+            </div>
+         </div>
     </div>
+</div>
+
 {% endblock %}

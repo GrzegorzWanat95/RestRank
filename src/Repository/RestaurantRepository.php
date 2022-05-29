@@ -63,4 +63,15 @@ class RestaurantRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+
+    public function average($value): ?Restaurant
+    {
+        $q = $em->createQuery();
+        $dql = "select AVG(t.value), DAY(t.createdAt)
+                cdate  from MyProject\Model\Table t WHERE t.type=:param GROUP BY cdate";
+        
+        $q->setDql($dql)->setParameter('param', $param);
+        ;
+    }
+
 }
