@@ -62,7 +62,7 @@
                             <tr class="col-12 comment__data__content">
                                 <td class="comment__text d-flex justify-content-center align-content-center">
                                                 <div class="login__bottom__buttons justify-content-center align-items-center d-flex">
-                                                    {{ include('comments/_delete_form.html.twig') }}
+                                                    {{ include('comments/_delete_form.html.twig', {'id': comment.id}) }}
                                                 </div>
                                 </td>
                             </tr>
