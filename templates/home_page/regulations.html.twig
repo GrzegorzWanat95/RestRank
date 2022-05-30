@@ -1,0 +1,436 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{asset('build/app.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block title %}RestRank{% endblock %}
+
+{% block body %}
+
+<div class="container pt-4">
+        <div id="aboutus">
+            <div class="register__form pt-4 d-block pb-4">
+                <div class="logged__panel pt-4 flex-column d-flex d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none w-100">
+                    <div class="d-flex pt-4 justify-content-center align-content-center">
+                        <h1 class="register__header">REGULAMIN</h1>
+                    </div>
+                </div>
+                <div class="logged__panel__alternative flex-column d-flex d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block w-100">
+                    <div class="d-flex justify-content-center align-content-center"><h1 class="register__header__alteriative">REGULAMIN</h1></div>
+                </div>
+        </div>
+            <div class="container register__form__panel__rules justify-content-center align-content-center d-block">
+                <div class="container register__form__handler justify-content-center d-flex">
+                        <div class="container-fluid register__input justify-content-center">
+                            <div>
+                                <h2 class="bold">
+                                    I
+                                </h2>
+                                    <p class="plain__text">
+                                        OGÓLNE POSTANOWIENIA REGULAMINU<br>
+                                        Art. 1.	POSTANOWIENIA WSTĘPNE<br>
+                                        Art. 2. 	DEFINICJE<br>
+                                        Art. 3.	RODZAJE I ZAKRES USŁUG<br>
+                                    </p>
+                                <h2 class="bold">
+                                    II
+                                </h2>
+                                    <p class="plain__text">
+                                        WARUNKI ŚWIADCZENIA USŁUG W RESTRANK.PL<br>
+                                        Art. 4.	OGÓLNE ZASADY SERWISU<br>
+                                        Art. 5.	WARUNKI ŚWIADCZENIA USŁUG W RESTRANK.PL<br>
+                                    </p>
+                                <h2 class="bold">
+                                    III
+                                </h2>
+                                    <p class="plain__text">
+                                        AKTYWNOŚĆ UŻYTKOWNIKÓW W SERWISIE<br>
+                                        Art. 6.	OPINIE I OCENY UŻYTKOWNIKÓW SERWISU<br>
+                                        Art. 7.	WARUNKI I OGRANICZENIA WYPOWIEDZI I OCEN<br>
+                                        Art. 8.	PRAWA I OBOWIĄZKI UŻYTKOWNIKÓW SERWISU<br>
+                                        Art. 9.	ZASADY KORZYSTANIA Z OCEN I WYPOWIEDZI<br>
+                                    </p>
+                                <h2 class="bold">
+                                    IV
+                                </h2>
+                                    <p class="plain__text">
+                                        ROLA I DZIAŁANIA USŁUGODAWCY W SERWISIE RESTRANK.PL<br>
+                                        Art. 10.	PRAWA I OBOWIĄZKI USŁUGODWACY<br>
+                                        Art. 11.	POSTĘPOWANIE REKLAMACYJNE<br>
+                                    </p>
+                                                                <h2 class="bold">
+                                    V
+                                </h2>
+                                    <p class="plain__text">
+                                        ROZPOCZĘCIE I ZAKOŃCZENIE KORZYSTANIA Z SERWISU<br>
+                                        Art. 12.	URUCHOMIENIE USŁUGI I ZAWARCIE UMOWY<br>
+                                        Art. 13.	KONTO I JEGO REJESTRACJA W SERWISIE<br>
+                                        Art. 14.	PRAWO ODSTĄPIENIA OD UMOWY PRZEZ KONSUMENTA<br>
+                                        Art. 15.	ZAKOŃCZENIE KORZYSTANIA Z SERWISU<br>
+
+                                    </p>
+                                <h2 class="bold">
+                                    VI
+                                </h2>
+                                    <p class="plain__text">
+                                        POSTANOWIENIA KOŃCOWE I TRYB ZMIANY REGULAMINU<br>
+                                        Art. 16.	ZMIANY REGULAMINU<br>
+                                        Art. 17.	POSTANOWIENIA KOŃCOWE<br><br>
+                                    </p>
+                                <h3 class="bold">
+                                        I OGÓLNE POSTANOWIENIA REGULAMINU
+                                </h3>
+                                <h4 class="bold">
+                                        Art. 1. POSTANOWIENIA WSTĘPNE 
+                                </h4>
+                                    <p class="plain__text">
+                                        1. Ten Regulamin sporządziliśmy w oparciu o przepisy prawa obowiązujące na terytorium Rzeczypospolitej Polskiej i 
+                                        zawarliśmy w nim zasady funkcjonowania RestRank.pl oraz warunki świadczenia i korzystania z dostępnych w tym Serwisie Usług, 
+                                        które dla Użytkownika nie podlegają żadnym opłatom. Postanowienia Regulaminu wraz z jego załącznikami oraz przepisami prawa obowiązującego 
+                                        na terytorium RP, określają prawa i obowiązki Użytkowników korzystających z Restrank.pl i Usług określonych Regulaminem.<br><br>
+                                        2. Za każdym razem, gdy w treści Regulaminu wymieniamy „Restrank” lub wskazujemy na „ nas ” lub formułą „ my ”, zwrot ten dotyczy 
+                                        Usługodawcy i administratora Serwisu, którym jest RestRank Polska sp. z o. o  (szczegółowe dane w Art. 2). Jeżeli posługujemy się zwrotem 
+                                        „Restrank.pl” – jest on tożsamy z definicją naszego Serwisu, a nie tylko z adresem naszej strony internetowej.<br><br>
+                                        3. W ramach Usług i z zastrzeżeniem dalszych postanowień Regulaminu, udostępniamy zasoby systemu teleinformatycznego oraz serwerów, 
+                                        które umożliwiają Użytkownikom przechowywanie i udostępnianie ich treści (danych) w Serwisie, co wiąże się z możliwością indeksowania treści 
+                                        Użytkowników zamieszczanych w Serwisie przez wyszukiwarki internetowe.<br><br>
+                                        4. Opinie przechowywane i prezentowane w ramach Serwisu mogą być również prezentowane na stronach internetowych Partnerów lub Słuchających 
+                                        na podstawie odrębnej umowy Restrank z takim podmiotem.<br><br>
+                                        5. Korzystając z Restrank.pl, jako jego Użytkownik, akceptujesz Regulamin wraz z załącznikami zobowiązując się do przestrzegania jego 
+                                        postanowień. Możemy wymagać od Ciebie potwierdzenia akceptacji przy rejestracji Konta w Serwisie bądź dodawaniu Opinii/Oceny przez Formularz.<br><br>
+                                        6. Usługi Serwisu dla Słuchających (przedsiębiorców opiniowanych przez Użytkowników) świadczone są przez RestRank na podstawie odrębnej umowy. 
+                                        Przedmiot regulacji Usługodawca RestRank Usługi dla Użytkowników Usługi dla Słuchających.<br><br>
+                                    </p>
+                                    <h4 class="bold">
+                                        Art. 2. DEFINICJE
+                                    </h4>
+                                    <p class="plain__text">
+                                        O ile Regulamin nie stanowi wprost inaczej, użyte w nim sformułowania pisane wielką literą oznaczają:<br><br>
+                                        „ RestRank ” lub „ Usługodawca ”, wymiennie „my” - właściciel i administrator Serwisu, RestRank Polska sp. z o.o. z siedzibą w Poznaniu, ul. Ustronna 126, 60-012 Poznań.
+                                        Adres do korespondencji RestRank:<br><br>
+                                        ul. Ustronna 126, 60-012 Poznań, lub adres e-mail: kontakt[małpa]restrank.pl<br><br>
+
+                                        „ Serwis ” wymiennie „ RestRank.pl ” - oznacza zorganizowaną, właściwą serwisom internetowym, platformę internetową, znajdującą się pod adresem: www.restrank.pl, której administratorem jest Usługodawca, udostępniający Użytkownikom narzędzia informatyczne służące zamieszczaniu treści, wymianie informacji lub prezentacji ocen, rankingów i opinii w ramach świadczonej Usługi (a Słuchającym na podstawie odrębnej umowy);
+                                        <br><br>
+                                        „ Regulamin ” - niniejszy regulamin wraz z załącznikami stanowiącymi jego integralną część;
+                                        <br><br>
+                                        „ Umowa ” - Umowa o świadczenie Usług zawierana przez Usługodawcę z Użytkownikiem w drodze
+                                        akceptacji Regulaminu przez Użytkownika;
+                                        <br><br>
+                                        „ Usługa ”, „ Usługi ” - usługa świadczona przez RestRank drogą elektroniczną, na zasadach określonych w niniejszym Regulaminie;
+                                        <br><br>
+                                        „ Użytkownik ”, „ Opiniujący ”, (wymiennie w formie: „Ty”, „Tobie”, „Ci” „dla Ciebie” itp.) - z zastrzeżeniem Art. 4 ust. 1 Regulaminu - każdy nieposiadający statusu Słuchającego lub Partnera podmiot spełniający warunki Regulaminu, korzystający z Formularzy i Usług Serwisu (w szczególności osoba fizyczna będąca konsumentem),. Opiniującym może być „Użytkownik Zarejestrowany" - Użytkownik, który skutecznie zarejestrował Konto w Serwisie;
+                                        <br><br>
+                                        „ Konto ” – prowadzony dla Użytkownika Zarejestrowanego zbiór funkcjonalności, narzędzi internetowych Serwisu oraz zasobów związanych z dodawaniem przez niego Opinii, dostępny dla Użytkownika Zarejestrowanego po zalogowaniu;
+                                        <br><br>
+                                        „ Formularz ” – formularz/narzędzie internetowe Serwisu (np. wyodrębnione pole, zakładka, ankieta), za pomocą którego Użytkownik zamieszcza Wypowiedzi i/lub Oceny;
+                                        <br><br>
+                                        „ Ocena ” - to wartość punktowa wybrana przez Użytkownika za pomocą narzędzi internetowych Serwisu, w kategoriach tematycznych dostępnych w Formularzu, przyznawana produktom, usługom bądź restauracjom  prezentowana w Serwisie w określonej przez RestRank formie. Ocena jest zliczana w Rankingach;
+                                        <br><br>
+                                        „ Wypowiedzi ” - wszelkie treści, wypowiedzi i materiały zamieszczane w Serwisie przez Użytkowników, w szczególności: teksty (opinie, recenzje, komentarze, opisy), zdjęcia, wyniki testów, materiały audiowizualne lub multimedialne, przy czym: „ Opinia ” to Wypowiedź Użytkownika.
+                                        <br><br>
+                                        „ E-mail ” – adres poczty elektronicznej danej osoby, umożliwiający odbieranie, wysyłanie, zapisywanie, przechowywanie i usuwanie wiadomości w ramach usługi poczty elektronicznej świadczonej przez podmiot inny niż RestRank.
+                                          <br><br>
+                                    </p>
+                                    <h4 class="bold">
+                                        Art. 3. RODZAJE I ZAKRES USŁUG
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Za pomocą RestRank.pl świadczymy Użytkownikom usługi polegające na nieodpłatnym udostępnieniu narzędzi internetowych i funkcjonalności Serwisu umożliwiających publikowanie w ramach Serwisu Wypowiedzi (Opinii) i/lub Ocen przy wykorzystaniu Formularza, przy czym:<br><br>
+                                        1.1. Opinie oraz Oceny zliczane są przez narzędzia informatyczne, statystyczne, prezentowane w ramach Serwisu, także w postaci Rankingów, z zastrzeżeniem dalszych postanowień Regulaminu.<br><br>
+                                        2. Użytkownicy w ramach Formularzy i Wypowiedzi mogą wyrażać Oceny/Opinie,
+                                        odnoszące się do:<br><br>
+                                        (I)	odwiedzonych restauracji (w tym do ich cech, jakości, zgodności z ofertą i opisem, cen, wad i zalet); <br><br>
+                                        (II)	przebiegu wizyty;<br><br>
+                                        (III)	jakości wykonanych usług;<br><br>
+                                        (IV)	innych doświadczeń (np. kontakt z obsługą restauracji);<br><br>
+                                        (V)	innych tematów, o ile nie są one niezgodne z Regulaminem.<br><br>
+                                        3. Wypowiedzi nie są merytorycznie weryfikowane przez RestRank, są to wyłącznie własne opinie Użytkowników. Opiniujący wyłącznie i samodzielnie ponosi odpowiedzialność za własną Wypowiedź (Opinię) i/lub Ocenę;<br><br>
+                                        4. Oceny Użytkowników wraz z liczbą Opinii przedstawiane są w Serwisie automatycznie w formie Rankingów, przy czym:<br><br>
+                                        4.1. Określona pozycja w Rankingu bądź automatyczny komunikat (np. o liczbie pozytywnych, neutralnych lub negatywnych opinii) zależą od wartości punktowej wyliczonej z Ocen i ilości Opinii lub ilości Opiniujących.<br><br>
+                                        4.2. System Rankingów, w stosunku do pozostałych Wypowiedzi, może zliczać automatycznie wyższą wartość punktową z Ocen.<br><br>
+                                        4.3. RestRank umożliwia wyświetlanie Rankingów według dostępnych w Serwisie kategorii i według obiektywnych kryteriów oceny, które są uwzględnione w narzędziach informatycznych np. skala punktacji, liczbowe lub graficzne wyrażenie Oceny zgodnie z instrukcją RestRank.<br><br>
+                                        5. Korzystając z RestRank.pl jako Użytkownik możesz również zapoznać się z Opiniami/Ocenami innych Opiniujących bądź odnoszącymi się do nich publicznie, przeglądać oraz korzystać z wyszukiwarki restauracji, korzystać z Konta i jego funkcjonalności po jego skutecznym zarejestrowaniu.<br><br>
+                                        6. Słuchający korzysta z formularzy dodawania treści/komentowania i innych usług RestRank na podstawie umowy.
+                                    </p>
+                                    <h3 class="bold">
+                                            II WARUNKI ŚWIADCZENIA USŁUG W RESTRANK.PL
+                                    </h3>
+                                    <h4 class="bold">
+                                        Art. 4. OGÓLNE ZASADY SERWISU
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Użytkownikiem Serwisu może być osoba fizyczna, która posiada pełną zdolność do czynności prawnych. W przypadku osoby fizycznej z ograniczoną zdolnością do czynności prawnych albo nieposiadającej zdolności do czynności prawnych, także małoletniego od lat 13 do lat 16 – nie może być ona Użytkownikiem Serwisu, choćby była reprezentowana przez przedstawiciela ustawowego. RestRank zastrzega sobie prawo do weryfikacji spełniania niniejszego postanowienia przez Użytkownika.<br><br>
+                                        2. Jako Użytkownik uczestniczysz w Serwisie i korzystasz z Usług RestRank całkowicie dobrowolnie i nieodpłatnie na zasadach określonych Regulaminem. Za dodanie Wypowiedzi i/lub Oceny w Serwisie nie wypłacamy jakiegokolwiek wynagrodzenia. (Nie uchybia to obowiązkowi ponoszenia przez Ciebie opłat za dostęp do Sieci Internet, zgodnie z odrębnie zawartymi umowami z podmiotami trzecimi zapewniającymi taki dostęp do Sieci.)<br><br>
+                                        3. Serwis jest własnością Usługodawcy. Elementy Serwisu, w tym nazwa Serwisu, jego funkcjonalności, wygląd graficzny, logotypy, elementy grafiki, układ i kompozycja tych elementów, znaki towarowe, oprogramowanie oraz baza danych podlegają ochronie prawnej. Możesz korzystać z Serwisu wyłącznie w sposób określony i zgodny z Regulaminem.<br><br>
+                                        4. W Serwisie prezentowane są Wypowiedzi, Oceny, Rankingi, w tym inne treści informacyjne oraz treści reklamowe, przy czym RestRank zastrzega sobie prawo do wykorzystywania Serwisu do prowadzenia działalności reklamowej lub ogłoszeniowej. <br><br>
+                                        5. Zakazane jest zamieszczanie w Serwisie treści o charakterze bezprawnym, zwłaszcza treści stanowiących czyn nieuczciwej konkurencji, treści naruszających prawa uzyskane przez osoby trzecie, w tym do znaku towarowego bądź prawa autorskie osób trzecich albo treści w inny sposób niezgodnych z prawem.<br><br>
+                                        6. Ograniczenia Serwisu:<br><br>
+                                        6.1. Możliwość zamieszczenia i/lub wyświetlenia Ocen/Wypowiedzi w Serwisie może być ograniczona czasowo lub ilościowo (np. dodanie nie więcej niż jednej Oceny dla tej samej Wypowiedzi lub tylko jednej Wypowiedzi przez tego samego Użytkownika w danym okresie czasu);<br><br>
+                                        6.2. Ilość znaków jaką zawierać może Wypowiedź może być ograniczana przez RestRank poprzez automatyczny system Serwisu, w szczególności w Formularzu.<br><br>
+                                        6.3. RestRank zastrzega sobie prawo do wprowadzenia innych ograniczeń (np. czasowych lub ilościowych), o czym w odpowiedni sposób i uprzednio na stronach Serwisu poinformuje Użytkowników;<br><br>
+                                        6.4. Zamieszczane w Serwisie Wypowiedzi są dostępne publicznie dla wszystkich korzystających z sieci Internet.<br><br>
+                                        6.5. Możliwość zamieszczenia i/lub wyświetlenia Wypowiedzi i/lub Oceny może być<br><br>
+                                        ograniczona zabezpieczeniami Serwisu.<br><br>
+                                    </p>
+                                    <h4 class="bold">
+                                        Art. 5. WARUNKI KORZYSTANIA Z SERWISU
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Korzystając z Serwisu jako jego Użytkownik zobowiązujesz się postępować Korzystanie z REGULAMIN RESTRANK.PL zgodnie z prawem, zasadami współżycia społecznego, postanowieniami Regulaminu, dobrymi obyczajami oraz powszechnie przyjmowanymi zasadami postępowania odnoszącymi się do wszystkich użytkowników Internetu, które mają na celu ochronę ich interesów oraz interesów osób trzecich (tzw. Netykieta). Wszelkie Twoje działania w ramach Serwisu, powinny być zgodne z przeznaczeniem Serwisu.<br><br>
+                                        2. Uruchomienie w Serwisie usługi przechowywania i publicznego udostępnienia Wypowiedzi Użytkownika następuje w chwili jej aktywacji.<br><br>
+                                        3. Zakazane jest wykorzystywanie Usług świadczonych w ramach Serwisu w sposób sprzeczny z prawem, dobrymi obyczajami lub naruszający uzasadnione interesy RestRank oraz osób trzecich, a w szczególności zakazane jest:<br><br>
+                                        3.1. używanie i dostęp do Serwisu za pomocą automatycznych rozwiązań informatycznych, botów, robotów, robaków, jak i innych kodów, aplikacji i skryptów, plików lub narzędzi automatyzujących, w tym do automatycznego pobierania lub agregowania zawartości Serwisu oraz stosowanie innych rozwiązań informatycznych wpływających negatywnie na Serwis lub na jego efektywność biznesową.<br><br>
+                                        3.2. podejmowanie jakichkolwiek działań mogących wpłynąć na stabilność i dostępność Serwisu (np. dokonywanie jakichkolwiek testów penetracyjnych, bezpieczeństwa Serwisu, zamieszczanie w Serwisie szkodliwej zawartości - oprogramowania, informacji lub innych materiałów zawierających wirusy bądź inne szkodliwe lub niszczące elementy),<br><br>
+                                        3.3. podejmowanie jakichkolwiek działań mających na celu manipulowanie wiarygodnością Ocen lub Wypowiedzi lub pozycją opiniowanych produktów, usług bądź podmiotów w Rankingach, w tym poprzez zamieszczanie nieprawdziwych Ocen i Wypowiedzi, w szczególności niedozwolone jest:<br><br>
+                                        - publikowanie opinii i ocen na temat własnej działalności, np. przez Słuchającego lub na jego zlecenie, nieuczciwe zachwalanie poprzez pozyskiwanie pozytywnych Ocen i Wypowiedzi od osób, które nie mają własnego doświadczenia zakupowego z opiniowanym podmiotem;<br><br>
+                                        - zamieszczanie Oceny lub Wypowiedzi odnoszących się do pozornego zamówienia towaru lub usługi, złożonego wyłącznie w celu uzyskania numeru transakcji, która nie została zrealizowana, w celu uzyskania wpływu na automatyczne Rankingi;<br><br>
+                                        - wielokrotne zamieszczanie przez jednego Użytkownika Wypowiedzi dotyczącej tej samej transakcji sugerujące mnogość transakcji;<br><br>
+                                        - zamieszczanie Wypowiedzi/Ocen tematycznie niezwiązanych z treścią Usługi lub w inny sposób niepozostających w związku transakcją, inną Wypowiedzią bądź nieodnoszących się w żaden sposób do opiniowanego podmiotu w Strefie Firmy, wątku/kontekstu forum Opinii albo bez związku do opiniowanego na danej podstronie produktu.<br><br>
+                                        4. Użytkownik nie jest uprawniony do kopiowania, rozpowszechniania, reprodukowania
+                                        lub modyfikowania jakichkolwiek treści zamieszczonych w Serwisie, w szczególności
+                                        bez pisemnej zgody Usługodawcy zakazuje się prezentowania poza Serwisem
+                                        części danych umieszczonych w Serwisie, całych Wypowiedzi lub ich fragmentów.<br><br>
+                                    </p>  
+                                    <h3 class="bold">
+                                            III AKTYWNOŚĆ UŻYTKOWNIKÓW W SERWISIE
+                                    </h3> 
+                                    <h4 class="bold">
+                                            Art. 6. OPINIE I OCENY UŻYTKOWNIKÓW SERWISU
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Wypowiedź (zgodnie z definicją w Art. 2 Regulaminu) wyrażana jest przez Użytkownika w dostępnej w Serwisie formie, za pomocą Formularza bezpośrednio na podstronach RestRank.pl bądź w jakiejkolwiek interaktywnej części Serwisu.<br><br>
+                                        2. Wypowiedzi i/lub Oceny publikowane w Serwisie są samodzielnie redagowane przez Użytkownika i stanowią subiektywną opinię Użytkownika w szczególności na temat sprzedawców towarów lub dostawców usług oraz jakości nabywanych produktów lub usług. RestRank nie kontroluje ani nie monitoruje Wypowiedzi (Opinii) ani Ocen zamieszczanych przez Użytkowników lub Słuchających w Serwisie, nie weryfikuje wiarygodności ani zawartości merytorycznej Wypowiedzi i Ocen, a także nie ma możliwości technicznych, ani organizacyjnych, aby w sposób ciągły i regularny monitorować bądź weryfikować jakiekolwiek Wypowiedzi. RestRank zapewnia Użytkownikom jedynie odpowiednie narzędzia informatyczne i przestrzeń dla przechowywania i publicznego udostępnienia ich Wypowiedzi i/lub Ocen w ramach Serwisu.<br><br>
+                                        3. Uniemożliwienie dostępu do Wypowiedzi lub Oceny w związku z jej niezgodnością z przepisami prawa następuje na podstawie otrzymanej przez RestRank wiarygodnej wiadomości lub urzędowego zawiadomienia o bezprawności danych (w rozumieniu ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną). Na zasadach wynikających z obowiązujących przepisów prawa i niniejszego Regulaminu Usługodawca upoważniony jest do zablokowania Wypowiedzi, Oceny w całości lub części. Każdy kto poweźmie informacje, że Wypowiedź Użytkownika jest niezgodna z prawem lub postanowieniami Regulaminu powinna poinformować RestRank o fakcie i miejscu zamieszczenia takich treści, na adres listowny RestRank.<br><br>
+                                    </p>  
+                                    <h4 class="bold">
+                                        Art. 7. WARUNKI I OGRANICZENIA WYPOWIEDZI I OCEN
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Wypowiedź Użytkownika może być skomentowana lub oceniona przez innego Użytkownika albo Słuchającego, (może być również komentowana przez Słuchającego za pomocą narzędzi OpiConnect i z uwzględnieniem szczególnych postanowień tej usługi), co Użytkownik akceptuje.<br><br>
+                                        2. Wypowiedzi i Oceny Użytkownika zamieszczane w Serwisie są powszechnie dostępne dla osób korzystających z sieci.<br><br>
+                                        3. Wypowiedzi powinny być zredagowane w języku polskim, w sposób przejrzysty, merytoryczny i zrozumiały, przy czym nie mogą zawierać znaków, które powodują, że treść staje się nieczytelna.<br><br>
+                                        4. Merytoryczny tekst Użytkownika prezentowany w formie jego opinii na dany temat nie może bezpośrednio w swej treści zawierać jakichkolwiek danych osobowych, teleadresowych, w tym adresów poczty elektronicznej, a także linków do stron internetowych.<br><br>
+                                        5. Niedopuszczalne jest publikowanie w Serwisie w szczególności treści:<br><br>
+                                        5.1. Zawierających informacje nieprawdziwe, nieaktualne lub wprowadzające w błąd;<br><br>
+                                        5.2. o charakterze wulgaryzmów, obraźliwych, agresywnych lub posiadających formułę wypowiedzi, która może być w oczywisty sposób uznana za niezgodną z dobrymi obyczajami albo za naruszającą prawa osób trzecich (np. bezpodstawnie podważając dobre imię innych Użytkowników lub renomę opiniowanych podmiotów);<br><br>
+                                        5.3. Nawołujących do agresji i przemocy, nienawiści rasowej, ksenofobii oraz konfliktów międzykulturowych, popierających radykalne postawy społeczne lub przedstawiających takie poglądy (np. wszelkiego rodzaju dyskryminacja ze względu na płeć, wyznanie itp.);<br><br>
+                                        5.4. Mających charakter pornograficzny lub nieobyczajny;<br><br>
+                                        5.5. propagujących używanie narkotyków bądź niedopuszczone do obrotu środki odurzające lub nadmierne spożywanie alkoholu albo dotyczących produktów lub usług, których obrót jest prawnie zakazany;<br><br>
+                                        5.6. przekazów stanowiących reklamę oraz ukrytą reklamę lub naruszających Art. 5 ust. 6 pkt 6.3 Regulaminu;<br><br>
+                                        5.7. danych osobowych innych Użytkowników bądź danych osobowych pracowników restauracji;<br><br>
+                                        5.8. zawierają uwagi skierowane do RestRank.<br><br>
+                                        5.9. w inny sposób nielicujących z charakterem Serwisu.<br><br>
+
+                                    </p> 
+                                    <h4 class="bold">
+                                        Art. 8. PRAWA I OBOWIĄZKI UŻYTKOWNIKÓW SERWISU
+                                    </h4>  
+                                    <p class="plain__text">
+                                        1. Użytkownik zobowiązany jest korzystać z Serwisu zgodnie z obowiązującymi przepisami prawa, postanowieniami Regulaminu, dobrymi obyczajami, zarówno wobec Usługodawcy jak i osób trzecich. Rażącym naruszeniem Regulaminu jest zamieszczanie przez Użytkownika w Serwisie danych o charakterze bezprawnym.<br><br>
+                                        2. Samodzielnie udostępniając i publikując Wypowiedzi i/lub Oceny w Serwisie, Użytkownik:<br><br>
+                                        2.1. Oświadcza, iż treść i forma Wypowiedzi nie narusza obowiązujących przepisów oraz Regulaminu, w szczególności, Wypowiedź nie narusza praw lub dóbr osób trzecich;<br><br>
+                                        2.2. Oświadcza, iż przysługują mu do Wypowiedzi wszelkie prawa i zgody wymagane przepisami prawa, odpowiednie prawa autorskie bądź licencje, prawo do wykorzystania wizerunku lub zdjęć, umożliwiające opublikowanie Wypowiedzi i Oceny na łamach Serwisu i wykorzystanie stosownie do zapisów Regulaminu (w tym zgodnie z licencją udzieloną RestRank przez Użytkownika określoną w Art. 9 Regulaminu) i nie spowoduje to naruszenia jakichkolwiek praw osób trzecich;<br><br>
+                                        2.3. Zobowiązuje się, że w przypadku skierowania przez podmioty trzecie jakichkolwiek roszczeń do RestRank, odnośnie naruszania jakichkolwiek praw do opublikowanych Wypowiedzi, złożyć pisemne oświadczenie odpowiedniej treści, które uwolni RestRank od jakiejkolwiek odpowiedzialności w tym zakresie, a także, w razie konieczności, wstąpić do sprawy w miejsce RestRank lub przystąpić do sprawy po jego stronie jako interwenient uboczny, zwracając przy tym RestRank na jego pierwsze żądanie wszelkie poniesione przez RestRank wydatki związane z postępowaniem sądowym, w tym w szczególności wydatki poniesione na opłacenie zastępstwa procesowego, doradztwa prawnego oraz zasądzonych odszkodowań.<br><br>
+                                        3. Użytkownik zobowiązuje się do:<br><br>
+                                        (i) nieuprawniania działalności komercyjnej, reklamowej, promocyjnej, w tym tzw. "lokowania produktu"; <br><br>
+                                        (ii) niekorzystania zusług Serwisu w sposób uciążliwy dla innych Użytkowników; <br><br>
+                                        (iii) zamieszczania Wypowiedzi i Ocen odzwierciedlających wyłącznie jego osobiste i rzeczywiste
+                                        doświadczenia (np. z transakcji, których Wypowiedź/Ocena dotyczy).<br><br>
+                                        4. Użytkownik ponosi wyłączną odpowiedzialność za redagowane przez siebie i zamieszczane w Serwisie Wypowiedzi i/lub Oceny, w szczególności jest odpowiedzialny za ewentualne naruszenie praw lub dóbr osób trzecich oraz szkody z tego tytułu, ponosi też odpowiedzialność za sposób korzystania z Usług - skutki sprzecznego z prawem i postanowieniami Regulaminu korzystania z Serwisu.<br><br>
+                                    </p>                                                                                                       
+                                    <h4 class="bold">
+                                       Art. 9. ZASADY KORZYSTANIA Z OCEN I WYPOWIEDZI
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Wszelkie Wypowiedzi i/lub Oceny zamieszczane przez Użytkowników Serwisu (w tym z „Nick”), nie wyłączając komentarzy do Ocen i Opinii, mogą być wykorzystywane w całości lub w części przez RestRank w ramach Serwisu, w tym w Strefie Firmy w dowolny sposób i w dowolnym celu, zgodnym z obowiązującym prawem, w tym również w celu promocyjnym i marketingowym, a także mogą być prezentowane na stronach internetowych Partnerów lub Słuchających.<br><br>
+                                        1.1. RestRank informuje, że:<br><br>
+                                        (I) Wypowiedź lub Ocena Użytkownika (wraz z tzw. "Nick”) może być automatycznie klasyfikowana przez narzędzia Serwisu, tj. przyporządkowywana do odpowiednich podstron Serwisu według kategorii i tematów lub ocen innych Użytkowników o przydatności Wypowiedzi, a Użytkownik ten fakt akceptuje;<br><br>
+                                        (II) Wypowiedzi Użytkownika może towarzyszyć komunikat systemowy według wybranego przez Użytkownika kryterium punktowego wynikającego z Oceny (np. opinia może być „pozytywna”, „neutralna”, „negatywna”, „pomocna”, „polecająca” lub o tożsamym znaczeniu - także odpowiednio przedstawiana w postaci graficznej);<br><br>
+                                        1.2. RestRank uprawniony jest do promowania funkcjonalności Serwisu i Usług świadczonych za jego pośrednictwem i zastrzega wykorzystanie zamieszczonych przez Użytkowników Wypowiedzi (w tym Nick) i/lub Ocen poprzez ich:<br><br>
+                                        (I) automatyczne przyporządkowanie i wyświetlanie w wyodrębnionych tematycznie podstronach Serwisu (np. katalogi produktów, storna główna Serwisu), jak i w innej interaktywnej części Serwisu poprzez technologię (typu API, Widget, Proxy, bądź inną) umożliwiającą wyświetlanie zawartości Serwisu poza stronami www.RestRank.pl, w tym w serwisach internetowych Partnerów lub Słuchających;<br><br>
+                                        (ii) publikowanie w całości lub w części Wypowiedzi (wraz z Nick) i/lub Ocen Użytkowników, a także komentarzy do tych Wypowiedzi i/lub Ocen we wszelkich źródłach informacji oraz materiałach promujących Usługę i Serwis (zwłaszcza: prasa, foldery/plakaty/broszury reklamowe, publikacje elektroniczne, strony internetowe, statystyki, raporty, zestawienia) oraz za pośrednictwem dowolnego medium (w szczególności: radio, telewizja, prasa drukowana, rozpowszechnianie w sieci Internet).<br><br>
+                                        2. W każdym przypadku, w którym Wypowiedź Użytkownika stanowi utwór w rozumieniu ustawy o prawie autorskim i prawach pokrewnych, Użytkownik z chwilą zamieszczenia jej w Serwisie udziela RestRank bezpłatnej, niewyłącznej i nieograniczonej czasowo oraz terytorialnie licencji na korzystanie z tego utworu, z prawem do udzielania sublicencji na rzecz partnerów Usługodawcy (w tym Słuchających lub Partnerów), na następujących polach eksploatacji:<br><br>
+                                        (i) utrwalania dowolną techniką, zwielokrotnianie techniką analogową i cyfrową, w tym w sieci Internet wprowadzanie do pamięci komputera, wprowadzanie do sieci komputerowej lub multimedialnej, wprowadzanie do obrotu, publiczne udostępnianie w miejscu i czasie wybranym przez Usługodawcę, wyświetlanie, nadawanie, reemitowanie, odtwarzanie, umieszczanie odpowiedzi w bazach danych, wykorzystania odpowiedzi w celu promocji Usługodawcy i prezentacji w Serwisie<br><br>
+                                        (ii) dokonywania modyfikacji zawartości Wypowiedzi, bez naruszania istoty treści merytorycznej oraz wprowadzania zmian Wypowiedzi, wymaganych przez specyfikę medium internetowego, urządzeń mobilnych, w tym przetworzenia Wypowiedzi, do udostępnienia audiowizualnego; prawo wykorzystywania w różnych formatach, w tym w postaci drukowanej, w całości, we fragmentach, wraz z prawem wprowadzania do obrotu; prawo do tworzenia opracowań; wykonywania praw zależnych i udzielania zgody na ich wykonanie;<br><br>
+                                        (iii) publicznego odtwarzania, wykonywania oraz nadawania (w tym w telewizji, w dowolnej technologii), a także publicznego rozpowszechniania Wypowiedzi (w dowolnym formacie, w tym opracowań) w sieci Internet, w taki sposób aby każdy mógł mieć do niego dostęp w miejscu i czasie przez siebie wybranym, niezależnie od rodzaju i sposobu działania urządzenia, którym się w tym celu posługuje;<br><br>
+                                        (iii) wykorzystanie utworów w celu marketingowym lub promocyjnym. Użytkownik zobowiązuje się do nie wykonywania autorskich praw osobistych do ww. utworów.<br><br>
+                                        3. W każdym przypadku, w którym Wypowiedź Użytkownika stanowi utwór w rozumieniu Ustawy o prawie autorskim i prawach pokrewnych, Użytkownik zezwala Usługodawcy na nieodpłatne wykonywanie zależnego prawa autorskiego do utworu, tj. w szczególności na jego modyfikowanie, dokonywanie w nim skrótów i zmian redakcyjnych, z prawem dalszego udzielania takiego zezwolenia, a także na włączanie do utworu treści pochodzących od innego Użytkownika bądź Słuchającego lub włączanie utworu lub jego części do innych utworów, bez nadzoru autorskiego ze strony Użytkownika.<br><br>
+                                        4. Usunięcie Konta Użytkownika zarejestrowanego lub usunięcie Wypowiedzi dodanej przez Użytkownika niezarejestrowanego nie ma wpływu na obowiązywanie powyżej licencji, a uprawnienia RestRank określone w Art. 9 pozostają w mocy również po rozwiązaniu Umowy.<br><br>
+                                        5. Usunięcie Konta Użytkownika lub usunięcie Wypowiedzi dodanej przez Użytkownika niezarejestrowanego nie powoduje automatycznego usunięcia wszystkich Wypowiedzi i/lub Ocen, jakie Użytkownik zamieścił w Serwisie i Wypowiedzi te nadal są prezentowane w Serwisie. Nick może być automatycznie zastąpiony komunikatem systemowym. RestRank ma prawo do korzystania z udzielonych przez Użytkownika licencji na korzystanie z Wypowiedzi. Użytkownik, który chciałby usunąć zamieszczoną przez siebie Wypowiedź, powinien zwrócić się na adres listowny RestRank. RestRank zastrzega sobie prawo usunięcia lub zabezpieczenia Wypowiedzi na nośniku danych, jeżeli jest to wymagane decyzjami odpowiednich organów publicznych.<br><br>
+                                    </p>   
+                                    <h3 class="bold">
+                                            IV ROLA I DZIAŁANIA USŁUGODAWCY W SERWISIE RESTRANK.PL
+                                    </h3> 
+                                    <h4 class="bold">
+                                        Art. 10. PRAWA I OBOWIĄZKI USŁUGODWACY
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. RestRank udostępnia na zasadach Regulaminu odpowiednie narzędzia informatyczne i przestrzeń w ramach Serwisu w celu umożliwienia Użytkownikom korzystania z Usługi zgodnie z Regulaminem.<br><br>
+                                        2. RestRank ma prawo zablokować Użytkownikowi możliwość korzystania z usług Serwisu bądź uniemożliwić dostęp do jego Wypowiedzi i/lub Oceny, jak i jakiejkolwiek treści (blokada lub usunięcie treści w całości lub w części), w każdym przypadku naruszenia Regulaminu i zasad korzystania z Serwisu przez Użytkownika lub jego działań w Serwisie sprzecznych z obowiązującym
+                                        prawem.<br><br>
+                                        3. RestRank zastrzega sobie prawo do wstrzymania świadczenia Usług, w tym do zablokowania/usunięcia Konta Użytkownika zarejestrowanego lub uniemożliwienia zalogowania się albo korzystania z funkcjonalności Konta i usług Serwisu bądź zablokowania/usunięcia Wypowiedzi zwłaszcza, gdy:<br><br>
+                                        (i) Użytkownik narusza istotne postanowienia Regulaminu lub gdy z winy Użytkownika świadczenie Usług na jego rzecz okaże się niemożliwe;<br><br>
+                                        (ii) otrzymano, uprzednio potwierdzone urzędowe zgłoszenie lub wiarygodne powiadomienie, z którego wynika, że Użytkownik działa na szkodę innych Użytkowników, Słuchających, Partnerów;<br><br>
+                                        (iii) Użytkownik narusza uzasadnione interesy i dobre imię Usługodawcy<br><br>
+                                        (iv) zamieszczona przez Użytkownika Wypowiedź powiela inną odnoszącą się do tej samej transakcji (tego samego numeru zamówienia), została zamieszczona z tzw. tymczasowego adresu poczty elektronicznej, została skopiowana w całości lub w części od innych Użytkowników lub od podmiotu opiniowanego, została wystawiona w sposób wskazujący na zautomatyzowany proces lub za pomocą rozwiązań pozwalających na uniknięcie analizy ruchu sieciowego (została wykryta przez automatyczny filtr antyspam) W powyższych sytuacjach RestRank może również wypowiedzieć umowę w trybie natychmiastowym (poprzez usunięcie/zablokowanie Konta lub Wypowiedzi).<br><br>
+                                        5.	RestRank dołoży wszelkich starań w celu zapewnienia prawidłowego, ciągłego działania Serwisu. Usługodawca nie udziela gwarancji na Usługi określone Regulaminem, a także gwarancji działania Serwisu. W stosunku do podmiotów innych niż Użytkownicy o statusie konsumenta w rozumieniu obowiązujących przepisów, RestRank odpowiada wyłącznie za szkody spowodowane z wyłącznej winy umyślnej Usługodawcy.<br><br>
+                                        5. RestRank informuje, iż:<br><br>
+                                        5.1. w Serwisie mogą wystąpić przerwy w dostępności powstałe w wyniku niezbędnych przeglądów technicznych, zakłóceń w działaniu Internetu lub działania siły wyższej.<br><br>
+                                        5.2. W przypadkach szczególnych mających wpływ na bezpieczeństwo lub stabilność systemu teleinformatycznego, RestRank ma prawo do czasowego zaprzestania lub ograniczenia świadczenia usług, bez wcześniejszego powiadomienia i przeprowadzenia prac konserwacyjnych mających na celu przywrócenie bezpieczeństwa i stabilności systemu teleinformatycznego.<br><br>
+                                        5.3. Usługodawca nie odpowiada za problemy techniczne uniemożliwiające świadczenie usług zaistniałe z powodu siły wyższej oraz zdarzeń, za które Usługodawca nie ponosi odpowiedzialności, jak np. w wyniku działania osób trzecich lub Użytkownika.<br><br>
+                                        5.4. RestRank nie ponosi odpowiedzialności za informacje uzyskane z Wypowiedzi oraz Ocen, Wizytówek i ich prawdziwość, ani za skutki ich wykorzystania przez Użytkowników lub przydatność dla Użytkowników (w szczególności do decyzji konsumenckich o zakupie, podjętych w oparciu o Wypowiedzi i/lub Oceny w Serwisie). Dla uniknięcia wątpliwości stwierdza się, że RestRank nie jest stroną umowy dotyczącej produktów lub usług oferowanych przez opiniowany przez Użytkowników podmiot lub produkt;<br><br>
+                                        5.5. RestRank nie ponosi odpowiedzialności za skutki niewykonania lub nienależytego wykonania zaciągniętych przez kogokolwiek, za pośrednictwem Serwisu, zobowiązań oraz zdolności tych osób do zaciągania zobowiązań.<br><br>
+                                        5.6. RestRank nie ponosi odpowiedzialności, w tym w szczególności odszkodowawczej za jakiekolwiek straty wynikające z nieprawidłowości, nieaktualności, jakości danych, treści reklam lub ogłoszeń zamieszczonych na stronach Serwisu.<br><br>
+                                        5.7. za sposób, w jaki Użytkownik korzysta z Serwisu niezgodnie z Regulaminem oraz obowiązującym prawem oraz za wszelkie wynikłe z tego skutki, w tym szkody, odpowiedzialny jest wyłącznie Użytkownik;<br><br>
+                                        6. RestRank zastrzega sobie prawo do:<br><br>
+                                        6.1. sporadycznych, krótkich przerw w działaniu Usługi z ważnych przyczyn, wynikających z natury technicznej, w tym konieczności rozbudowy, renowacji, zmiany konfiguracji lub konserwacji systemu, wymiany sprzętu lub oprogramowania
+                                        6.2. do usuwania usterek, błędnych lub nieaktualnych informacji, unowocześnienia i przeprowadzenia aktualizacji usług Serwisu, jak i wszelkiej zmiany szaty graficznej Serwisu i jego Usług, mogących powodować utrudnienia lub uniemożliwienie Użytkownikowi korzystania z usług, także do modyfikowania wyglądu/układu, Konta, Rankingów, Formularzy, RestRank Connect (w trosce o ich jakość i aktualność);
+                                        6.3. ograniczenia dostępu do części lub całości prezentowanych w Serwisie treści w przypadku stosowania przez Użytkowników sprzętu lub oprogramowania wpływającego na sposób odbioru treści prezentowanych w Serwisie, w tym w szczególności ograniczającego lub wyłączającego publikację określonych treści z Serwisu;
+                                        6.4. ograniczenia w zakładaniu Kont Użytkowników i dodawaniu Wypowiedzi do Serwisu w sytuacjach wyjątkowych np. w przypadku konkursu, przy czym konkurs lub loteria organizowana przez RestRank w ramach Serwisu będzie regulowana odrębnym regulaminem;
+                                        6.5. zaprzestania prowadzenia Serwisu, a także każdej z jego usług z uprzednim powiadomieniem Użytkowników na łamach Serwisu, przeniesienia praw do Serwisu, oraz na podjęcie wszelkich dozwolonych przez prawo czynności związanych z Serwisem.
+                                        7. W przypadku, gdy działania Użytkownika naruszają postanowienia Regulaminu bądź w uzasadnionych przypadkach, gdy Konto lub działalność Użytkownika w ramach Serwisu wymaga dodatkowej weryfikacji (np. ustalenie Adresu E-mail Użytkownika lub weryfikacja dokonanej transakcji po otrzymaniu zgłoszenia),
+                                        RestRank jest uprawnione:<br><br>
+                                        (i) upomnieć Użytkownika, za pośrednictwem E-mail bądź informować Użytkownika w drodze komunikatu w ramach jego Konta bądź kierowanego na jego E-mail o działaniach Usługodawcy związanych z aktywnością Użytkownika w Serwisie;<br><br>
+                                        (ii) uprzednio powiadomić Użytkownika na jego E-mail o konieczności zablokowania Wypowiedzi lub możliwości korzystania z Serwisu z jednoczesnym wezwaniem do zaniechania naruszeń Regulaminu.<br><br>
+                                        (iii) za uprzednim powiadomieniem Użytkownika ograniczyć na czas określony lub nieokreślony funkcjonalność Konta Użytkownika w zakresie dostępu do poszczególnych usług świadczonych w ramach Serwisu;<br><br>
+                                        (iv) uzależnić korzystanie z Serwisu albo utrzymanie i dalsze wyświetlanie zamieszczonej treści (po zgłoszeniu co do jej prawdziwości) od potwierdzenia przez Użytkownika wiarygodności Wypowiedzi dowodami (np. dokumentacją przebiegu reklamacji lub dokumentacją złożenia zamówienia) lub od potwierdzenia przez Użytkownika dokonania transakcji opiniowanej w ramach Wypowiedzi;<br><br>
+                                        (v) zawiesić w uzasadnionych przypadkach na czas określony lub nieokreślony Konto Użytkownika w wyniku uporczywego naruszania istotnych postanowień Regulaminu,<br><br>
+                                        (vi) usunąć lub zablokować Wypowiedź lub jej część, jeśli zostanie stwierdzona lub wykazana jej nieprawdziwość bądź nieaktualność;<br><br>
+                                        (vii) odstąpić od egzekwowania dowolnego punktu Regulaminu, jeżeli naruszenie Regulaminu jest nieznaczne, a jego stopień umożliwia takie odstąpienie.<br><br>
+                                        8. RestRank zastrzega sobie prawo, w uzasadnionych przypadkach (np. na podstawie zgłoszenia), do przeniesienia Wypowiedzi Użytkownika we właściwe miejsce Serwisu, gdy Wypowiedź została omyłkowo wystawiona niewłaściwemu podmiotowi, w tym Słuchającemu lub do niewłaściwej transakcji, jeśli jej treść jednoznacznie wskazuje na błąd.<br><br>
+                                        9. Usługodawca jest uprawniony do stosowania zabezpieczeń antyspamowych i antyfloodowych oraz zapobiegania próbom sztucznego i nieuczciwego ingerowania w Rankingi Serwisu. RestRank zastrzega sobie prawo do zablokowania Wypowiedzi i/lub Ocen bez powiadomienia Użytkownika, gdy zachodzi uzasadnione podejrzenie, że aktywność Użytkownika prowadzi do działań, o których mowa w Art. 5 ust. 6 pkt 6.3.Regulaminu, Art. 4 ust. 1, Art. 4 ust. 3 Regulaminu, w szczególności do manipulowania Rankingami. W powyższych przypadkach Użytkownikowi w stosunku do Usługodawcy nie przysługują jakiekolwiek roszczenia odszkodowawcze, ani zadośćuczynienie.<br><br>
+                                        10. Wszelkie zauważone nieprawidłowości w działaniu Serwisu (w szczególności problemy techniczne) można zgłaszać poprzez wysłanie poczty elektronicznej na adres admin[małpa]RestRank.pl.<br><br>
+                                    </p>   
+                                    <h4 class="bold">
+                                        Art. 11. POSTĘPOWANIE REKLAMACYJNE
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Użytkownik ma prawo do złożenia reklamacji w sprawach związanych z funkcjonowaniem Usługi.<br><br>
+                                        2. Reklamacje Użytkownicy mogą zgłaszać Usługodawcy pisemnie, w formie listu poleconego, na adres: ul. Marii Curie-Skłodowskiej 12, 50-381 Wrocław (z dopiskiem: „reklamacja RestRank”).<br><br>
+                                        3. Reklamacja powinna w sposób przejrzysty i zrozumiały formułować opis zdarzenia będącego przyczyną reklamacji (zawierać przedmiot reklamacji oraz zwięzłe i zrozumiałe uzasadnienie) a ponadto być sporządzona w języku polskim. Reklamacje zawierające treści wulgarne lub obraźliwe nie będą rozpatrywane.<br><br>
+                                        4. Zgłoszenia reklamacyjne będą na bieżąco rozpatrywane przez zespół obsługi Serwisu w terminie 14 dni od daty otrzymania przez RestRank prawidłowo złożonej reklamacji (zawierające wymagane elementy i niewymagające uzupełnienia).<br><br>
+                                        5. Jeżeli przekazane w reklamacji dane lub informacje wymagają uzupełnienia, przed rozpatrzeniem reklamacji RestRank zwraca się do Użytkownika o jej uzupełnienie we wskazanym zakresie. RestRank zastrzega sobie prawo do wydłużenia terminu, o którym mowa w Art. 4 ust. 4 wyżej, o nie więcej niż 10 dni, w przypadku, gdy rozpoznanie reklamacji wymaga nietypowych, szczególnych działań i ustaleń, w tym wiadomości specjalnych lub napotyka przeszkody z przyczyn od RestRank niezależnych (awarie sprzętu, sieci internetowej itp.). RestRank zastrzega, że rozpatrzenie reklamacji, która wymaga uzyskania od Użytkownika dodatkowych wyjaśnień – czas udzielania wyjaśnień przez Użytkownika każdorazowo przedłuża okres rozpoznania reklamacji.<br><br>
+                                        6. RestRank zastrzega sobie prawo do ingerencji technicznej w usługę świadczoną Użytkownikowi lub w Konto Użytkownika, w celu identyfikacji nieprawidłowości w funkcjonowaniu Serwisu, jak i ewentualnej modyfikacji lub przywrócenia prawidłowego działania Konta lub usług Serwisu. Użytkownik otrzyma informację o sposobie rozpatrzenia reklamacji na swój E-mail.<br><br>
+                                    </p>   
+                                    <h3 class="bold">
+                                        V ROZPOCZĘCIE I ZAKOŃCZENIE KORZYSTANIA Z SERWISU
+                                    </h3> 
+                                    <h4 class="bold">
+                                        Art. 12. URUCHOMIENIE USŁUGI I ZAWARCIE UMOWY
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Zarejestrowanie Konta w Serwisie albo dodanie Oceny/Wypowiedzi (opinii) przez Użytkownika niezarejestrowanego (bez Konta) może, wraz z aktywacją opinii bądź aktywacją Konta, wymagać potwierdzenia akceptacji Regulaminu.<br><br>
+                                        2. Potwierdzenie w trakcie rejestracji Konta lub w trakcie dodawania Oceny/Wypowiedzi w Serwisie może nastąpić poprzez: (i) zaznaczenie odpowiedniego pola informującego o zapoznaniu się z treścią Regulaminu i akceptacją jego treści (tzw. "check box"), bądź (ii) poprzez kliknięcie w przycisk „Dodaj Opinię” na stronie Serwisu, przycisk „Wyślij”.Z chwilą powyższego potwierdzenia:<br><br>
+                                        2.1. przy rejestracji Konta dochodzi do zawarcia Umowy na czas nieokreślony o świadczenie drogą elektroniczną Usługi określonej Regulaminem i zapewnienia Użytkownikowi możliwości korzystania z Serwisu w sposób opisany w Regulaminie w odniesieniu do danego Konta;<br><br>
+                                        2.2. przy dodawaniu przez Formularz Wypowiedzi Użytkownika niezarejestrowanego, dochodzi do zawarcia Umowy na czas nieokreślony o świadczenie Usługi określonej niniejszym Regulaminem i zapewnienia Użytkownikowi możliwości korzystania z Serwisu w sposób opisany w Regulaminie w odniesieniu do dodanej Wypowiedzi.<br><br>
+                                        3. Akceptacja Regulaminu przez Użytkownika rejestrującego Konto bądź dodającego Wypowiedź w procesie uruchomienia Usługi (potwierdzenie rejestracji Konta bądź aktywowanie dodawanej Wypowiedzi przez Użytkownika niezarejestrowanego) jest równoznaczna ze złożeniem oświadczeń o treści:<br><br>
+                                        - zapoznałem się z Regulaminem i zobowiązuje się go przestrzegać (co jest równoznaczne z akceptacją wszystkich postanowień Regulaminu i zobowiązaniem do korzystania z Serwisu zgodnie z nim)
+                                        - podane przeze mnie dobrowolnie dane są kompletne i zgodne ze stanem faktycznym, nie naruszają jakichkolwiek praw osób trzecich,<br><br>
+                                        - przyjmuję do wiadomości przekazane mi przez RestRank informacje dotyczące uprawnień w zakresie przetwarzania moich danych osobowych przez Usługodawcę w związku z realizacją Usługi i zawartą Umową, między innymi prawa wglądu, sprostowania, przenoszenia, ograniczenia lub żądania ich usunięcia, wyrażenia sprzeciwu wobec ich przetwarzania, wniesienia skargi do organu nadzorczego ochrony danych.<br><br>
+                                        - Przyjmuje do wiadomości, że żądanie usunięcia danych osobowych z Serwisu jest równoznaczne z zaprzestaniem świadczenia Usługi przez RestRank.<br><br>
+                                        - Umieszczone za pomocą Konta bądź w ramach Formularza jakiekolwiek treści (w tym "Nick", funkcjonujący jako podpisanie Wypowiedzi dowolnym przybranym przez Opiniującego anonimowym oznaczeniem) są zgodne z prawem, w szczególności nie naruszają praw osób trzecich ani dobrych obyczajów, a także podaje je dobrowolnie;<br><br>
+                                        4. W celu uniknięcia wątpliwości stwierdza się, że wszelkie akceptacje regulaminów Serwisu przez Słuchającego, jak i tryb i warunki zawierania oraz rozwiązywania umowy ze Słuchającym odbywają się na zasadach odrębnej umowy. <br><br>
+                                    </p>   
+                                    <h4 class="bold">
+                                        Art. 13. KONTO I JEGO REJESTRACJA W SERWISIE
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        6. Usługa związana z prowadzeniem Konta Użytkownika świadczona jest nieodpłatnie.<br><br>
+                                        7. Zarejestrowanie Konta w Serwisie, a następnie logowanie do Konta wymaga danych dostępowych ustalonych przez Użytkownika w procedurze rejestracji, przy czym:<br><br>
+                                        7.1. można posiadać jedno Konto (Konta o takich samych danych stanowią podstawę do ich zablokowania);<br><br>
+                                        7.2. zakazane jest udostępnianie Kont osobom trzecim oraz korzystanie z cudzych Kont;<br><br>
+                                        7.3. warunkiem rejestracji Konta i korzystania z jego funkcjonalności jest podanie przy rejestracji Adresu E-mail (loginu) oraz skonfigurowanie hasła dostępu do Konta, a także zapoznanie się z Regulaminem i zaakceptowanie go;<br><br>
+                                        7.4. Konto Użytkownika można aktywować poprzez postępowanie zgodne z instrukcją załączoną w wiadomości przesłanej na Adres E-mail podany w procedurze rejestracji. Uruchomienie usługi Konta następuje w chwili aktywacji Konta zgodnie z wymogami tej instrukcji;<br><br>
+                                        8. Użytkownik rejestrujący Konto jest odpowiedzialny za bezpieczeństwo i właściwe używanie danych autoryzacyjnych do Konta, w tym hasła, które powinien przechowywać w poufności. W razie zaistnienia okoliczności wskazujących na podejrzenie, iż dane dostępowe znalazły się w posiadaniu osoby nieuprawnionej, Użytkownik zobowiązany jest do natychmiastowej zmiany hasła. W przypadku uzasadnionego zagrożenia przejęcia Konta Użytkownik powinien o tym poinformować RestRank. Użytkownik ponosi odpowiedzialność za nieuprawniony dostęp do jego Konta przez osoby trzecie w skutek udostępnienia przez niego hasła lub innej dostępnej w Serwisie metody autoryzacji.<br><br>
+                                        9. W przypadku stwierdzenia naruszenia przez Użytkownika przepisów prawa lub postanowień Regulaminu jego Konto może zostać usunięte. Powyższe nie pozbawia RestRank możliwości skorzystania w stosunku do Użytkownika z innych przewidzianych prawem środków, ani nie wyłącza odpowiedzialności Użytkownika z tytułu dokonanych przez siebie naruszeń praw osób trzecich.<br><br>
+                                        10. W przypadku zablokowania lub usunięcia Konta przez Usługodawcę, założenie nowego Konta przez tego samego Użytkownika wymaga uprzedniej zgody RestRank.<br><br>
+                                        11. Użytkownik ma możliwość w każdej chwili i bez podania przyczyny zażądać usunięcia swojego Konta z poziomu funkcjonalności Konta, a w przypadku niedostępności takiej funkcjonalności przez przesłanie wniosku o usunięcie Konta w Serwisie na adres: admin[małpa]RestRank.pl. W przypadku usunięcia Konta dochodzi do rozwiązania Umowy.<br><br>
+                                    </p>   
+                                    <h4 class="bold">
+                                        Art. 14. PRAWO ODSTĄPIENIA OD UMOWY PRZEZ KONSUMENTA
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Użytkownikowi będący konsumentem (w rozumieniu właściwych przepisów praw obowiązującego na terytorium Rzeczpospolitej Polskiej) ma prawo odstąpić od Umowy o świadczenie usług przez Usługodawcę w terminie 14 dni od dnia zawarcia umowy bez podawania przyczyny. W razie wątpliwości dniem zawarcia umowy jest dzień, w którym Użytkownik dodał Wypowiedź/Ocenę przez Formularz albo zarejestrował Konto i zostały one aktywowane (Art. 6). Do zachowania ww. terminu 14 dni wystarczy wysłanie Usługodawcy oświadczenia o odstąpieniu przed jego upływem.<br><br>
+                                        2. Użytkownik odstępuje od umowy przesyłając do RestRank oświadczenie, z którego będzie wynikać wola odstąpienia od Umowy. Konieczne jest przesłanie jednoznacznej informacji na adres:<br><br>
+                                        ul. Ustronna 126, 60-012 Poznań, z dopiskiem „RestRank” Adres listowny  o treści według poniższego wzoru:<br><br>
+                                        Niniejszym informuję o moim odstąpieniu od umowy z RestRank o:<br><br>
+                                        świadczenie usługi Konta w RestRank.pl /usługi dotyczącej Wypowiedzi zamieszczanej przeze mnie w Serwisie RestRank.pl [ należy wybrać odpowiednią usługę ]
+                                        Imię i nazwisko konsumenta:<br><br>
+                                        Data:<br><br>
+                                        Adres e-mail (podany podczas rejestracji lub późniejszej edycji Konta bądź przy dodawaniu Wypowiedzi):<br><br>
+                                        Adres konsumenta i podpis (wymagane tylko w przypadku korespondencji pocztą)<br><br>
+                                        Konsument może posłużyć się również wzorem stanowiącym Załącznik nr 2 do ustawy z dnia 30 maja 2014 r. o prawach konsumenta (Dz.U. 2014 r. poz. 827)<br><br>
+                                        3. W razie skutecznego odstąpienia od Umowy jest ona uważana za niezawartą. W przypadku odstąpienia od Umowy przez Użytkownika w procedurze rejestracji Konta, nieaktywowane Konto w Serwisie zostanie niezwłocznie usunięte przez RestRank.<br><br>
+                                        4. Prawo odstąpienia od umowy zawartej na odległość nie przysługuje Użytkownikowi będącemu konsumentem jeżeli wyraził on zgodę na rozpoczęcie świadczenia usługi przed upływem 14 dniowego terminu na odstąpienie od umowy i został poinformowany przez Usługodawcę o utracie prawa odstąpienia od umowy. Wyrażenie zgody na rozpoczęcie świadczenia usługi przed upływem 14 dniowego terminu na odstąpienie od umowy, o której mowa wyżej (żądanie takiego świadczenia) następuje w przypadku kliknięcia przez Użytkownika w link aktywacyjny otrzymany od RestRank na Adres E-mail Użytkownika.<br><br>
+                                        5. Potwierdzenie zawarcia umowy oraz potwierdzenie informacji o utracie prawa odstąpienia od Umowy zostaje przesłane na Adres E-mail Użytkownika.<br><br>
+                                    </p>   
+                                    <h4 class="bold">
+                                        Art. 15. ZAKOŃCZENIE KORZYSTANIA Z SERWISU                                    
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. Zarówno Użytkownik, jak i RestRank mogą wypowiedzieć Umowę w każdym czasie i bez podawania przyczyny, z zastrzeżeniem zachowania praw nabytych przez drugą stronę przed rozwiązaniem Umowy oraz postanowień wskazanych poniżej.<br><br>
+                                        2. Oświadczenie woli o wypowiedzeniu Umowy przez Użytkownika może zostać złożone pisemnie przez przesłanie na adres RestRank: ul. Ustronna 126, 60-012 Poznań W przypadku Użytkownika zarejestrowanego skuteczne złożenie oświadczenia, o którym mowa w zdaniu poprzedzającym wiąże się z usunięciem Konta.<br><br>
+                                        3. Usługodawca uprawniony jest do natychmiastowego rozwiązania Umowy w sytuacji rażącego naruszenia postanowień Regulaminu przez Użytkownika, w tym także do zablokowania dostępu do Konta Użytkownika lub usunięcia Konta Użytkownika korzystającego z Serwisu w sposób sprzeczny z prawem lub postanowieniami Regulaminu. Rozwiązanie Umowy dokonane w takiej sytuacji przez RestRank może wywoływać skutek natychmiastowy w odniesieniu do wszystkich świadczonych Użytkownikowi za pomocą Serwisu usług oraz wiązać się z usunięciem wszelkich danych Użytkownika albo usunięciem zamieszczonej przez niego Wypowiedzi w Serwisie.<br><br>
+                                    </p>  
+                                     <h3 class="bold">
+                                        VI POSTANOWIENIA KOŃCOWE I TRYB ZMIANY REGULAMINU
+                                    </h3>  
+                                    <h4 class="bold">
+                                        Art. 16. ZMIANY REGULAMINU
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                        1. RestRank ma prawo do jednostronnej zmiany postanowień Regulaminu w każdym czasie w zakresie zgodnym z obowiązującym prawem, zwłaszcza w przypadku zaistnienia przyczyn związanych z technicznym bądź merytorycznym aspektem funkcjonowania Serwisu.<br><br>
+                                        2. O zmianie Regulaminu RestRank zawiadamia Użytkowników poprzez zamieszczenie stosownego komunikatu w Serwisie. Regulamin oraz wszystkie jego zmiany wchodzą w życie z dniem opublikowania ujednoliconego tekstu Regulaminu na stronach internetowych Serwisu, chyba, że RestRank zastrzegało w nim określony inny termin wejścia w życie nowego Regulaminu. Zmiany Regulaminu nie mogą naruszać nabytych uprawnień Użytkowników.<br><br>
+                                        3. Po ukazaniu się na stronie głównej Serwisu lub w innych miejscach do tego przeznaczonych w Serwisie informacji o zmianach w Regulaminie, Użytkownik powinien niezwłocznie zapoznać się ze zmianami, gdyż zalogowanie do Serwisu, jak i dalsze z niego korzystanie po takim ogłoszeniu jest równoznaczne z potwierdzeniem przez Użytkownika, że zapoznał się on ze zmianami Regulaminu oraz złożeniem przez tego Użytkownika oświadczenia o akceptacji wszystkich zmian i akceptacji nowej treści Regulaminu. RestRank zastrzega, że komunikat o planowanej zmianie Regulaminu może być wysłany również na E-mail Użytkownika.<br><br>
+                                        4. W przypadku braku akceptacji nowego lub zmienionego Regulaminu: (i) Użytkownik Zarejestrowany (posiadający Konto) powinien powstrzymać się od zalogowania do Serwisu i niezwłocznie powiadomić RestRank o takiej decyzji; (ii) Użytkownik, który nie zarejestrował Konta powinien powstrzymać się od korzystania z Serwisu i niezwłocznie powiadomić RestRank o takiej decyzji.<br><br>
+                                        5. Brak akceptacji nowego lub zmienionego Regulaminu przez Użytkownika jest równoznaczny z jego rezygnacją z korzystania Usług świadczonych za pośrednictwem Serwisu i stanowi podstawę do rozwiązania umowy ze skutkiem natychmiastowym, w tym oświadczenie o niezaakceptowaniu nowego lub zmienionego Regulaminu skutkuje usunięciem Konta, jeżeli Użytkownik zarejestrował Konto w Serwisie.<br><br>
+                                    </p>   
+                                    <h4 class="bold">
+                                        Art. 17. POSTANOWIENIA KOŃCOWE
+                                    </h4>                                    
+                                    <p class="plain__text">
+                                       1. Wszelka korespondencja, komunikaty i informacje przesyłane w postaci elektronicznej z RestRank do Użytkownika będą kierowane na podany w Usłudze Adres E-mail.<br><br>
+                                        2. W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie znajdują przepisy powszechnie obowiązującego prawa polskiego, a wszelkie spory rozstrzygane będą przez właściwe sądy polskie.<br><br>
+                                        3. Wszelkie załączniki do niniejszego Regulaminu stanowią jego integralną część. <br><br>
+                                        4. Spory pomiędzy RestRank, a Użytkownikiem dotyczące usług Serwisu mogą być zakończone polubownie w drodze postępowania przed sądem polubownym na zasadach określonych w regulaminie tego sądu, np. przed stałymi polubownymi sądami konsumenckimi przy wojewódzkich inspektorach inspekcji handlowej, o których mowa w art. 37 ustawy z dnia 15 grudnia 2000 r. o Inspekcji Handlowej (t.j. Dz. U. z 2001 r. Nr 4, poz. 25), na zasadach określonych w rozporządzeniu Ministra Sprawiedliwości z dnia 25 września 2001 r. w sprawie określenia regulaminu organizacji i działania stałych polubownych sądów konsumenckich (Dz.U. z 2001 r. Nr 113, poz. 1214).<br><br>
+                                        5. Sprawa może być rozpatrywana przez sąd polubowny tylko po zakończeniu postępowania reklamacyjnego i w przypadku jeżeli obie strony sporu wyrażą na to zgodę. W pozostałych wypadkach ewentualne spory zostają poddane sądom właściwym zgodnie z postanowieniami przepisów Kodeksu postępowania cywilnego.<br><br>
+                                        6. Jeżeli jakiekolwiek istniejące lub przyszłe postanowienie lub część postanowienia Regulaminu zostanie uznane za nieważne lub niewykonalne w całości lub części z dowolnego powodu obecnie lub w przyszłości, jego nieważność lub niewykonalność nie ma wpływu na wykonalność pozostałych postanowień niniejszego Regulaminu. Niniejszy Regulamin będzie interpretowany zgodnie z przepisami prawa tak, jakby niewykonalne postanowienie nigdy nie było w nim zawarte.<br><br>
+                                    </p>   
+                            </div>
+                            <div class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">
+                                <a href="{{ path('app_login') }}" id="register__login" class="login__buttons" type="button" onclick="functionOpen()"><span class="border__none">Powrót do strony głównej</span></a>
+                            </div>
+                        </div>
+                </div>
+                <form class="container form-inline my-2 my-lg-0 pt-4 pb-4 d-xxl-flex d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
+                                <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-exclamation-square-fill square-fill"></i>
+                                </div> 
+                                <div class="text__register__form">
+                                    <div>
+                                        Powyższy regulamin to kopia regulaminu strony Opineo.pl, wykorzystana jako przykład dla strony RestRank.pl, wykorzystywany w celach pokazowych. 
+                                    </div>
+                                </div> 
+                                <div class="person col-1 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-eye-fill hidden"></i>
+                                </div>  
+                </form>
+                <form class="form-inline my-2 my-lg-0 pt-4 pb-4 d-flex d-xxl-none d-xl-none d-lg-none d-md-flex d-sm-flex d-flex">
+                                <div class="person col-3 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-exclamation-square-fill square-fill square-fill__alternative"></i>
+                                </div> 
+                                <div class="text__register__form__alternative">
+                                    <div>
+                                        Powyższy regulamin to kopia regulaminu strony Opineo.pl, wykorzystana jako przykład dla strony RestRank.pl, wykorzystywany w celach pokazowych. 
+                                    </div>
+                                </div>  
+                                <div class="person justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-eye-fill eye__alternative hidden"></i>
+                                </div> 
+                </form>    
+            </div>
+        </div>
+    </div>
+{% endblock %}

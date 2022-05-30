@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{asset('build/app.css')}}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block title %}RestRank{% endblock %}
+
+{% block body %}
+
+<div class="container pt-4">
+        <div id="aboutus">
+            <div class="register__form pt-4 d-block pb-4">
+                <div class="logged__panel pt-4 flex-column d-flex d-xxl-block d-xl-block d-lg-block d-md-block d-sm-none d-none w-100">
+                    <div class="d-flex pt-4 justify-content-center align-content-center">
+                        <h1 class="register__header">Kontakt</h1>
+                    </div>
+                </div>
+                <div class="logged__panel__alternative flex-column d-flex d-xxl-none d-xl-none d-lg-none d-md-none d-sm-block d-block w-100">
+                    <div class="d-flex justify-content-center align-content-center"><h1 class="register__header__alteriative">Kontakt</h1></div>
+                </div>
+        </div>
+            <div class="container register__form__panel justify-content-center align-content-center d-block">
+                <div class="container register__form__handler justify-content-center d-flex">
+                        <div class="container-fluid register__input justify-content-center">
+                            <div>
+                                <h2 class="bold">
+                                    Usługodawcą RestRank.pl jest:
+                                </h2>
+                                <h3 class="bold">
+                                    Adres:
+                                </h3>
+                                    <p class="plain__text">
+                                        RestRank Polska Sp. z o.o.<br>
+                                        ul. Ustronna 126<br>
+                                        60-012 Poznań<br>
+                                    </p>
+                                <h3 class="bold">
+                                    Dane firmy:
+                                </h3>
+                                    <p class="plain__text">
+                                        KRS: 1234567890<br>
+                                        NIP: 123-456-78-91<br>
+                                        Regon: 123456789<br>
+
+                                    </p>
+                                <h3 class="bold">
+                                    E-mail:
+                                </h3>
+                                    <p class="plain__text">
+                                        kontakt@restrank.pl<br>
+                                    </p>
+                            </div>
+                            <div class="login__bottom__buttons w-100 justify-content-center align-items-center d-flex">
+                                <a href="{{ path('app_login') }}" id="register__login" class="login__buttons" type="button" onclick="functionOpen()"><span class="border__none">Powrót do strony głównej</span></a>
+                            </div>
+                        </div>
+                </div>
+                <form class="container form-inline my-2 my-lg-0 pt-4 pb-4 d-xxl-flex d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
+                                <div class="person col-2 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-exclamation-square-fill square-fill"></i>
+                                </div> 
+                                <div class="text__register__form">
+                                    <div>
+                                        Czas odpowiedzi na wiadomości mailowe uzależniony jest od liczby napływających wiadomości. 
+                                    </div>
+                                </div> 
+                                <div class="person col-1 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-eye-fill hidden"></i>
+                                </div>  
+                </form>
+                <form class="form-inline my-2 my-lg-0 pt-4 pb-4 d-flex d-xxl-none d-xl-none d-lg-none d-md-flex d-sm-flex d-flex">
+                                <div class="person col-3 justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-exclamation-square-fill square-fill square-fill__alternative"></i>
+                                </div> 
+                                <div class="text__register__form__alternative">
+                                    <div>
+                                        Czas odpowiedzi na wiadomości mailowe uzależniony jest od liczby napływających wiadomości. 
+                                    </div>
+                                </div>  
+                                <div class="person justify-content-end align-items-end align-content-end">
+                                    <i class="bi bi-eye-fill eye__alternative hidden"></i>
+                                </div> 
+                </form>    
+            </div>
+        </div>
+    </div>
+{% endblock %}

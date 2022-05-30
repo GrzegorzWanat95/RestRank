@@ -107,7 +107,10 @@
                 @click="isOpen = false">
                 {{app.user ? 'Wyloguj' : 'Zaloguj'}}
                 </a>
+                {% if app.user %}
+                {% else %}
                 <a class="nav-link" href="{{ path('app_register') }}">Rejestracja</a>
+                {% endif %}
                 </div>
             </div>
             </div>
@@ -128,7 +131,10 @@
                 @click="isOpen = false">
                 {{app.user ? 'Wyloguj' : 'Zaloguj'}}
                 </a>
+                {% if app.user %}
+                {% else %}
                 <a class="nav-link" href="{{ path('app_register') }}">Rejestracja</a>
+                {% endif %}
                 </div>
             </div>
             </div>
@@ -144,9 +150,9 @@
                         <div class="links__field d-flex align-items-center">
                             <div class="links__holder col-7 justify-content-start align-items-center d-flex">
                                     <div class="bottom__links d-flex flex-wrap justify-items-start">
-                                        <a class="link__list light__brown__color" href="#">Kontakt</a>
-                                        <a class="link__list light__brown__color" href="#">Regulamin</a>
-                                        <a class="link__list light__brown__color" href="#">Zasady pisania recenzji</a>
+                                        <a class="link__list light__brown__color" href="{{ path('app_contatct') }}">Kontakt</a>
+                                        <a class="link__list light__brown__color" href="{{ path('app_regulations') }}">Regulamin</a>
+                                        <a class="link__list light__brown__color" href="{{ path('app_rules') }}">Zasady pisania recenzji</a>
                                     </div>
                             </div>
                             <div class="certifies__field col-5 d-block d-flex justify-content-end align-items-center d-xxl-4 d-xl-4 d-lg-4 d-md-12 d-sm-12">
@@ -163,9 +169,9 @@
                         <div class="links__field d-flex align-items-center">
                             <div class="links__holder col-5 justify-content-start align-items-center d-flex">
                                 <div class="bottom__links d-flex flex-column justify-items-start">
-                                        <a class="link__list light__brown__color" href="#">Kontakt</a>
-                                        <a class="link__list light__brown__color" href="#">Regulamin</a>
-                                        <a class="link__list light__brown__color" href="#">Zasady pisania recenzji</a>
+                                        <a class="link__list light__brown__color" href="{{ path('app_contatct') }}">Kontakt</a>
+                                        <a class="link__list light__brown__color" href="{{ path('app_regulations') }}">Regulamin</a>
+                                        <a class="link__list light__brown__color" href="{{ path('app_rules') }}">Zasady pisania recenzji</a>
                                     </div>
                             </div>
                             <div class="certifies__field col-7 d-block d-flex justify-content-end align-items-center d-xxl-4 d-xl-4 d-lg-4 d-md-12 d-sm-12">
@@ -183,13 +189,13 @@
                             <div class="links__holder col-12 justify-content-start flex-column align-items-center d-block w-100">
                                 <div class="bottom__links d-flex flex-column justify-items-start">
                                     <div class="input-group-append__alternative col-12 d-flex">
-                                        <button class="bottom__navigation btn-outline-secondary" type="button">Kontakt</button>
+                                        <a class="bottom__navigation d-flex" href="{{ path('app_contatct') }}">Kontakt</a>
                                     </div>
                                     <div class="input-group-append__alternative col-12 d-flex">
-                                        <button class="bottom__navigation btn-outline-secondary" type="button">Regulamin</button>
+                                        <a class="bottom__navigation d-flex" href="{{ path('app_regulations') }}">Regulamin</a>
                                     </div>
                                     <div class="input-group-append__alternative col-12 d-flex">
-                                        <button class="bottom__navigation btn-outline-secondary" type="button">Zasady pisania recenzji</button>
+                                        <a class="bottom__navigation d-flex" href="{{ path('app_rules') }}">Zasady pisania recenzji</a>
                                     </div>
                                 </div>
                             </div>

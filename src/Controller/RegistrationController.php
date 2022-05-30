@@ -56,7 +56,7 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $userRepository->add($user, true);
-            return $this->redirectToRoute('app_home_page', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_user_panel', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('users/edit.html.twig', [

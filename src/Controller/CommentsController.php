@@ -47,15 +47,17 @@ class CommentsController extends AbstractController
 
 
     #[Route('/{id}/edycja', name: 'app_comments_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Comments $comment, CommentsRepository $commentsRepository): Response
+    public function edit(Request $request, Comments $comment, CommentsRepository $commentsRepository, RestaurantRepository $Restaurant): Response
     {
+        $id = $comment->getRestaurant()->getId();
         $form = $this->createForm(CommentsType::class, $comment);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $commentsRepository->add($comment, true);
 
-            return $this->redirectToRoute('app_user_panel', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_restaurant_show', array('id' => $id,
+        ));
         }
 
         return $this->renderForm('comments/edit.html.twig', [

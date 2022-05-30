@@ -16,10 +16,24 @@ class HomePageController extends AbstractController
         ]);
     }
 
-    //More informations
-    #[Route('/informacje', name: 'app_info', methods: ['GET'])]
-    public function info(): Response
+    //Contact
+    #[Route('/kontakt', name: 'app_contatct', methods: ['GET'])]
+    public function contact(): Response
     {
-        return $this->render('info.html.twig');
+        return $this->render('home_page/contact.html.twig');
+    }
+
+    //Regulations
+    #[Route('/regulamin', name: 'app_regulations', methods: ['GET'])]
+    public function regulations(): Response
+    {
+        return $this->render('home_page/regulations.html.twig');
+    }
+
+    //Comment rules
+    #[Route('/zasady-pisania-opinii', name: 'app_rules', methods: ['GET'])]
+    public function rules(): Response
+    {
+        return $this->render('home_page/rules.html.twig');
     }
 }

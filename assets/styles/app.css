@@ -133,8 +133,9 @@ body{
 }
 
 .input-group-append__alternative {
-    display:block;
-
+    display: flex;
+    display: flex;justify-content: center;
+    align-content: center;
 }
 
 .btn__alternative{
@@ -441,6 +442,8 @@ a{
 }
 
 .bottom__links{
+    display: flex;
+    justify-content: center;
     font-size: 1.2rem;
     font-weight: bold;
     color: #E0B59F;
@@ -466,7 +469,8 @@ a{
 .bottom__navigation{
     display: flex;
     text-align: center;
-    display: block;
+    justify-content: center;
+    align-content: center;
     background-color: #2D1D15;
     width: 100%;
     margin-top:5vw;
@@ -474,6 +478,8 @@ a{
     min-width: 200px;
     border:none;
     color: #E0B59F;
+    padding-left:0px !important;
+    margin-left:0px !important;
 }
 
 .certifies__field__alternative{
@@ -1253,6 +1259,13 @@ a{
     min-width: 200px;
 }
 
+.register__form__panel__rules{
+    display:flex;
+    max-width: 80rem;
+    align-items: center;
+    min-width: 200px;
+}
+
 .register__form__handler{
     display:flex;
     min-width: 200px;
@@ -1724,4 +1737,22 @@ a{
     text-decoration: none;
     padding: 0px;
     margin: 0px;
+}
+
+@media screen and (min-width: 770px) {
+    .plain__text{
+        font-size: 1.5rem !important;
+        text-align: start;
+        word-break: break-all;
+    }
+}
+
+.plain__text{
+    font-size: 1.2rem;
+    text-align: start;
+    word-break: break-all;
+}
+
+.bold{
+    font-weight: bold;
 }
