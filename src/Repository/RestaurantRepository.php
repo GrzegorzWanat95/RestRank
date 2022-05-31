@@ -64,6 +64,7 @@ class RestaurantRepository extends ServiceEntityRepository
         ;
     }
 
+    /*
     public function average($value): ?Restaurant
     {
         $q = $em->createQuery();
@@ -72,6 +73,6 @@ class RestaurantRepository extends ServiceEntityRepository
         
         $q->setDql($dql)->setParameter('param', $param);
         ;
-    }
+    }*/
 
 }

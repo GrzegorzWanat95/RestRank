@@ -34,7 +34,6 @@ class CommentsController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $commentsRepository->add($comment, true);
-
             return $this->redirectToRoute('app_restaurant_show', array('id' => $value,
             ));
         }

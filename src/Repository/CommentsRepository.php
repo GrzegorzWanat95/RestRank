@@ -44,11 +44,9 @@ class CommentsRepository extends ServiceEntityRepository
      */
     public function findByExampleField($value): array
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+        return $this->createQueryBuilder('Comments')
+            ->andWhere('Comments.Restaurant = :val')
             ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;

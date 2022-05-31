@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Restaurant;
 use App\Form\RestaurantType;
 use App\Repository\RestaurantRepository;
+use App\Repository\CommentsRepository;
 use Doctrine\DBAL\Query;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,8 +16,28 @@ use Symfony\Component\Routing\Annotation\Route;
 class RestaurantController extends AbstractController
 {
     #[Route('/', name: 'app_restaurant_index', methods: ['GET'])]
-    public function index(RestaurantRepository $restaurantRepository): Response
-    {
+    public function index(RestaurantRepository $restaurantRepository, CommentsRepository $commentsRepository): Response
+    {   
+        $restaurants = $restaurantRepository -> findAll();
+        foreach ($restaurants as &$restaurant) {
+            $id = $restaurant -> getId();
+            $comments=$commentsRepository->findByExampleField($id);
+            $number = count($comments);
+            $sum=0;
+            $average=0;
+            foreach ($comments as &$comment) {
+                $sum += $comment->getStars();
+            }
+            if ($number != 0) {
+                $average = $sum/$number;
+              }
+            else
+            {
+                $average = 0;
+            }
+            $restaurant->setAverage($average);
+            $restaurant->setCountOpinions($number); 
+        }
         return $this->render('restaurant/index.html.twig', [
             'restaurants' => $restaurantRepository->findAll(),
         ]);
@@ -42,8 +63,24 @@ class RestaurantController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_restaurant_show', methods: ['GET'])]
-    public function show(Restaurant $restaurant): Response
+    public function show(Restaurant $restaurant, CommentsRepository $commentsRepository): Response
     {
+        $comments=$commentsRepository->findByExampleField($restaurant);
+        $number = count($comments);
+        $sum=0;
+        $average=0;
+        foreach ($comments as &$comment) {
+            $sum += $comment->getStars();
+        }
+        if ($number != 0) {
+            $average = $sum/$number;
+          }
+        else
+        {
+            $average = 0;
+        }
+        $restaurant->setAverage($average);
+        $restaurant->setCountOpinions($number);
         return $this->render('restaurant/show.html.twig', [
             'restaurant' => $restaurant,
         ]);

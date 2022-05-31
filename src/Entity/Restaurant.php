@@ -39,6 +39,12 @@ class Restaurant
     #[ORM\OneToMany(mappedBy: 'Restaurant', targetEntity: Comments::class)]
     private $Comments;
 
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private $countOpinions;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $Average;
+
     public function __construct()
     {
         $this->Comments = new ArrayCollection();
@@ -172,5 +178,29 @@ class Restaurant
 
     public function __toString() {
         return $this->Name;
+    }
+
+    public function getCountOpinions(): ?int
+    {
+        return $this->countOpinions;
+    }
+
+    public function setCountOpinions(?int $countOpinions): self
+    {
+        $this->countOpinions = $countOpinions;
+
+        return $this;
+    }
+
+    public function getAverage(): ?float
+    {
+        return $this->Average;
+    }
+
+    public function setAverage(?float $Average): self
+    {
+        $this->Average = $Average;
+
+        return $this;
     }
 }

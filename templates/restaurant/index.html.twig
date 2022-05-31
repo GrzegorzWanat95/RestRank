@@ -18,11 +18,11 @@
                 <td class="column text__column image__column"><div class="column__row__field col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><img src={{restaurant.image}} class="image__form"></div></td>
                 <td class="column text__column"><div class="column__row__field d-flex col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">{{ restaurant.Name }}</div></td>
                 <td class="column text__column__city"><div class="column__row__field col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">{{ restaurant.City }}</div></td>
+                <td class="column text__column__city"><div class="column__row__field col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">★ {{ restaurant.Average|round(1, 'floor')}} ({{restaurant.countOpinions}}) </div></td>
                 <td class="column text__column">
                     <div class="d-flex flex-wrap justify-items-center justify-content-center column__row__field d-flex col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <a class="btn__white__form" href="{{ path('app_restaurant_show', {'id': restaurant.id}) }}">Wyświetl</a>
                     </div>
-
                 </td>
             </tr>
         {% else %}

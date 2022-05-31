@@ -29,6 +29,10 @@
                                                 <th  class="table__header__show">Opis</th>
                                                 <td class="table__content" >{{ restaurant.Description }}</td>
                                             </tr>
+                                            <tr>
+                                                <th  class="table__header__show">Średnia ocen</th>
+                                                <td class="table__content" >★ {{ restaurant.Average|round(1, 'floor')}} ({{restaurant.countOpinions}}) </td>
+                                            </tr>
                                 </table>
                         </div>
                     </div>
