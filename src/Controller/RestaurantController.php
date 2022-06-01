@@ -7,6 +7,7 @@ use App\Form\RestaurantType;
 use App\Repository\RestaurantRepository;
 use App\Repository\CommentsRepository;
 use Doctrine\DBAL\Query;
+use Doctrine\ORM\Query\AST\UpdateItem;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,31 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/restauracje')]
 class RestaurantController extends AbstractController
 {
-    #[Route('/', name: 'app_restaurant_index', methods: ['GET'])]
-    public function index(RestaurantRepository $restaurantRepository, CommentsRepository $commentsRepository): Response
+    #[Route('/', name: 'app_restaurant_index', methods: ['GET', 'POST'])]
+    public function index(RestaurantRepository $restaurantRepository, Restaurant $restaurant): Response
     {   
-        $restaurants = $restaurantRepository -> findAll();
-        foreach ($restaurants as &$restaurant) {
-            $id = $restaurant -> getId();
-            $comments=$commentsRepository->findByExampleField($id);
-            $number = count($comments);
-            $sum=0;
-            $average=0;
-            foreach ($comments as &$comment) {
-                $sum += $comment->getStars();
-            }
-            if ($number != 0) {
-                $average = $sum/$number;
-              }
-            else
-            {
-                $average = 0;
-            }
-            $restaurant->setAverage($average);
-            $restaurant->setCountOpinions($number); 
-        }
         return $this->render('restaurant/index.html.twig', [
-            'restaurants' => $restaurantRepository->findAll(),
+            'restaurants' => $restaurantRepository ->findAll(),
         ]);
     }
 

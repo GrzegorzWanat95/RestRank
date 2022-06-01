@@ -34,6 +34,8 @@ class CommentsController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $commentsRepository->add($comment, true);
+            $this->updateRestaurantDatabase($commentsRepository, $Restaurant, $restaurant);
+            
             return $this->redirectToRoute('app_restaurant_show', array('id' => $value,
             ));
         }
@@ -49,12 +51,13 @@ class CommentsController extends AbstractController
     public function edit(Request $request, Comments $comment, CommentsRepository $commentsRepository, RestaurantRepository $Restaurant): Response
     {
         $id = $comment->getRestaurant()->getId();
+        $restaurant = $Restaurant->find($id);
         $form = $this->createForm(CommentsType::class, $comment);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $commentsRepository->add($comment, true);
-
+            $this->updateRestaurantDatabase($commentsRepository, $Restaurant, $restaurant);
             return $this->redirectToRoute('app_restaurant_show', array('id' => $id,
         ));
         }
@@ -66,12 +69,47 @@ class CommentsController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_comments_delete', methods: ['POST'])]
-    public function delete(Request $request, Comments $comment, CommentsRepository $commentsRepository): Response
+    public function delete(Request $request, Comments $comment, CommentsRepository $commentsRepository, RestaurantRepository $Restaurant): Response
     {
+        $id = $comment->getRestaurant()->getId();
+        $restaurant = $Restaurant->find($id);
+        $this->updateRestaurantDatabase($commentsRepository, $Restaurant, $restaurant);
+
         if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
             $commentsRepository->remove($comment, true);
+            $this->updateRestaurantDatabase($commentsRepository, $Restaurant, $restaurant);
         }
 
-        return $this->redirectToRoute('app_user_panel', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_user_panel', []);
+    }
+
+    public function updateRestaurantDatabase(CommentsRepository $commentsRepository, RestaurantRepository $restaurantRepository, Restaurant $restaurant)
+    {
+        $comments=$commentsRepository->findByExampleField($restaurant);
+        if(is_null($comments) || ($comments < 1))
+        {
+            $restaurant->setAverage(0);
+            $restaurant->setCountOpinions(0);
+            $restaurantRepository->add($restaurant, true);
+        }
+        else
+        {
+            $number = count($comments);
+            $sum=0;
+            $average=0;
+            foreach ($comments as &$comment) {
+                $sum += $comment->getStars();
+            }
+            if ($number != 0) {
+                $average = $sum/$number;
+              }
+            else
+            {
+                $average = 0;
+            }
+            $restaurant->setAverage($average);
+            $restaurant->setCountOpinions($number);
+            $restaurantRepository->add($restaurant, true);
+        }
     }
 }

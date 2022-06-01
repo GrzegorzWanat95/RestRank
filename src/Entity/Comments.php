@@ -42,7 +42,7 @@ class Comments
     /**
      * Get restaurant
      *
-     * @return string
+     * @return Restaurant
      */
     public function getRestaurant(): ?Restaurant
     {
