@@ -4184,6 +4184,11 @@
   "resolved" "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   "version" "1.1.2"
 
+"vue-runtime-helpers@^1.1.2":
+  "integrity" "sha512-pZfGp+PW/IXEOyETE09xQHR1CKkR9HfHZdnMD/FVLUNI+HxYTa82evx5WrF6Kz4s82qtqHvMZ8MZpbk2zT2E1Q=="
+  "resolved" "https://registry.npmjs.org/vue-runtime-helpers/-/vue-runtime-helpers-1.1.2.tgz"
+  "version" "1.1.2"
+
 "watchpack@^2.3.1":
   "integrity" "sha512-x0t0JuydIo8qCNctdDrn1OzH/qDzk2+rdCOC3YzumZ42fiMqmQ7T3xQurykYMhYfHaPHTp4ZxAx2NfUo1K6QaA=="
   "resolved" "https://registry.npmjs.org/watchpack/-/watchpack-2.3.1.tgz"
