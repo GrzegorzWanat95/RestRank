@@ -254,7 +254,7 @@ body{
 }
 
 @media screen and (min-width: 770px) {
-    .bar__alternative{display: none};
+    .bar__alternative{display: none;}
 }
 
 .right__text{
@@ -851,7 +851,7 @@ a{
     display: flex;
     font-size: 3rem;
     padding-right: 0.5rem;    
-    };
+    }
 }
 
 @media screen and (min-width: 770px) {
@@ -859,7 +859,7 @@ a{
     display: flex;
     font-size: 3rem;
     padding-right: 0.5rem;    
-    };
+    }
 }
 
 .envelope{
@@ -897,7 +897,6 @@ a{
 .bi-eye-fill{
     font-size: 2rem;
     align-self: center;
-    padding-bottom: -2rem;
     display: flex;
     line-height: 0;
 }
@@ -908,7 +907,7 @@ a{
         display: block;
         line-height: 0;
         padding-bottom: 0.6rem;
-    };
+    }
 }
 
 .eye__alternative{
@@ -936,11 +935,11 @@ a{
         color: #5E2D19;
         width: 15rem;
         background-color: transparent;
-        font-weight: bold;;
+        font-weight: bold;
         font-size: 2rem;
         padding: 0.7rem;
         text-align: center;
-    };
+    }
 }
 
 
@@ -949,9 +948,9 @@ a{
         border: 2px solid #4D1E08;
         color: white;
         background-color: #5E2D19;
-        font-weight: bold;;
-        text-justify: center;
-    };
+        font-weight: bold;
+        text-justify:auto;
+    }
 }
 
 
@@ -962,7 +961,7 @@ a{
     color: #5E2D19;
     width: 15rem;
     background-color: transparent;
-    font-weight: bold;;
+    font-weight: bold;
     font-size: 1.5rem;
     padding: 0.5rem;
 }
@@ -972,7 +971,7 @@ a{
     border: 2px solid #4D1E08;
     color: white;
     background-color: #5E2D19;
-    font-weight: bold;;
+    font-weight: bold;
 }
 
 .btn__white{
@@ -1061,14 +1060,14 @@ a{
 }
 
 
-.btn__brown__form:{
+.btn__brown__form{
     border: 2px solid #5E2D19;
     text-align: center;
     display: block;
     color: #5E2D19;
     width: 8rem;
     background-color: white;
-    font-weight: bold;;
+    font-weight: bold;
     font-size: 1.3rem;
     padding: 0.3rem;
     text-align: center;
@@ -1082,7 +1081,7 @@ a{
     border: 2px solid #4D1E08;
     color: white;
     background-color: #5E2D19;
-    font-weight: bold;;
+    font-weight: bold;
 }
 
 .btn__white__alternative{
@@ -1125,7 +1124,7 @@ a{
         margin: 0.8rem;
         border-bottom: 2px solid #5E2D19;
         font-weight: bold;      
-    };
+    }
 }
 
 .login__buttons__complex{
@@ -1286,7 +1285,7 @@ a{
 }
 
 @media screen and (min-width: 770px) {
-    .login__field__in__form{width: 100%};
+    .login__field__in__form{width: 100%}
 }
 
 #users_Login{
@@ -1433,7 +1432,6 @@ a{
     height: 200px;
     background-size: 200px;
     image-orientation: from-image;
-    size: 200px;
     justify-self: flex-start;
 }
 
@@ -1477,7 +1475,7 @@ a{
     font-size: 2rem;
     min-width: 250px;
     width: auto;
-    };
+    }
 }
 
 .text__column__city{
@@ -1506,7 +1504,7 @@ a{
         align-items: center;
         justify-content: center;
         height: 200px;
-    };
+    }
 }
 
 .column__row__field__show{
@@ -1526,7 +1524,7 @@ a{
         align-items: center;
         justify-content: center;
         height: 200px;
-    };
+    }
 }
 
 .column__row__field__h{
@@ -1731,7 +1729,6 @@ a{
 }
 
 .link__form{
-    display: row;
     text-align: start;
     color:#5E2D19;
     text-decoration: none;
