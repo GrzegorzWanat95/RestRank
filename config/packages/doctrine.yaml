@@ -1,11 +1,6 @@
 doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
-        dbname:               heroku_f4cef07f59912af
-        host:                 us-cdbr-east-05.cleardb.net
-        port:                 3306
-        user:                 b0de5401e49b44
-        password:             d0c42100
 
         # IMPORTANT: You MUST configure your server version,
         # either here or in the DATABASE_URL env var (see .env file)
