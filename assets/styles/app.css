@@ -1753,3 +1753,7 @@ a{
 .bold{
     font-weight: bold;
 }
+
+#sf-dump{
+    display: none;
+}
