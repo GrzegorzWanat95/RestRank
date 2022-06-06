@@ -99,9 +99,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                <!--{% if is_granted('ROLE_USER') %}-->
                 <a class="nav-link" href="{{ path('app_user_panel') }}">Panel&nbsp;użytkownika</a>
-                <!--{% endif %}-->
                 <a class="nav-link" href="/#aboutus">O&nbsp;nas</a>
                 <a id="login__button" class="nav-link" href="/{{app.user ? 'wyloguj' : 'logowanie'}}" 
                 @click="isOpen = false">
@@ -123,9 +121,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup__alternative">
                 <div class="alternative__collapse navbar-nav ms-auto">
-                <!--{% if is_granted('ROLE_USER') %}-->
                 <a class="nav-link" href="{{ path('app_user_panel') }}">Panel&nbsp;użytkownika</a>
-                <!--{% endif %}-->
                 <a class="nav-link" href="/#aboutus">O nas</a>
                 <a id="login__button__mobile" class="nav-link" href="/{{app.user ? 'wyloguj' : 'logowanie'}}" 
                 @click="isOpen = false">
