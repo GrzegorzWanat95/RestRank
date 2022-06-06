@@ -1,0 +1,15 @@
+{
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/script1.js": "/build/script1.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js",
+  "build/images/restauracja-wnetrze.cc13d4ec.png": "/build/images/restauracja-wnetrze.cc13d4ec.cc13d4ec.png",
+  "build/images/restauracja.08205931.png": "/build/images/restauracja.08205931.08205931.png",
+  "build/images/restauracja-wnetrze-stoly.d514bd82.png": "/build/images/restauracja-wnetrze-stoly.d514bd82.d514bd82.png",
+  "build/images/najlepszy_portal_certyfikat.png": "/build/images/najlepszy_portal_certyfikat.ee4edd8e.png",
+  "build/images/portal_roku_certyfikat.png": "/build/images/portal_roku_certyfikat.712d41ac.png",
+  "build/images/sygnet.png": "/build/images/sygnet.722c6e0b.png",
+  "build/images/logo.png": "/build/images/logo.3f9949ba.png",
+  "build/images/favicon.ico": "/build/images/favicon.140a9d9b.ico"
+}
