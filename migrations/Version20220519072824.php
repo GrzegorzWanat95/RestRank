@@ -10,6 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
+/*
 final class Version20220519072824 extends AbstractMigration
 {
     public function getDescription(): string
@@ -30,4 +31,4 @@ final class Version20220519072824 extends AbstractMigration
         $this->addSql('ALTER TABLE opinions CHANGE text text VARCHAR(255) DEFAULT \'NULL\'');
         $this->addSql('ALTER TABLE restaurant CHANGE Nazwa name VARCHAR(50) NOT NULL');
     }
-}
+}*/
