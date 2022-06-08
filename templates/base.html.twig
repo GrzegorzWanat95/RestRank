@@ -101,11 +101,8 @@
                 <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="{{ path('app_user_panel') }}">Panel&nbsp;użytkownika</a>
                 <a class="nav-link" href="/#aboutus">O&nbsp;nas</a>
-                {% if app.user %}
                  <a class="nav-link" href="{{ path('app_logout') }}">Wyloguj</a>
-                {% else %}
                  <a class="nav-link" href="{{ path('app_login') }}">Zaloguj</a>
-                {% endif %}
                 {% if app.user|default %}
                 {% else %}
                 <a class="nav-link" href="{{ path('app_register') }}">Rejestracja</a>
@@ -122,19 +119,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup__alternative">
                 <div class="alternative__collapse navbar-nav ms-auto">
-                {% if app.user%}
                 <a class="nav-link" href="{{ path('app_user_panel') }}">Panel&nbsp;użytkownika</a>
-                {% endif %}
                 <a class="nav-link" href="/#aboutus">O&nbsp;nas</a>
-                {% if app.user %}
                  <a class="nav-link" href="{{ path('app_logout') }}">Wyloguj</a>
-                {% else %}
                  <a class="nav-link" href="{{ path('app_login') }}">Zaloguj</a>
-                {% endif %}
-                {% if app.user|default %}
-                {% else %}
                 <a class="nav-link" href="{{ path('app_register') }}">Rejestracja</a>
-                {% endif %}
                 </div>
             </div>
             </div>
