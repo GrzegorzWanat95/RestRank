@@ -92,20 +92,21 @@ class RestaurantController extends AbstractController
         $value = dump($request->query->get('Type'));
         $name = dump($request->query->get('Name'));
         switch ($value){
-            /*case 1 :
+            case 1 :
                 if($name == null){
                     return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurantRepository->findAll(),
                     ]);
-                }
+                }/*
+                else{
                 $restaurants = $restaurantRepository->findBy(
                     ['Name' => $name]
                 );
                     return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurants,
-                    ]);
+                    ]);*/
                 break;
-            case 2 :
+            /*case 2 :
                 if($name == null){
                     return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurantRepository->findAll(),
