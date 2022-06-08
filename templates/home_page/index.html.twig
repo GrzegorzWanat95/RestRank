@@ -11,9 +11,9 @@
                 <p class="header flex-row display-3">POZNAJ OPINIE O&nbsp;RESTAURACJACH W&nbsp;TWOJEJ OKOLICY</p>
                 <div class="input__field d-flex col-12 align-items-center justify-content-center">
                     <nav id="search__field" class="navbar col-11 justify-content-center">
-                        <form class="input-group d-flex;" class="form-group" action="/restauracje/szukaj/{type}/{name}" method="post">
+                        <form class="input-group d-flex;" class="form-group" action="/restauracje/szukaj/{type}/{name}" method="get">
                             <input class="form-control mr-sm-2 col-9 col-xxl-9 col-xl-9 col-lg-9 col-md-6 col-sm-6" type="text" name="name" placeholder="Znajdź restaurację" aria-label="Search">
-                            <select class="custom-select col-2 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-5" id="inputGroupSelect04" name="type" type="text" method="post">
+                            <select class="custom-select col-2 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-5" id="inputGroupSelect04" name="type" type="text" method="get">
                             <option value="1">Nazwa restauracji</option>
                             <option value="2">Miasto</option>
                             </select>
@@ -36,7 +36,7 @@
                                 <input class="form-control__alternative" type="text" name="name" type="text" placeholder="Znajdź restaurację" aria-label="Search">
                             </div>
                             <div class="input__alternative col-12">
-                                <select name="Type" type="text" name="Type" class="custom-select__alternative d-block" id="inputGroupSelect04__alternative" method="post">
+                                <select name="Type" type="text" name="Type" class="custom-select__alternative d-block" id="inputGroupSelect04__alternative" method="get">
                                     <option class="text-black" value="1">Nazwa restauracji</option>
                                     <option class="text-black" value="2">Miasto</option>
                                 </select>
