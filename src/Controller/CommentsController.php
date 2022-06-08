@@ -22,12 +22,12 @@ class CommentsController extends AbstractController
     {
         $value = dump($request->query->get('id'));
         $restaurant = $Restaurant->find($value);
-        #$login = $this->getUser()->getLogin();
+        $user = $this->getUser();
+        $login = $this->getUser()->getLogin();
         $comment = new Comments();   
         $comment -> setRestaurant($restaurant);
-        $comment -> setUserLogin('xd');
-        #$comment -> setUser($this->getUser());
-        $comment -> setUser(null);
+        $comment -> setUserLogin($login);
+        $comment -> setUser($this->getUser());
         $comment -> setDate(new \DateTime());
         $form = $this->createForm(CommentsType::class, $comment);
         $form->handleRequest($request);
