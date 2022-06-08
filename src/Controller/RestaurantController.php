@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class RestaurantController extends AbstractController
 {
     #[Route('/', name: 'app_restaurant_index', methods: ['GET', 'POST'])]
-    public function index(RestaurantRepository $restaurantRepository, Restaurant $restaurant): Response
+    public function index(RestaurantRepository $restaurantRepository): Response
     {   
         return $this->render('restaurant/index.html.twig', [
             'restaurants' => $restaurantRepository ->findAll(),
@@ -91,7 +91,6 @@ class RestaurantController extends AbstractController
     {
         $value = dump($request->query->get('Type'));
         $name = dump($request->query->get('Name'));
-        /*
         switch ($value){
             case 1 :
                 if($name == null){
@@ -119,6 +118,6 @@ class RestaurantController extends AbstractController
                         'restaurants' => $restaurants,
                     ]);
                 break;
-        }*/
+        }
     }
 }
