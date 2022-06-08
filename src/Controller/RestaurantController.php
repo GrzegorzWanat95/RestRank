@@ -91,8 +91,9 @@ class RestaurantController extends AbstractController
     {
         #$value = dump($request->query->get('Type'));
         #$name = dump($request->query->get('Name'));
-        $name = dump($request->query->get('name'));
-        $value = dump($request->query->get('type'));
+        $request = $this->request->all();
+        $name = dump($request['name']);
+        $value = dump($request['value']);
         switch ($value){
             case 1 :
                 if($name == null){
@@ -125,7 +126,7 @@ class RestaurantController extends AbstractController
                         'restaurants' => $restaurantRepository ->findAll(),
                     ]);
                     break;
-        }*/
+        }
 
     }
 }
