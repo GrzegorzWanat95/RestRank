@@ -99,11 +99,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
+                {% if app.user %}
                 <a class="nav-link" href="{{ path('app_user_panel') }}">Panel&nbsp;użytkownika</a>
+                {% endif %}
                 <a class="nav-link" href="/#aboutus">O&nbsp;nas</a>
-                 <a class="nav-link" href="{{ path('app_logout') }}">Wyloguj</a>
-                 <a class="nav-link" href="{{ path('app_login') }}">Zaloguj</a>
+                {% if app.user %}
+                 <a class="nav-link" href="{{ path('app_logout') }}">wyloguj</a>
+                {% else %}
+                 <a class="nav-link" href="{{ path('app_login') }}">zaloguj</a>
+                {% endif %}
+                {% if app.user %}
+                {% else %}
                 <a class="nav-link" href="{{ path('app_register') }}">Rejestracja</a>
+                {% endif %}
                 </div>
             </div>
             </div>
@@ -116,11 +124,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup__alternative">
                 <div class="alternative__collapse navbar-nav ms-auto">
+                {% if app.user %}
                 <a class="nav-link" href="{{ path('app_user_panel') }}">Panel&nbsp;użytkownika</a>
+                {% endif %}
                 <a class="nav-link" href="/#aboutus">O&nbsp;nas</a>
-                 <a class="nav-link" href="{{ path('app_logout') }}">Wyloguj</a>
-                 <a class="nav-link" href="{{ path('app_login') }}">Zaloguj</a>
+                {% if app.user %}
+                 <a class="nav-link" href="{{ path('app_logout') }}">wyloguj</a>
+                {% else %}
+                 <a class="nav-link" href="{{ path('app_login') }}">zaloguj</a>
+                {% endif %}
+                {% if app.user %}
+                {% else %}
                 <a class="nav-link" href="{{ path('app_register') }}">Rejestracja</a>
+                {% endif %}
                 </div>
             </div>
             </div>
