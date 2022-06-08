@@ -1,5 +1,7 @@
-{% block stylesheets %}
-    <link href="{{asset('build/app.css')}}" rel="stylesheet" type="text/css">
+{% extends 'base.html.twig' %}
+{% block javascripts %}
+    {{encore_entry_script_tags('app')}}
+    {{encore_entry_script_tags('script1')}}
 {% endblock %}
 
 {% block body %}
