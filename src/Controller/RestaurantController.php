@@ -91,7 +91,6 @@ class RestaurantController extends AbstractController
     {
         $values = dump([$type, $name]);
 
-        $name = dump($request->query->get('Name'));
         switch ($type){
             case 1 :
                 if($name == null){
