@@ -1,4 +1,6 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}RestRank{% endblock %}
 {% block javascripts %}
     {{encore_entry_script_tags('app')}}
     {{encore_entry_script_tags('script1')}}
@@ -31,7 +33,10 @@
         {% endfor %}
         </tbody>
     </table>
-        <a class="btn__white__form w-100 my-4" href="{{path('app_restaurant_new')}}">Dodaj restaurację</a>
+    {% if app.user|default %}
+    <a class="btn__white__form w-100 my-4" href="{{path('app_restaurant_new')}}">Dodaj restaurację</a>
+    {% else %}
     <a class="btn__white__form w-100 my-4" href="{{ path('app_login') }}">Zaloguj się żeby dodać restaurację</a>
+    {% endif %}
     </div>
 {% endblock %}
