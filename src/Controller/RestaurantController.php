@@ -87,10 +87,10 @@ class RestaurantController extends AbstractController
 
 
     #[Route('/szukaj/{Type}/{Name}', name: 'app_restaurant_query_name', methods: ['GET'])]
-    public function searchByName(RestaurantRepository $restaurantRepository): Response
+    public function searchByName(RestaurantRepository $restaurantRepository, Request $request): Response
     {
-        #$value = dump($request->query->get('Type'));
-        #$name = dump($request->query->get('Name'));
+        $value = dump($request->query->get('Type'));
+        $name = dump($request->query->get('Name'));
         return $this->render('restaurant/index.html.twig', [
             'restaurants' => $restaurantRepository ->findAll(),
         ]);
