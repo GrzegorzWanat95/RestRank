@@ -86,8 +86,8 @@ class RestaurantController extends AbstractController
     }
 
 
-    #[Route('/szukaj/{Type}/{Name}', name: 'app_restaurant_query_name', methods: ['GET', 'POST'])]
-    public function searchByName(RestaurantRepository $restaurantRepository, Request $request): Response
+    #[Route('/szukaj/{Type}/{Name}', name: 'app_restaurant_query_name', methods: ['GET'])]
+    public function searchByName(RestaurantRepository $restaurantRepository, Request $request)
     {
         $value = dump($request->query->get('Type'));
         $name = dump($request->query->get('Name'));
