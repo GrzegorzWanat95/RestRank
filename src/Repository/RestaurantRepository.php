@@ -44,20 +44,20 @@ class RestaurantRepository extends ServiceEntityRepository
 //     */
     public function findByExampleField($value): array
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+        return $this->createQueryBuilder('Restaurant')
+            ->andWhere('Restaurant.Name = :val')
             ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
 
+    
     public function findOneBySomeField($value): ?Restaurant
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+        return $this->createQueryBuilder('Restaurant')
+            ->andWhere('Restaurant.Name = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

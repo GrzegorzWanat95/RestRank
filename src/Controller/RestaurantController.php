@@ -90,11 +90,8 @@ class RestaurantController extends AbstractController
     public function searchByName(RestaurantRepository $restaurantRepository, $type, $name)
     {
         $values = dump([$type, $name]);
-        {   
-            return $this->render('restaurant/index.html.twig', [
-                'restaurants' => $restaurantRepository ->findAll(),
-            ]);
-        /*switch ($type){
+
+        switch ($type){
             case 1 :
                 if($name == null){
                     return $this->render('restaurant/index.html.twig', [
@@ -127,7 +124,7 @@ class RestaurantController extends AbstractController
                         'restaurants' => $restaurantRepository ->findAll(),
                     ]);
                     break;
-        }*/
+        }
 
     }
 }
