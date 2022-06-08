@@ -98,26 +98,27 @@ class RestaurantController extends AbstractController
                         'restaurants' => $restaurantRepository->findAll(),
                     ]);
                 }
+                /*
                 $restaurants = $restaurantRepository->findBy(
                     ['Name' => $name]
                 );
                     return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurants,
                     ]);
-                break;
+                break;*/
             case 2 :
                 if($name == null){
                     return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurantRepository->findAll(),
                     ]);
                 }
-                $restaurants = $restaurantRepository->findBy(
+                /*$restaurants = $restaurantRepository->findBy(
                     ['City' => $name]
                 );
                     return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurants,
                     ]);
-                break;
+                break;*/
             default: 
                     return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurantRepository ->findAll(),
