@@ -22,7 +22,6 @@ class CommentsController extends AbstractController
     {
         $value = dump($request->query->get('id'));
         $restaurant = $Restaurant->find($value);
-        $user = $this->getUser();
         $login = $this->getUser()->getLogin();
         $comment = new Comments();   
         $comment -> setRestaurant($restaurant);
