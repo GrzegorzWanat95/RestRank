@@ -99,9 +99,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                {% if app.user%}
                 <a class="nav-link" href="{{ path('app_user_panel') }}">Panel&nbsp;użytkownika</a>
-                {% endif %}
                 <a class="nav-link" href="/#aboutus">O&nbsp;nas</a>
                 {% if app.user %}
                  <a class="nav-link" href="{{ path('app_logout') }}">Wyloguj</a>
