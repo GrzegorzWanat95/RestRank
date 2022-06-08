@@ -94,6 +94,8 @@ class RestaurantController extends AbstractController
         return $this->render('restaurant/index.html.twig', [
             'restaurants' => $restaurants,
         ]);
+        
+    }
         /*switch ($type){
             case 1 :
                 if($name == null){
@@ -125,8 +127,8 @@ class RestaurantController extends AbstractController
                     return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurantRepository ->findAll(),
                     ]);
-                    break;*/
+                    break;
         }
 
-    }
+    }*/
 }
