@@ -38,23 +38,22 @@ class RestaurantRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
-//    /**
-//     * @return Restaurant[] Returns an array of Restaurant objects
-//     */
+    
+    /**
+     * @return Comments[] Returns an array of Comments objects
+     */
     public function findByExampleField($value): array
     {
         return $this->createQueryBuilder('Restaurant')
             ->andWhere('Restaurant.Name = :val')
             ->setParameter('val', $value)
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
 
     
-    public function findOneBySomeField($value): ?Restaurant
+   /* public function findOneBySomeField($value): ?Restaurant
     {
         return $this->createQueryBuilder('Restaurant')
             ->andWhere('Restaurant.Name = :val')
@@ -62,7 +61,7 @@ class RestaurantRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult()
         ;
-    }
+    }*/
 
     /*
     public function average($value): ?Restaurant
