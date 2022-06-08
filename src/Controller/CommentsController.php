@@ -20,7 +20,7 @@ class CommentsController extends AbstractController
     #[Route('/dodaj', name: 'app_comments_new', methods: ['GET', 'POST'])]
     public function new(Request $request, CommentsRepository $commentsRepository, RestaurantRepository $Restaurant): Response
     {
-        $value = dump($request->query->get('id'));
+        $value = $request->query->get('id');
         $restaurant = $Restaurant->find($value);
         $user = $this->getUser();
         $login = $this->getUser()->getLogin();
