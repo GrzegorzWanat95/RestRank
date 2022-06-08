@@ -90,8 +90,8 @@ class RestaurantController extends AbstractController
     public function searchByName(RestaurantRepository $restaurantRepository, Request $request)
     {
 
-        $value = dump($request->query->get('Type'));
-        $name = dump($request->query->get('Name'));
+        $value = $request->query->get('Type');
+        $name = $request->query->get('Name');
 
         switch ($value){
             case 1 :
