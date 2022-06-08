@@ -26,7 +26,8 @@ class CommentsController extends AbstractController
         $comment = new Comments();   
         $comment -> setRestaurant($restaurant);
         $comment -> setUserLogin('xd');
-        $comment -> setUser($this->getUser());
+        #$comment -> setUser($this->getUser());
+        $comment -> setUser(null);
         $comment -> setDate(new \DateTime());
         $form = $this->createForm(CommentsType::class, $comment);
         $form->handleRequest($request);
