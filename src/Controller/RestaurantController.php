@@ -19,13 +19,14 @@ use Knp\Component\Pager\PaginatorInterface;
 class RestaurantController extends AbstractController
 {
     #[Route('/', name: 'app_restaurant_index', methods: ['GET', 'POST'])]
-    public function index(PaginatorInterface $paginator, RestaurantRepository $restaurantRepository, Request $request): Response
+    public function index(Request $request, PaginatorInterface $paginator, RestaurantRepository $restaurantRepository): Response
     {   
         $restaurants = $paginator->paginate($restaurantRepository->findAll(), $request->query->getInt('page', 1),5);
-       
-        return $this->render('restaurant/index.html.twig', [
-            'restaurants' => $restaurants,
-        ]);
+
+        return $this->render('blog/list.html.twig', [ 
+            'pagination' => $paginator->paginate(
+             $restaurantRepository->findAll(),$request->query->getInt('page', 1),10) 
+        ]); 
     }
 
     #[Route('/dodaj', name: 'app_restaurant_new', methods: ['GET', 'POST'])]
@@ -90,33 +91,31 @@ class RestaurantController extends AbstractController
     }
 
 
-    #[Route('/szukaj/{type}/{name}', name: 'app_restaurant_query_name', methods: ['GET'])]
-    public function searchByName(PaginatorInterface $paginator, RestaurantRepository $restaurantRepository, Request $request)
+    #[Route('/szukaj/{type}/{name}', name: 'app_restaurant_query_name', methods: ['GET', 'POST'])]
+    public function searchByName(RestaurantRepository $restaurantRepository, Request $request)
     {
 
         $value = $request->query->get('type');
         $name = $request->query->get('name');
 
-
         switch ($value){
             case 1 :
-                $restaurants = $paginator->paginate($restaurantRepository->findAll(), $request->query->getInt('page', 1),5);
                 if($name == null){
                     return $this->render('restaurant/index.html.twig', [
-                        'restaurants' => $restaurants,
+                        'restaurants' => $restaurantRepository->findAll(),
                     ]);
-                }/*
+                }
                 $restaurants = $restaurantRepository->findBy(
                     ['Name' => $name]
                 );
                     return $this->render('restaurant/index.html.twig', [
-                        'restaurants' => $restaurants, 
+                        'restaurants' => $restaurants,
                     ]);
                 break;
             case 2 :
                 if($name == null){
                     return $this->render('restaurant/index.html.twig', [
-                        'restaurants' => $restaurants,
+                        'restaurants' => $restaurantRepository->findAll(),
                     ]);
                 }
                 $restaurants = $restaurantRepository->findBy(
@@ -124,8 +123,9 @@ class RestaurantController extends AbstractController
                 );
                     return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurants,
-                    ]);*/
+                    ]);
                 break;
         }
+
     }
 }
