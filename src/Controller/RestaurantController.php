@@ -127,6 +127,5 @@ class RestaurantController extends AbstractController
                     ]);*/
                 break;
         }
-
     }
 }
