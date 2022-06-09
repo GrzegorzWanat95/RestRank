@@ -102,9 +102,9 @@ class RestaurantController extends AbstractController
         switch ($value){
             case 1 :
                 if($name == null){
-                    return $this->render('restaurant/index.html.twig', [
+                    return $this->redirectToRoute('restaurant/index.html.twig', [
                         'restaurants' => $restaurants,
-                    ]);
+                    ], Response::HTTP_SEE_OTHER);
                 }/*
                 $restaurants = $restaurantRepository->findBy(
                     ['Name' => $name]
