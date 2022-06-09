@@ -1781,3 +1781,21 @@ a, a:focus, a:active{
     text-decoration: none !important;
     color:#3C0B07; 
 }
+
+.current:hover{
+    color: #E0B59F !important;
+}
+
+.next:hover{
+    color: #E0B59F !important;
+}
+
+.page:hover{
+    color: #E0B59F !important;
+}
+
+.last:hover{
+    color: #E0B59F !important;
+}
+
+
