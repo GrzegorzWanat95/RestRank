@@ -21,10 +21,13 @@ class RestaurantController extends AbstractController
     #[Route('/', name: 'app_restaurant_index', methods: ['GET', 'POST'])]
     public function index(PaginatorInterface $paginator, RestaurantRepository $restaurantRepository, Request $request): Response
     {   
-        return $this->render('blog/list.html.twig', [ 
-            'restaurants' => $paginator->paginate(
-             $restaurantRepository->findAll(),$request->query->getInt('page', 1),5) 
-        ]); 
+        $restaurants = $paginator->paginate($restaurantRepository->findAll(), $request->query->getInt('page', 1),5);
+       
+        return $this->render('restaurant/index.html.twig', [
+            'restaurants' => $restaurants,
+        ]);
+
+        
 
 
 
