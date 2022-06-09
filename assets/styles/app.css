@@ -1778,31 +1778,29 @@ pre{
 .next{
     text-decoration: none;
     color:#4D1C08 !important; 
-    background-color: #2D1D15;
 
 }
 
 .last{
     text-decoration: none;
     color:#4D1C08 !important; 
-    background-color: #2D1D15;
 
 }
 
 .page:hover{
     text-decoration: none;
-    color:#4D1C08;
+    color:#4D1C08 !important; 
 }
 
 .pagination{
     font-family: 'League Spartan', sans-serif;
     text-decoration: none;
-    color:#4D1C08;
     justify-content: center;
-    background-color: #2D1D15;
+    color:#4D1C08 !important; 
 
 }
 
 a{
     text-decoration: none;
+    color:#4D1C08;
 }
