@@ -28,6 +28,10 @@
             <tr>
                 <td>Nie znaleziono restauracji</td>
             </tr>
+
+        <div class="navigation"> 
+        {{ knp_pagination_render(restaurants) }} 
+        </div> 
         {% endfor %}
         </tbody>
     </table>
@@ -37,8 +41,4 @@
     <a class="btn__white__form w-100 my-4" href="{{ path('app_login') }}">Zaloguj się żeby dodać restaurację</a>
     {% endif %}
     </div>
-
-    <div class="navigation"> 
-    {{ knp_pagination_render(restaurant) }} 
-    </div> 
 {% endblock %}
