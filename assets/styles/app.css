@@ -1780,6 +1780,11 @@ pre{
     color:#4D1C08 !important; 
 }
 
+.page:hover{
+    text-decoration: none;
+    color: #E0B59F !important;
+}
+
 .next{
     text-decoration: none;
     color:#4D1C08 !important; 
