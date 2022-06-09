@@ -112,17 +112,18 @@ class RestaurantController extends AbstractController
                 }
                 break;
             case 2 :
-                if($name == null){
+                if($name == null)
+                {
                     return $this->redirectToRoute('app_restaurant_index', [], Response::HTTP_SEE_OTHER);
                 }
-                $restaurants = $restaurantRepository->findBy(
-                    ['City' => $name]
-                );
-                    return $this->render('restaurant/index.html.twig', [
-                        'restaurants' => $restaurants,
-                    ]);
+                else
+                {
+                    $restaurants = $paginator->paginate($restaurantRepository->findBy(
+                        ['City' => $name]), $request->query->getInt('page', 1), 5);
+                        return $this->render('restaurant/index.html.twig', [
+                        'restaurants' => $restaurants,]);
+                }
                 break;
         }
-
     }
 }
