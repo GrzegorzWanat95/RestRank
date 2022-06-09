@@ -28,11 +28,10 @@
             <tr>
                 <td>Nie znaleziono restauracji</td>
             </tr>
-
+        {% endfor %}
         <div class="navigation"> 
         {{ knp_pagination_render(restaurants) }} 
         </div> 
-        {% endfor %}
         </tbody>
     </table>
     {% if app.user %}
