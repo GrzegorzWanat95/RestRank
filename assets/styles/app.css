@@ -1794,5 +1794,10 @@ pre{
     font-family: 'League Spartan', sans-serif;
     text-decoration: none;
     color:#4D1C08;
-    border: 1px solid black;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color:#4D1C08 !important; 
 }
