@@ -1770,6 +1770,11 @@ pre{
     visibility: hidden;
 }
 
+.current:hover{
+    text-decoration: none;
+    color: #E0B59F !important;
+}
+
 .page{
     text-decoration: none;
     color:#4D1C08 !important; 
