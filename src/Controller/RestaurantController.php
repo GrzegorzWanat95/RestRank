@@ -101,7 +101,7 @@ class RestaurantController extends AbstractController
         switch ($value){
             case 1 :
                 if($name == null){
-                    return $this->render('restaurant/app_restaurant_index');
+                    return $this->redirectToRoute('restaurant/app_restaurant_index');
                 }
                 $restaurants = $restaurantRepository->findBy(
                     ['Name' => $name]
