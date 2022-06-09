@@ -1772,17 +1772,17 @@ pre{
 
 .page{
     text-decoration: none;
-    color:#4D1C08;
+    color:#4D1C08 !important; 
 }
 
 .next{
     text-decoration: none;
-    color:#4D1C08;
+    color:#4D1C08 !important; 
 }
 
 .last{
     text-decoration: none;
-    color:#4D1C08;
+    color:#4D1C08 !important; 
 }
 
 .page:hover{
@@ -1799,5 +1799,4 @@ pre{
 
 a{
     text-decoration: none;
-    color:#4D1C08 !important; 
 }
