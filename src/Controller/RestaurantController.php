@@ -120,11 +120,6 @@ class RestaurantController extends AbstractController
                         'restaurants' => $restaurants,
                     ]);
                 break;
-            default: 
-                    return $this->render('restaurant/index.html.twig', [
-                        'restaurants' => $restaurantRepository ->findAll(),
-                    ]);
-                    break;
         }
 
     }
