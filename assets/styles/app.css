@@ -1808,7 +1808,13 @@ pre{
     text-decoration: none;
     justify-content: center;
     color:#4D1C08 !important; 
+}
 
+.pagination:hover{
+    font-family: 'League Spartan', sans-serif;
+    text-decoration: none;
+    justify-content: center;
+    color: #E0B59F !important;
 }
 
 a{
