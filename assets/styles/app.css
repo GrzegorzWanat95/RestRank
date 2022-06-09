@@ -1824,9 +1824,10 @@ pre{
     font-family: 'League Spartan', sans-serif;
     text-decoration: none;
     justify-content: center;
-    color:#3C0B07 !important; 
+    color:#3C0B07; 
 }
 
-a, a:hover, a:focus, a:active{
+a, a:focus, a:active{
     text-decoration: none !important;
+    color: #E0B59F;
 }
