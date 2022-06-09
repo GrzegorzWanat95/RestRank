@@ -1783,7 +1783,7 @@ a, a:focus, a:active{
 }
 
 a:hover{
-    color: #E0B59F !important;
+    color: #E0B59F;
 }
 
 .current:hover{
