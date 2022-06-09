@@ -10,7 +10,7 @@ html{
 }
 
 a:hover{
-    text-decoration: none;;
+    text-decoration: none;
     color:#4D1C08;
 }
 
@@ -1794,4 +1794,5 @@ pre{
     font-family: 'League Spartan', sans-serif;
     text-decoration: none;
     color:#4D1C08;
+    border: 1px solid black;
 }
