@@ -38,7 +38,7 @@ class RestaurantRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-    
+
     /**
      * @return Comments[] Returns an array of Comments objects
      */
@@ -53,7 +53,7 @@ class RestaurantRepository extends ServiceEntityRepository
     }
 
     
-   /* public function findOneBySomeField($value): ?Restaurant
+   /*public function findOneBySomeField($value): ?Restaurant
     {
         return $this->createQueryBuilder('Restaurant')
             ->andWhere('Restaurant.Name = :val')
