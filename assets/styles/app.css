@@ -1781,15 +1781,26 @@ pre{
 
 }
 
+.next:hover{
+    text-decoration: none;
+    color: #E0B59F !important;
+}
+
 .last{
     text-decoration: none;
     color:#4D1C08 !important; 
 
 }
 
+.last:hover{
+    text-decoration: none;
+    color: #E0B59F !important;
+
+}
+
 .page:hover{
     text-decoration: none;
-    color:#4D1C08 !important; 
+    color: #E0B59F !important;
 }
 
 .pagination{
