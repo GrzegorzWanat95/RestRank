@@ -4,7 +4,13 @@
     <div class="table__style container">
     <h1 class="form__header">Lista restauracji</h1>
 
-    <table class="table">
+
+{% for row in pagination %} 
+<article><a href="#">{{ row.title }}</a></article> 
+{% endfor %} 
+
+
+<table class="table">
         <thead>
         </thead>
         <tbody>
@@ -31,6 +37,21 @@
         {% endfor %}
         </tbody>
     </table>
+
+
+
+
+<div class="navigation"> 
+{{ knp_pagination_render(pagination) }} 
+</div> 
+
+
+
+
+
+
+
+    
     {% if app.user %}
     <a class="btn__white__form w-100 my-4" href="{{path('app_restaurant_new')}}">Dodaj restaurację</a>
     {% else %}
