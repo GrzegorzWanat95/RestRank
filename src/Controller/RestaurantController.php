@@ -26,11 +26,6 @@ class RestaurantController extends AbstractController
         return $this->render('restaurant/index.html.twig', [
             'restaurants' => $restaurants,
         ]);
-
-        
-
-
-
     }
 
     #[Route('/dodaj', name: 'app_restaurant_new', methods: ['GET', 'POST'])]
