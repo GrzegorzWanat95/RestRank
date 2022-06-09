@@ -1769,3 +1769,8 @@ pre{
     display: none;
     visibility: hidden;
 }
+
+.page{
+    text-decoration: none;
+    color:#5E2D19;
+}
