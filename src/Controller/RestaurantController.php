@@ -23,9 +23,8 @@ class RestaurantController extends AbstractController
     {   
         $restaurants = $paginator->paginate($restaurantRepository->findAll(), $request->query->getInt('page', 1),5);
 
-        return $this->render('blog/list.html.twig', [ 
-            'pagination' => $paginator->paginate(
-             $restaurantRepository->findAll(),$request->query->getInt('page', 1),10) 
+        return $this->render('app_restaurant_index', [ 
+            'restaurants' => $restaurants
         ]); 
     }
 
