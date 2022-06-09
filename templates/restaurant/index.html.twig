@@ -11,20 +11,6 @@
 {% for row in pagination %} 
 <article><a href="#">{{ row.title }}</a></article> 
 {% endfor %} 
-
-<div class="navigation"> 
-{{ knp_pagination_render(pagination) }} 
-</div> 
- 
-{% endblock %}
-
-
-
-{% block section %} 
- 
-{% for row in pagination %} 
-<article><a href="#">{{ row.title }}</a></article> 
-{% endfor %} 
  
 <div class="navigation"> 
 {{ knp_pagination_render(pagination) }} 
