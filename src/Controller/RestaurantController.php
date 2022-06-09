@@ -91,7 +91,7 @@ class RestaurantController extends AbstractController
 
 
     #[Route('/szukaj/{type}/{name}', name: 'app_restaurant_query_name', methods: ['GET', 'POST'])]
-    public function searchByName(PaginatorInterface $paginator, RestaurantRepository $restaurantRepository, Request $request)
+    public function searchByName(PaginatorInterface $paginator, RestaurantRepository $restaurantRepository, Request $request):Response
     {
 
         $value = $request->query->get('type');
@@ -110,7 +110,7 @@ class RestaurantController extends AbstractController
                     ['Name' => $name]
                 );
                     return $this->render('restaurant/index.html.twig', [
-                        'restaurants' => $restaurants,
+                        'restaurants' => $restaurants, 
                     ]);
                 break;
             case 2 :
