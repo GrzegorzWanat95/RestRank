@@ -12,16 +12,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface; 
+
 
 #[Route('/restauracje')]
 class RestaurantController extends AbstractController
 {
     #[Route('/', name: 'app_restaurant_index', methods: ['GET', 'POST'])]
-    public function index(RestaurantRepository $restaurantRepository): Response
+    public function index(PaginatorInterface $paginator, RestaurantRepository $restaurantRepository, Request $request): Response
     {   
-        return $this->render('restaurant/index.html.twig', [
-            'restaurants' => $restaurantRepository ->findAll(),
-        ]);
+        return $this->render('blog/list.html.twig', [ 
+            'pagination' => $paginator->paginate(
+                $restaurantRepository ->findAll(),$request->query->getInt('page', 1),10) 
+        ]); 
+
+
+
     }
 
     #[Route('/dodaj', name: 'app_restaurant_new', methods: ['GET', 'POST'])]
