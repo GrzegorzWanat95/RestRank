@@ -1134,7 +1134,7 @@ a{
     padding: 3px;
     text-align: center;
     background-color: transparent;
-    color: #5E2D19;
+    color: #5E2D19 !important;
     border: none;
     margin: 0.8rem;
     border-bottom: 2px solid #5E2D19;
