@@ -91,20 +91,20 @@ class RestaurantController extends AbstractController
 
 
     #[Route('/szukaj/{type}/{name}', name: 'app_restaurant_query_name', methods: ['GET'])]
-    public function searchByName(PaginatorInterface $paginator, RestaurantRepository $restaurantRepository, Request $request):Response
+    public function searchByName(PaginatorInterface $paginator, RestaurantRepository $restaurantRepository, Request $request)
     {
 
         $value = $request->query->get('type');
         $name = $request->query->get('name');
-        $restaurants = $paginator->paginate($restaurantRepository->findAll(), $request->query->getInt('page', 1),5);
 
 
         switch ($value){
             case 1 :
+                $restaurants = $paginator->paginate($restaurantRepository->findAll(), $request->query->getInt('page', 1),5);
                 if($name == null){
-                    return $this->redirectToRoute('restaurant/index.html.twig', [
+                    return $this->render('restaurant/index.html.twig', [
                         'restaurants' => $restaurants,
-                    ], Response::HTTP_SEE_OTHER);
+                    ]);
                 }/*
                 $restaurants = $restaurantRepository->findBy(
                     ['Name' => $name]
