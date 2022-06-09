@@ -96,14 +96,11 @@ class RestaurantController extends AbstractController
 
         $value = $request->query->get('type');
         $name = $request->query->get('name');
-        return $this->redirectToRoute('app_restaurant_index', [], Response::HTTP_SEE_OTHER);
 
-        /*switch ($value){
+        switch ($value){
             case 1 :
                 if($name == null){
-                    return $this->render('restaurant/index.html.twig', [
-                        'restaurants' => $restaurantRepository->findAll(),
-                    ]);
+                    return $this->redirectToRoute('app_restaurant_index', [], Response::HTTP_SEE_OTHER);
                 }
                 $restaurants = $restaurantRepository->findBy(
                     ['Name' => $name]
@@ -114,9 +111,7 @@ class RestaurantController extends AbstractController
                 break;
             case 2 :
                 if($name == null){
-                    return $this->render('restaurant/index.html.twig', [
-                        'restaurants' => $restaurantRepository->findAll(),
-                    ]);
+                    return $this->redirectToRoute('app_restaurant_index', [], Response::HTTP_SEE_OTHER);
                 }
                 $restaurants = $restaurantRepository->findBy(
                     ['City' => $name]
@@ -125,7 +120,7 @@ class RestaurantController extends AbstractController
                         'restaurants' => $restaurants,
                     ]);
                 break;
-        }*/
+        }
 
     }
 }
