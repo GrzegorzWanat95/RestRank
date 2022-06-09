@@ -1772,5 +1772,26 @@ pre{
 
 .page{
     text-decoration: none;
-    color:#5E2D19;
+    color:#4D1C08;
+}
+
+.next{
+    text-decoration: none;
+    color:#4D1C08;
+}
+
+.last{
+    text-decoration: none;
+    color:#4D1C08;
+}
+
+.page:hover{
+    text-decoration: none;
+    color:#4D1C08;
+}
+
+.pagination{
+    font-family: 'League Spartan', sans-serif;
+    text-decoration: none;
+    color:#4D1C08;
 }
