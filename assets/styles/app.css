@@ -1782,6 +1782,10 @@ a, a:focus, a:active{
     color:#3C0B07; 
 }
 
+a:hover{
+    color: #E0B59F !important;
+}
+
 .current:hover{
     color: #E0B59F !important;
 }
