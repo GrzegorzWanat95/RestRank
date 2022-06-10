@@ -1788,11 +1788,11 @@ a:hover{
 }
 
 .current{
-    padding-left: 0.8rem !important;
+    padding-left: 1rem !important;
 }
 
 .page{
-    padding-left: 0.8rem !important;
+    padding-left: 1rem !important;
 }
 
 .current:hover{
