@@ -14,7 +14,11 @@
             <div class="container register__form__panel justify-content-center align-content-center d-block">
                 <div class="container register__form__handler justify-content-center d-flex">
                         <div class="container-fluid register__input justify-content-center">
-                            {{ form_start(form) }}
+                                {{ form_start(form) }}
+                                {{ form_row(form.email) }}
+                                {{ form_row(form.Login) }}
+                                {{ form_row(form.agreeTerms) }}
+                                {{ form_row(form.plainPassword) }}
                                 <div class="widget__field">{{ form_widget(form) }}</div>
                             <div class="login__button contaienr w-100 mb-2">
                                     <button class="btn__white d-flex justify-content-center">{{ button_label|default('Aktualizuj dane') }}</button>
