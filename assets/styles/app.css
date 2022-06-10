@@ -1776,6 +1776,7 @@ pre{
     justify-content: center;
     color:#4D1C08 !important; 
     width: 250px; 
+    border: 1px solid black;
 }
 
 a, a:focus, a:active{
@@ -1785,6 +1786,16 @@ a, a:focus, a:active{
 
 a:hover{
     color: #E0B59F;
+}
+
+.current{
+    padding: 0.8rem;
+    margin: 0.5rem;
+}
+
+.page{
+    padding: 0.8rem;
+    margin: 0.5rem;
 }
 
 .current:hover{
