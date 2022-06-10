@@ -1775,6 +1775,7 @@ pre{
     text-decoration: none;
     justify-content: center;
     color:#4D1C08 !important; 
+    width: 250px; 
 }
 
 a, a:focus, a:active{
