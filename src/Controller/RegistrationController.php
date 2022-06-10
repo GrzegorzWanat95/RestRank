@@ -52,6 +52,7 @@ class RegistrationController extends AbstractController
     public function edit(Request $request, User $user, UserRepository $userRepository): Response
     {
         $form = $this->createForm(RegistrationFormType::class, $user);
+        $form['agreTersm']->setData(true); 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
