@@ -48,10 +48,9 @@ class RestaurantController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_restaurant_show', methods: ['GET'])]
-    public function show( PaginatorInterface $paginator, Request $request, Restaurant $restaurant, CommentsRepository $commentsRepository): Response
+    public function show(Restaurant $restaurant, CommentsRepository $commentsRepository): Response
     {
-        $comments= $paginator->paginate($commentsRepository->findByExampleField($restaurant), $request->query->getInt('page', 1),5);
-        #$comments=$commentsRepository->findByExampleField($restaurant);
+        $comments=$commentsRepository->findByExampleField($restaurant);
         $number = count($comments);
         $sum=0;
         $average=0;
