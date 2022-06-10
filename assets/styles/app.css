@@ -1789,13 +1789,15 @@ a:hover{
 }
 
 .current{
-    padding: 0.8rem;
-    margin: 0.5rem;
+    display: block;
+    padding: 0.8rem !important;
+    margin: 0.5rem !important;
 }
 
 .page{
-    padding: 0.8rem;
-    margin: 0.5rem;
+    display: block;
+    padding: 0.8rem !important;
+    margin: 0.5rem !important;
 }
 
 .current:hover{
